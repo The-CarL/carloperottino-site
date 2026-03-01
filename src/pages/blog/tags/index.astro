@@ -1,0 +1,28 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { getAllTags } from '../../../lib/posts';
+
+const tagMap = await getAllTags();
+const sortedTags = [...tagMap.entries()].sort((a, b) => b[1] - a[1]);
+---
+
+<BlogLayout title="Tags | Carlo Perottino" description="Browse blog posts by topic.">
+  <header class="mb-10">
+    <h1 class="text-3xl font-bold tracking-tight text-cream">Tags</h1>
+    <p class="mt-2 text-warm-gray">Browse posts by topic.</p>
+  </header>
+
+  <div class="flex flex-wrap gap-3">
+    {sortedTags.map(([tag, count]) => (
+      <a
+        href={`/blog/tags/${tag}`}
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-surface-3
+               text-warm-gray hover:text-accent hover:border-accent/30
+               hover:bg-accent/5 transition-all duration-200"
+      >
+        <span>{tag}</span>
+        <span class="text-xs text-warm-dim">({count})</span>
+      </a>
+    ))}
+  </div>
+</BlogLayout>

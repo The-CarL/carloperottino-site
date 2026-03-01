@@ -1,0 +1,26 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import PostCard from '../../components/blog/PostCard.astro';
+import { getPublishedPosts } from '../../lib/posts';
+
+const posts = await getPublishedPosts();
+---
+
+<BlogLayout title="What's on my mind | Carlo Perottino" description="Thoughts on AI/ML, technology leadership, and building intelligent systems.">
+  <header class="mb-10">
+    <h1 class="text-3xl font-bold tracking-tight text-cream">What's on my mind</h1>
+    <p class="mt-2 text-warm-gray">
+      Ideas, musings, and things I'm exploring in AI, tech, and beyond.
+    </p>
+  </header>
+
+  {posts.length === 0 ? (
+    <p class="text-warm-dim text-center py-12">No posts yet. Check back soon.</p>
+  ) : (
+    <div>
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  )}
+</BlogLayout>

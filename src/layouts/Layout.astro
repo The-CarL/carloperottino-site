@@ -4,12 +4,19 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** When true, body uses normal flow instead of centered flex */
+  fullPage?: boolean;
 }
 
 const {
   title = 'Carlo Perottino — Technology Leader & Builder',
   description = 'Technology Leader & Builder. 10+ years building intelligent systems and leading high-performing teams across AI, cloud infrastructure, and enterprise transformation.',
+  fullPage = false,
 } = Astro.props;
+
+const bodyClass = fullPage
+  ? 'text-cream min-h-screen antialiased overflow-x-hidden'
+  : 'text-cream antialiased overflow-x-hidden';
 ---
 
 <!doctype html>
@@ -25,7 +32,7 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-cream antialiased overflow-x-hidden">
+  <body class={bodyClass}>
     <slot />
     <script>
       const nav = document.getElementById('nav');
