@@ -1,0 +1,88 @@
+---
+import Layout from './Layout.astro';
+import BlogNav from '../components/blog/BlogNav.astro';
+import FormattedDate from '../components/blog/FormattedDate.astro';
+import TagList from '../components/blog/TagList.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import { getReadingTime } from '../lib/reading-time';
+import type { BlogPost } from '../lib/posts';
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  post: BlogPost;
+  headings: MarkdownHeading[];
+}
+
+const { post, headings } = Astro.props;
+const { title, description, date, updatedDate, tags, heroImage } = post.data;
+const readingTime = post.body ? getReadingTime(post.body) : '';
+---
+
+<Layout title={`${title} | Carlo Perottino`} description={description} fullPage>
+  <BlogNav />
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <article>
+      <header class="mb-10">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-1.5 text-sm text-warm-dim hover:text-accent transition-colors mb-6"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+          Back to blog
+        </a>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-cream">
+          {title}
+        </h1>
+        <div class="flex items-center gap-3 mt-4 text-sm text-warm-dim">
+          <FormattedDate date={date} />
+          {readingTime && (
+            <>
+              <span class="text-surface-3">&middot;</span>
+              <span>{readingTime}</span>
+            </>
+          )}
+        </div>
+        {updatedDate && (
+          <p class="mt-2 text-sm text-warm-dim italic">
+            Updated <FormattedDate date={updatedDate} />
+          </p>
+        )}
+        {tags.length > 0 && <TagList tags={tags} class="mt-4" />}
+      </header>
+
+      {heroImage && (
+        <img
+          src={heroImage}
+          alt={title}
+          class="w-full rounded-lg mb-10 border border-surface-3"
+        />
+      )}
+
+      <TableOfContents headings={headings} />
+
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+
+    <div class="mt-16 pt-8 border-t border-surface-3/50">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-light transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+        All posts
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-surface-3/50 mt-16">
+    <div class="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-warm-dim">
+      &copy; {new Date().getFullYear()} Carlo Perottino
+    </div>
+  </footer>
+</Layout>
