@@ -1,1 +1,125 @@
 @import "tailwindcss";
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ─── Theme tokens ─── */
+@theme {
+  --color-accent: #c9a86c;
+  --color-accent-light: #d4b87e;
+  --color-accent-dim: #c9a86c26;
+  --color-surface: #0a0a0a;
+  --color-surface-2: #111111;
+  --color-surface-3: #1a1a1a;
+  --color-cream: #f0ece6;
+  --color-warm-gray: #b5b0a9;
+  --color-warm-dim: #8a8680;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #080808;
+}
+
+/* ─── Grain texture overlay ─── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ─── Aurora background ─── */
+@keyframes aurora {
+  0%, 100% { background-position: 0% 50%, 50% 100%, 100% 0%; }
+  33% { background-position: 100% 50%, 0% 50%, 50% 100%; }
+  66% { background-position: 50% 100%, 100% 0%, 0% 50%; }
+}
+
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201, 168, 108, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 108, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background-size: 200% 200%, 200% 200%, 200% 200%;
+  animation: aurora 20s ease-in-out infinite;
+}
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #c9a86c 0%, #d4b87e 50%, #c9a86c 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ─── Hero entrance animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.hero-enter { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-enter-1 { animation-delay: 0.2s; }
+.hero-enter-2 { animation-delay: 0.4s; }
+.hero-enter-3 { animation-delay: 0.6s; }
+.hero-enter-4 { animation-delay: 0.8s; }
+.hero-enter-5 { animation-delay: 1.0s; }
+
+/* ─── Accent gradient line ─── */
+.accent-gradient {
+  background: linear-gradient(90deg, #c9a86c, #d4b87e, transparent);
+}
+
+/* ─── Nav ─── */
+.nav-scrolled {
+  background: rgba(8, 8, 8, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(201, 168, 108, 0.3);
+  color: #fff;
+}
+
+/* ─── Accessibility ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

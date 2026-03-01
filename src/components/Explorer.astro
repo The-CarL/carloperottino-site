@@ -1,0 +1,1308 @@
+---
+const chapters = [
+  {
+    id: 'aws',
+    company: 'Amazon Web Services',
+    abbrev: 'AWS',
+    role: 'AI/ML Specialist Solutions Architect',
+    period: '2024 — Present',
+    location: 'Charlotte, NC',
+    focus: 'Healthcare & Life Sciences',
+    impactNumber: '$33.4M',
+    impactLabel: 'in wins across 36 opportunities',
+    highlights: [
+      'Design enterprise AI/ML architectures spanning computer vision, agentic AI, and generative AI for healthcare and life sciences organizations',
+      'Build and prototype multi-agent systems, RAG platforms, and serverless SaaS applications — delivering functional MVPs within days',
+      'Lead technical workshops, hackathons, and executive briefings across the US and EMEA',
+      'Architect compliance-aware AI solutions for regulated environments including HIPAA, GxP, and GDPR',
+      'Directly led wins totaling $33.4M across 36 closed opportunities in first year',
+      'Led largest-ever Clash of Agents competition at healthcare innovation summit — 51 participants, perfect 5.0 CSAT',
+      'Executed 2-day hackathon in Prague training analysts to build full GenAI applications with 100% satisfaction',
+    ],
+    projects: [
+      { title: 'Enterprise Video Analysis Platform', desc: 'Technical solution architecture for laboratory video analysis across thousands of cameras with custom ML models designed for HIPAA and GDPR compliance.', metric: '3,300+ cameras' },
+      { title: 'Agentic AI Strategic Partnership', desc: 'Expert consultation on agentic AI capabilities positioning for multi-year strategic investment agreement.', metric: '$30M+ engagement' },
+      { title: 'Scientific Workflow SaaS', desc: 'Serverless multi-agent SaaS for research workflow automation — literature search, protocol creation, and lab management with multi-tenant architecture.', metric: 'MVP in 3 days' },
+      { title: 'M&A Compliance Platform', desc: 'Agentic RAG system with async pipelines for automated regulatory compliance assessment.', metric: 'MVP in 3 days' },
+      { title: 'GenAI Productivity Transformation', desc: 'Enabled GenAI use case that improved productivity by 99%, reducing an 80-hour manual process to 25 minutes.', metric: '80 hrs → 25 min' },
+    ],
+    tech: ['Amazon Bedrock', 'SageMaker', 'LangGraph', 'Strands SDK', 'Lambda', 'Step Functions', 'ECS', 'CDK', 'AgentCore'],
+    pos: { x: 72, y: 22 },
+  },
+  {
+    id: 'perspectv',
+    company: 'Perspectv',
+    abbrev: 'PRSPV',
+    role: 'Creator & Lead Developer',
+    period: '2025 — Present',
+    location: 'Charlotte, NC',
+    label: 'Side Project',
+    impactNumber: '6',
+    impactLabel: 'AI agents orchestrated in production',
+    highlights: [
+      'Built full-stack multi-agent competitive intelligence platform from zero to production',
+      'Orchestrates 6 specialized AI agents with supervisor-pattern topology and concurrent tool execution',
+      'Engineered RAG pipeline with vector search using LangChain and PGVector (3,072-dim embeddings)',
+      'Designed multi-model slide generation pipeline — LLM designs layouts from 8 visual archetypes, image model renders visuals, PDF engine assembles output',
+      'Shipped FastAPI backend with 20+ endpoints, async job orchestration, and Cognito JWT auth',
+      'Built React 19 + TypeScript dashboard with structured insight cards and real-time job status polling',
+      'Provisioned complete AWS environment via Terraform (10 modules) with ECS Fargate and RDS PostgreSQL',
+    ],
+    projects: [
+      { title: 'Multi-Agent Intelligence Engine', desc: 'Supervisor-pattern topology orchestrating research, persona profiling, market analysis, strategic positioning, content generation, and meeting prep agents.', metric: '6 agents · Concurrent' },
+      { title: 'RAG Pipeline & Vector Search', desc: 'Document ingestion and retrieval pipeline with metadata-enriched chunking and company-scoped similarity search.', metric: '3,072-dim embeddings' },
+      { title: 'AI-Powered Slide Generation', desc: 'Three-stage pipeline — LLM designs structured layouts, image model renders each slide, PDF engine assembles the final output.', metric: '8 visual archetypes' },
+      { title: 'Full-Stack Production Platform', desc: 'FastAPI + React 19 dashboard with admin console, feedback system, and Terraform-managed AWS infrastructure.', metric: '20+ endpoints · 10 TF modules' },
+    ],
+    tech: ['Python', 'Strands SDK', 'FastAPI', 'React 19', 'LangChain', 'PGVector', 'Terraform', 'OpenAI', 'Google Gemini'],
+    pos: { x: 27, y: 22 },
+  },
+  {
+    id: 'ey',
+    company: 'Ernst & Young',
+    abbrev: 'EY',
+    role: 'Senior Consultant → Managing Consultant → Senior Manager',
+    period: '2019 — 2024',
+    location: 'Charlotte, NC',
+    focus: 'AI & Data Practice',
+    featured: true,
+    impactNumber: '1K+',
+    impactLabel: 'users · 70+ countries · ~$28B forecasted',
+    highlights: [
+      'Led delivery of next-generation commercial forecasting platform forecasting ~$28B in revenue, serving 1,000+ users in 70+ countries',
+      'Oversaw technical delivery for ~$25M program over 2.5 years, managing 30+ developers across 5 countries',
+      'Managed $12M engagement portfolio with full P&L ownership as Senior Manager',
+      'Grew team from initial founding to 50+ members through rigorous talent acquisition and capability expansion',
+      'Architected event-driven simulations framework enabling large-scale financial modeling for a $2B franchise',
+      'Led MLOps workflow implementation for time-series forecasting enrichment using Prophet',
+      'Designed graph-based recommendation engines and knowledge graph platforms across energy and travel industries',
+      'Built NLP pipelines for intelligent document processing and automated tax credit identification',
+      'Implemented real-time data streaming and event-driven architectures for enterprise analytics',
+      'Drove DevOps transformation with zero-touch deployments in GxP-regulated environments',
+      'Developed and closed new business worth $10M+ across capability expansions',
+      'Mentored 3+ team members to promotions and expanded leadership roles',
+    ],
+    projects: [
+      { title: 'Commercial Forecasting Platform', desc: 'Led delivery of enterprise forecasting platform covering ~$28B in forecasted revenue. Oversaw 30+ developers across 5 countries over 2.5 years. Architected on EKS with FastAPI, Cognito auth, and OPA-based authorization.', metric: '~$28B forecasted · 1K+ users · 70+ countries', featured: true },
+      { title: 'Platform Expansion & Hardening', desc: 'Managed $12M portfolio — event-driven simulations via AWS Batch, MLOps with Prophet, Kafka event bus, and a new platform support squad worth $1M/yr.', metric: '$12M portfolio · $2B franchise' },
+      { title: 'Graph-Based Recommendation Engine', desc: 'Graph-based product recommendation system for a major travel & entertainment company using Neo4j algorithms and Kafka-based data streaming from distributed sources.', metric: 'Neo4j + Kafka' },
+      { title: 'Knowledge Graph Platform', desc: 'Knowledge Graph POC aggregating project planning and cost data for a multinational energy company. NLP techniques for automated tax credit identification.', metric: 'BI time: 5 days → 4 hours' },
+      { title: 'Supply Chain Analytics Platform', desc: 'Spark-based data ingestion framework enabling cloud migration. Built reusable interface for supply chain forecasting model industrialization.', metric: 'Cloud migration · Spark' },
+      { title: 'Clinical Data Hub & DevOps', desc: 'DevOps revamp in GxP-regulated data platform. Zero-touch GitOps deployments, hub-and-spoke data architecture, and release cycle optimization.', metric: 'GxP compliant · 4-5 wk releases' },
+    ],
+    tech: ['Python', 'FastAPI', 'Kubernetes', 'EKS', 'Terraform', 'Kafka', 'Neo4j', 'Spark', 'SageMaker', 'PostgreSQL', 'Jenkins', 'Docker', 'AWS Batch', 'OPA'],
+    pos: { x: 78, y: 52 },
+  },
+  {
+    id: 'ge',
+    company: 'GE Digital',
+    abbrev: 'GE',
+    role: 'SRE & Data Analytics → Product Lead',
+    period: '2016 — 2019',
+    location: 'Cincinnati, OH',
+    impactNumber: '~1,600',
+    impactLabel: 'engineering hours reclaimed per month',
+    highlights: [
+      'Built AWS-based data collection platform monitoring 15,000+ compute assets across the enterprise',
+      'Discovered 150+ critical misconfigurations on 50+ applications through programmatic analysis',
+      'Developed ML models for change risk assessment, reducing time-to-resolution by up to 50%',
+      'Architected Kafka-driven self-healing automation framework, reclaiming ~1,600 engineering hours per month',
+      'Modeled enterprise connectivity networks using Neo4j graph analytics for dependency-aware incident response',
+      'Reclassified ~15% of compute assets to proper criticality, vastly improving support posture',
+      'Led product strategy for infrastructure intelligence tooling serving enterprise aviation operations',
+      'Pitched and secured leadership investment for new automation platform',
+    ],
+    projects: [
+      { title: 'Infrastructure Intelligence Platform', desc: 'Data collection and analytics platform monitoring enterprise compute assets. Programmatic configuration analysis and remediation tracking.', metric: '15K+ assets · 150+ misconfigs' },
+      { title: 'Self-Healing Automation Engine', desc: 'Kafka-driven intelligent automation framework enabling user-driven, self-healing infrastructure operations with measurable reductions in manual intervention.', metric: '~1,600 hrs/mo reclaimed' },
+      { title: 'Enterprise Graph Analytics', desc: 'Neo4j-based connectivity modeling of enterprise infrastructure. Graph algorithms for centrality analysis and dependency mapping.', metric: '15% assets reclassified' },
+      { title: 'Change Risk Assessment', desc: 'ML models predicting high-risk infrastructure changes. Integration with change management workflow for proactive risk identification.', metric: '50% faster TTR' },
+    ],
+    tech: ['Python', 'AWS', 'Kafka', 'SageMaker', 'Neo4j', 'PostgreSQL', 'Terraform', 'Docker', 'Elasticsearch', 'Flask', 'Jenkins'],
+    pos: { x: 22, y: 60 },
+  },
+  {
+    id: 'bmw',
+    company: 'BMW Group',
+    abbrev: 'BMW',
+    role: 'Co-Op, IT Innovation',
+    period: '2014 — 2015',
+    location: 'Greenville, SC',
+    highlights: [
+      'Managed 19-node Hadoop cluster for distributed computing and performance benchmarking',
+      'Developed CNN-based image recognition systems for manufacturing quality analysis',
+      'Benchmarked ML training algorithms across Spark MLlib and R frameworks',
+      'Presented technical findings and benchmarking results to senior leadership',
+    ],
+    projects: [
+      { title: 'Hadoop Cluster & Benchmarking', desc: 'Large-scale distributed computing environment management with performance benchmarking across Spark, Hive, and MapReduce.', metric: '19-node cluster' },
+      { title: 'CNN Image Recognition', desc: 'Neural network-based image recognition for manufacturing quality analysis using custom image processing and feature extraction.', metric: 'Manufacturing analysis' },
+    ],
+    tech: ['Hadoop', 'Spark', 'Python', 'R', 'CNN', 'EMR', 'Hive', 'YARN'],
+    pos: { x: 62, y: 80 },
+  },
+  {
+    id: 'education',
+    company: 'Education & Leadership',
+    abbrev: 'EDU',
+    role: 'University of Cincinnati',
+    period: '2011 — 2016',
+    location: 'Cincinnati, OH',
+    highlights: [
+      'Bachelor of Science, College of Engineering & Applied Science',
+      'President, CEAS Student Government — managed 26 officers, $140K budget, and 1,160 students',
+      'President, IEEE Student Chapter — managed 8 officers and 130 students',
+      'Supervised 13 committees focused on student experience, academic affairs, and career development',
+      'AWS Certified Solutions Architect — Associate',
+      'AWS Certified AI Practitioner',
+      'AWS Certified Machine Learning Engineer — Associate',
+    ],
+    projects: [] as Array<{title: string; desc: string; metric: string; featured?: boolean}>,
+    tech: [] as string[],
+    pos: { x: 38, y: 80 },
+  },
+];
+
+const skills = [
+  { title: 'AI & Machine Learning', items: ['Agentic AI', 'Multi-Agent Systems', 'RAG', 'MLOps', 'LLMOps', 'NLP', 'Computer Vision', 'Distributed Training', 'HITL Learning'] },
+  { title: 'Cloud & Infrastructure', items: ['AWS Bedrock', 'SageMaker', 'Lambda', 'ECS', 'Step Functions', 'EMR', 'Terraform', 'Docker', 'Kubernetes', 'Serverless'] },
+  { title: 'Data & Analytics', items: ['Spark', 'Kafka', 'PostgreSQL', 'Neo4j', 'OpenSearch', 'PGVector', 'Event-Driven Architecture', 'Microservices'] },
+  { title: 'Languages & Frameworks', items: ['Python', 'SQL', 'TypeScript', 'C#', 'FastAPI', 'React', 'LangGraph', 'LangChain', 'Strands SDK'] },
+];
+
+const earlierRoles = [
+  { company: 'Diebold, Inc.', role: 'Co-Op, Global Software Development', location: 'North Canton, OH', period: '2013' },
+  { company: 'Cincinnati Bell Technology Solutions', role: 'Management Trainee', location: 'Cincinnati, OH', period: '2012' },
+];
+
+const centerPos = { x: 50, y: 45 };
+---
+
+<section id="explorer" class="explorer-section">
+  <!-- Particle canvas background -->
+  <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+  <!-- Constellation (desktop) -->
+  <div class="constellation" id="constellation">
+    <!-- SVG connections -->
+    <svg id="lines-svg" class="lines-svg"></svg>
+
+    <!-- Center node -->
+    <button
+      class="c-node c-node--center"
+      data-id="overview"
+      style={`left:${centerPos.x}%;top:${centerPos.y}%`}
+    >
+      <div class="c-node__circle">
+        <span class="c-node__text">CP</span>
+      </div>
+    </button>
+
+    <!-- Chapter nodes -->
+    {chapters.map((ch) => (
+      <button
+        class:list={['c-node', 'c-node--chapter', ch.featured && 'c-node--featured']}
+        data-id={ch.id}
+        style={`left:${ch.pos.x}%;top:${ch.pos.y}%`}
+      >
+        <div class="c-node__circle">
+          <span class="c-node__text">{ch.abbrev}</span>
+        </div>
+        <span class="c-node__label">{ch.company}</span>
+        <span class="c-node__period">{ch.period}</span>
+      </button>
+    ))}
+
+    <!-- Prompt -->
+    <p class="constellation__prompt" id="constellation-prompt">
+      Select a node to explore
+    </p>
+  </div>
+
+  <!-- Mobile layout -->
+  <div class="mobile-explorer" id="mobile-explorer">
+    <p class="mobile-explorer__eyebrow">Experience</p>
+    <h2 class="mobile-explorer__title">Explore My Journey</h2>
+    {chapters.map((ch) => (
+      <button class="mobile-card" data-id={ch.id}>
+        <span class="mobile-card__abbrev">{ch.abbrev}</span>
+        <div class="mobile-card__info">
+          <h3 class="mobile-card__company">{ch.company}</h3>
+          <p class="mobile-card__role">{ch.role}</p>
+        </div>
+        <span class="mobile-card__period">{ch.period}</span>
+      </button>
+    ))}
+  </div>
+
+  <!-- Panel overlay -->
+  <div class="panel-overlay" id="panel-overlay">
+    <div class="panel-backdrop" id="panel-backdrop"></div>
+    <aside class="detail-panel" id="detail-panel">
+      <button class="detail-panel__close" id="panel-close" aria-label="Close panel">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="detail-panel__scroll">
+        <!-- ─── Overview panel ─── -->
+        <div class="panel-view" data-panel="overview">
+          <div class="pv-header">
+            <p class="pv-eyebrow">About</p>
+            <h2 class="pv-title">Carlo Perottino</h2>
+            <p class="pv-subtitle">Technology Leader & Builder</p>
+          </div>
+
+          <p class="pv-desc">
+            I build intelligent systems and lead high-performing teams at the intersection of AI,
+            cloud infrastructure, and enterprise transformation. I've scaled teams across continents,
+            shipped platforms used by thousands, and designed AI architectures from prototype to production
+            — always focused on turning complex technical challenges into impactful products.
+          </p>
+
+          <div class="impact-grid">
+            <div class="impact-item">
+              <span class="impact-item__number">10+</span>
+              <span class="impact-item__label">Years in Technology</span>
+            </div>
+            <div class="impact-item">
+              <span class="impact-item__number">50+</span>
+              <span class="impact-item__label">Team Members Led</span>
+            </div>
+            <div class="impact-item">
+              <span class="impact-item__number">5</span>
+              <span class="impact-item__label">Companies</span>
+            </div>
+            <div class="impact-item">
+              <span class="impact-item__number">6</span>
+              <span class="impact-item__label">Industries Served</span>
+            </div>
+          </div>
+
+          <div class="pv-section">
+            <h3 class="pv-section-title">Skills & Expertise</h3>
+            {skills.map((group) => (
+              <div class="skill-group">
+                <h4 class="skill-group__title">{group.title}</h4>
+                <div class="skill-group__tags">
+                  {group.items.map((item) => (
+                    <span class="skill-tag">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="pv-section">
+            <h3 class="pv-section-title">Education</h3>
+            <p class="text-base text-cream">University of Cincinnati</p>
+            <p class="text-sm text-warm-gray mt-1">College of Engineering & Applied Science</p>
+          </div>
+
+          <div class="pv-section">
+            <h3 class="pv-section-title">Certifications</h3>
+            <p class="text-sm text-cream">AWS Certified Solutions Architect — Associate</p>
+            <p class="text-sm text-cream">AWS Certified AI Practitioner</p>
+            <p class="text-sm text-cream">AWS Certified Machine Learning Engineer — Associate</p>
+          </div>
+
+          <div class="pv-section">
+            <h3 class="pv-section-title">Earlier Experience</h3>
+            {earlierRoles.map((role) => (
+              <div class="earlier-role">
+                <span class="earlier-role__company">{role.company}</span>
+                <span class="earlier-role__detail">{role.role}</span>
+                <span class="earlier-role__meta">{role.location} · {role.period}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="pv-section pv-contact">
+            <h3 class="pv-section-title">Contact</h3>
+            <div class="contact-links">
+              <a href="https://linkedin.com/in/carloperottino" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/The-CarL" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="mailto:carloperottino@gmail.com">carloperottino@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Chapter panels ─── -->
+        {chapters.map((ch) => (
+          <div class="panel-view" data-panel={ch.id}>
+            <div class="pv-header">
+              <div class="pv-header-row">
+                <p class="pv-eyebrow">{ch.period}</p>
+                {ch.label && <span class="pv-badge">{ch.label}</span>}
+              </div>
+              <h2 class="pv-title">{ch.company}</h2>
+              <p class="pv-subtitle">{ch.role}</p>
+              <p class="pv-meta">
+                {ch.location}{ch.focus && <span> &middot; {ch.focus}</span>}
+              </p>
+            </div>
+
+            {ch.impactNumber && (
+              <div class="impact-hero">
+                <span class="impact-hero__number">{ch.impactNumber}</span>
+                <span class="impact-hero__label">{ch.impactLabel}</span>
+              </div>
+            )}
+
+            <div class="pv-section">
+              <h3 class="pv-section-title">Highlights</h3>
+              <ul class="highlight-list">
+                {ch.highlights.map((h) => (
+                  <li class="highlight-item">
+                    <span class="highlight-marker">&rsaquo;</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {ch.projects.length > 0 && (
+              <div class="pv-section">
+                <h3 class="pv-section-title">Key Projects</h3>
+                <div class="project-list">
+                  {ch.projects.map((p) => (
+                    <div class:list={['project-card', p.featured && 'project-card--featured']}>
+                      <div class="project-card__head">
+                        <h4 class="project-card__title">{p.title}</h4>
+                        {p.featured && <span class="project-card__star">★</span>}
+                      </div>
+                      <p class="project-card__desc">{p.desc}</p>
+                      {p.metric && <p class="project-card__metric">{p.metric}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {ch.tech.length > 0 && (
+              <div class="pv-section">
+                <h3 class="pv-section-title">Technologies</h3>
+                <div class="tech-tags">
+                  {ch.tech.map((t) => (
+                    <span class="tech-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </aside>
+  </div>
+</section>
+
+<style is:global>
+  /* ─── Explorer Section ─── */
+  .explorer-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ─── Particle Canvas ─── */
+  .particle-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── Constellation (Desktop) ─── */
+  .constellation {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .constellation { display: block; }
+    .mobile-explorer { display: none !important; }
+  }
+
+  .constellation__prompt {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-warm-dim);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+
+  .constellation__prompt.hidden { opacity: 0; }
+
+  /* ─── SVG Lines ─── */
+  .lines-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .lines-svg line {
+    stroke: rgba(201, 168, 108, 0.25);
+    stroke-width: 1;
+    transition: stroke 0.5s, stroke-opacity 0.5s, stroke-width 0.5s;
+  }
+
+  .lines-svg line.line-active {
+    stroke: rgba(201, 168, 108, 0.6);
+    stroke-width: 1.5;
+  }
+
+  .lines-svg line.line-dimmed {
+    stroke-opacity: 0.3;
+  }
+
+  /* ─── Constellation Nodes ─── */
+  .c-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+  }
+
+  .c-node:focus-visible .c-node__circle {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  .c-node__circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201, 168, 108, 0.3);
+    background: rgba(8, 8, 8, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 20px rgba(201, 168, 108, 0.06);
+  }
+
+  .c-node__text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+  }
+
+  .c-node__label {
+    font-size: 0.82rem;
+    color: var(--color-cream);
+    opacity: 0.8;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: opacity 0.3s;
+  }
+
+  .c-node__period {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-warm-dim);
+    white-space: nowrap;
+  }
+
+  /* Center node */
+  .c-node--center .c-node__circle {
+    width: 80px;
+    height: 80px;
+    border-width: 2px;
+    border-color: rgba(201, 168, 108, 0.5);
+  }
+
+  .c-node--center .c-node__text {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  /* Featured node */
+  .c-node--featured .c-node__circle {
+    width: 72px;
+    height: 72px;
+    border-color: rgba(201, 168, 108, 0.4);
+    box-shadow: 0 0 30px rgba(201, 168, 108, 0.1);
+  }
+
+  .c-node--featured .c-node__text {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Node hover */
+  .c-node:hover { transform: translate(-50%, -50%) scale(1.1); }
+  .c-node:hover .c-node__circle {
+    border-color: rgba(201, 168, 108, 0.5);
+    box-shadow: 0 0 40px rgba(201, 168, 108, 0.12);
+    background: rgba(201, 168, 108, 0.06);
+  }
+  .c-node:hover .c-node__label { opacity: 1; }
+
+  /* Node selected */
+  .c-node.selected { transform: translate(-50%, -50%) scale(1.15); }
+  .c-node.selected .c-node__circle {
+    border-color: rgba(201, 168, 108, 0.7);
+    box-shadow: 0 0 50px rgba(201, 168, 108, 0.2);
+    background: rgba(201, 168, 108, 0.1);
+  }
+  .c-node.selected .c-node__label { opacity: 1; }
+
+  /* Node dimmed */
+  .c-node.dimmed { opacity: 0.35; }
+  .c-node.dimmed:hover { opacity: 0.7; }
+
+  /* ─── Panel Overlay ─── */
+  .panel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .panel-overlay.open {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .panel-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .detail-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 42%;
+    min-width: 380px;
+    max-width: 560px;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(32px) saturate(150%);
+    -webkit-backdrop-filter: blur(32px) saturate(150%);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panel-overlay.open .detail-panel {
+    transform: translateX(0);
+  }
+
+  @media (max-width: 767px) {
+    .detail-panel {
+      width: 100%;
+      min-width: unset;
+      max-width: unset;
+      height: 92vh;
+      top: auto;
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px 20px 0 0;
+      transform: translateY(100%);
+    }
+
+    .panel-overlay.open .detail-panel {
+      transform: translateY(0);
+    }
+  }
+
+  .detail-panel__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--color-warm-dim);
+    cursor: pointer;
+    z-index: 5;
+    padding: 6px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .detail-panel__close:hover {
+    color: var(--color-cream);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .detail-panel__scroll {
+    overflow-y: auto;
+    flex: 1;
+    padding: 32px 28px;
+    padding-right: 24px;
+  }
+
+  @media (max-width: 767px) {
+    .detail-panel__scroll {
+      padding: 28px 20px;
+    }
+  }
+
+  /* ─── Panel Views ─── */
+  .panel-view {
+    display: none;
+  }
+
+  .panel-view.active {
+    display: block;
+    animation: panelFadeIn 0.35s ease-out;
+  }
+
+  @keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── Panel View Elements ─── */
+  .pv-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .pv-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .pv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-warm-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .pv-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border: 1px solid rgba(201, 168, 108, 0.35);
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-weight: 500;
+  }
+
+  .pv-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-cream);
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  .pv-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .pv-meta {
+    font-size: 0.85rem;
+    color: var(--color-warm-dim);
+    margin-top: 4px;
+  }
+
+  .pv-desc {
+    font-size: 0.9rem;
+    color: var(--color-warm-gray);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .pv-section {
+    margin-bottom: 24px;
+  }
+
+  .pv-section-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-warm-dim);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  /* ─── Impact Hero ─── */
+  .impact-hero {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(201, 168, 108, 0.04);
+    border: 1px solid rgba(201, 168, 108, 0.1);
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  .impact-hero__number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .impact-hero__label {
+    font-size: 0.85rem;
+    color: var(--color-warm-gray);
+    line-height: 1.4;
+  }
+
+  /* ─── Impact Grid (Overview) ─── */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .impact-item {
+    padding: 12px 14px;
+    background: rgba(201, 168, 108, 0.04);
+    border: 1px solid rgba(201, 168, 108, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .impact-item__number {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+  }
+
+  .impact-item__label {
+    font-size: 0.75rem;
+    color: var(--color-warm-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── Highlights ─── */
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .highlight-item {
+    display: flex;
+    gap: 10px;
+    font-size: 0.875rem;
+    color: var(--color-warm-gray);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .highlight-marker {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-weight: 700;
+  }
+
+  /* ─── Projects ─── */
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card {
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    transition: border-color 0.3s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(201, 168, 108, 0.2);
+  }
+
+  .project-card--featured {
+    background: rgba(201, 168, 108, 0.05);
+    border-color: rgba(201, 168, 108, 0.15);
+  }
+
+  .project-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .project-card__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-cream);
+  }
+
+  .project-card__star {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .project-card__desc {
+    font-size: 0.82rem;
+    color: var(--color-warm-gray);
+    line-height: 1.55;
+    margin-top: 4px;
+  }
+
+  .project-card__metric {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    margin-top: 6px;
+  }
+
+  /* ─── Tech Tags ─── */
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tech-tag {
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    font-size: 0.75rem;
+    color: var(--color-warm-gray);
+  }
+
+  /* ─── Skill Groups (Overview) ─── */
+  .skill-group {
+    margin-bottom: 14px;
+  }
+
+  .skill-group__title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-cream);
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+
+  .skill-group__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .skill-tag {
+    padding: 3px 10px;
+    background: rgba(201, 168, 108, 0.05);
+    border: 1px solid rgba(201, 168, 108, 0.15);
+    border-radius: 99px;
+    font-size: 0.72rem;
+    color: var(--color-warm-gray);
+  }
+
+  /* ─── Earlier Roles ─── */
+  .earlier-role {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 10px;
+  }
+
+  .earlier-role__company {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-cream);
+  }
+
+  .earlier-role__detail {
+    font-size: 0.82rem;
+    color: var(--color-warm-gray);
+  }
+
+  .earlier-role__meta {
+    font-size: 0.78rem;
+    color: var(--color-warm-dim);
+  }
+
+  /* ─── Contact Links ─── */
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .contact-links a {
+    font-size: 0.85rem;
+    color: var(--color-warm-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-links a:hover {
+    color: var(--color-accent);
+  }
+
+  /* ─── Mobile Explorer ─── */
+  .mobile-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 100px 20px 40px;
+    min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-explorer { display: none !important; }
+  }
+
+  .mobile-explorer__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    padding-left: 4px;
+  }
+
+  .mobile-explorer__title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+
+  .mobile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: all 0.3s;
+  }
+
+  .mobile-card:hover,
+  .mobile-card:active {
+    border-color: rgba(201, 168, 108, 0.2);
+    background: rgba(201, 168, 108, 0.03);
+  }
+
+  .mobile-card__abbrev {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    background: rgba(201, 168, 108, 0.1);
+    border: 1px solid rgba(201, 168, 108, 0.2);
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .mobile-card__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-card__company {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-cream);
+  }
+
+  .mobile-card__role {
+    font-size: 0.8rem;
+    color: var(--color-warm-dim);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-card__period {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-warm-dim);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  // ─── State ───
+  let activePanel: string | null = null;
+
+  // ─── Elements ───
+  const overlay = document.getElementById('panel-overlay');
+  const backdrop = document.getElementById('panel-backdrop');
+  const closeBtn = document.getElementById('panel-close');
+  const prompt = document.getElementById('constellation-prompt');
+  const constellation = document.getElementById('constellation');
+  const particleCanvas = document.getElementById('particle-canvas') as HTMLCanvasElement | null;
+  const linesSvg = document.getElementById('lines-svg');
+
+  // ─── Open / Close Panel ───
+  function openPanel(id: string) {
+    if (activePanel === id) {
+      closePanel();
+      return;
+    }
+    activePanel = id;
+
+    overlay?.classList.add('open');
+    prompt?.classList.add('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Switch active panel view
+    document.querySelectorAll('.panel-view').forEach((el) => el.classList.remove('active'));
+    document.querySelector(`.panel-view[data-panel="${id}"]`)?.classList.add('active');
+
+    // Update node states
+    document.querySelectorAll('.c-node').forEach((node) => {
+      const nodeId = (node as HTMLElement).dataset.id;
+      node.classList.toggle('selected', nodeId === id);
+      node.classList.toggle('dimmed', nodeId !== id && nodeId !== 'overview');
+    });
+
+    // Update lines
+    updateLines(id);
+
+    // Scroll panel to top
+    const scroll = document.querySelector('.detail-panel__scroll');
+    if (scroll) scroll.scrollTop = 0;
+  }
+
+  function closePanel() {
+    activePanel = null;
+    overlay?.classList.remove('open');
+    prompt?.classList.remove('hidden');
+    document.body.style.overflow = '';
+
+    document.querySelectorAll('.c-node').forEach((node) => {
+      node.classList.remove('selected', 'dimmed');
+    });
+
+    document.querySelectorAll('.panel-view').forEach((el) => el.classList.remove('active'));
+    resetLines();
+  }
+
+  // ─── Event Listeners ───
+  document.querySelectorAll('.c-node').forEach((node) => {
+    node.addEventListener('click', () => {
+      const id = (node as HTMLElement).dataset.id;
+      if (id) openPanel(id);
+    });
+  });
+
+  document.querySelectorAll('.mobile-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const id = (card as HTMLElement).dataset.id;
+      if (id) openPanel(id);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closePanel);
+  backdrop?.addEventListener('click', closePanel);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && activePanel) closePanel();
+  });
+
+  // ─── SVG Connection Lines ───
+  const connectionDefs = [
+    { from: 'overview', to: 'aws' },
+    { from: 'overview', to: 'perspectv' },
+    { from: 'overview', to: 'ey' },
+    { from: 'overview', to: 'ge' },
+    { from: 'overview', to: 'bmw' },
+    { from: 'overview', to: 'education' },
+  ];
+
+  function getNodeCenter(id: string): { x: number; y: number } | null {
+    const node = document.querySelector(`.c-node[data-id="${id}"]`) as HTMLElement | null;
+    if (!node || !constellation) return null;
+    const circle = node.querySelector('.c-node__circle') as HTMLElement | null;
+    const el = circle || node;
+    const cRect = constellation.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    return {
+      x: elRect.left + elRect.width / 2 - cRect.left,
+      y: elRect.top + elRect.height / 2 - cRect.top,
+    };
+  }
+
+  function drawLines() {
+    if (!linesSvg) return;
+    linesSvg.innerHTML = '';
+
+    connectionDefs.forEach((conn) => {
+      const from = getNodeCenter(conn.from);
+      const to = getNodeCenter(conn.to);
+      if (!from || !to) return;
+
+      // Shorten lines so they stop at the circle edge
+      const dx = to.x - from.x;
+      const dy = to.y - from.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist === 0) return;
+
+      const fromNode = document.querySelector(`.c-node[data-id="${conn.from}"] .c-node__circle`) as HTMLElement | null;
+      const toNode = document.querySelector(`.c-node[data-id="${conn.to}"] .c-node__circle`) as HTMLElement | null;
+      const fromR = fromNode ? fromNode.offsetWidth / 2 + 8 : 40;
+      const toR = toNode ? toNode.offsetWidth / 2 + 8 : 40;
+
+      const ux = dx / dist;
+      const uy = dy / dist;
+
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', String(from.x + ux * fromR));
+      line.setAttribute('y1', String(from.y + uy * fromR));
+      line.setAttribute('x2', String(to.x - ux * toR));
+      line.setAttribute('y2', String(to.y - uy * toR));
+      line.dataset.from = conn.from;
+      line.dataset.to = conn.to;
+      linesSvg.appendChild(line);
+    });
+  }
+
+  function updateLines(activeId: string) {
+    linesSvg?.querySelectorAll('line').forEach((line) => {
+      const { from, to } = line.dataset;
+      const isActive = from === activeId || to === activeId;
+      line.classList.toggle('line-active', isActive);
+      line.classList.toggle('line-dimmed', !isActive);
+    });
+  }
+
+  function resetLines() {
+    linesSvg?.querySelectorAll('line').forEach((line) => {
+      line.classList.remove('line-active', 'line-dimmed');
+    });
+  }
+
+  // Draw on load and resize
+  drawLines();
+  let resizeTimer: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      drawLines();
+      if (activePanel) updateLines(activePanel);
+    }, 100);
+  });
+
+  // ─── Particle Animation ───
+  if (particleCanvas) {
+    const ctx = particleCanvas.getContext('2d');
+    const particles: Array<{
+      x: number; y: number; vx: number; vy: number; r: number; o: number;
+    }> = [];
+    let animId = 0;
+
+    function resizeCanvas() {
+      if (!particleCanvas) return;
+      particleCanvas.width = particleCanvas.offsetWidth;
+      particleCanvas.height = particleCanvas.offsetHeight;
+    }
+
+    function initParticles() {
+      if (!particleCanvas) return;
+      particles.length = 0;
+      const count = Math.min(50, Math.floor((particleCanvas.width * particleCanvas.height) / 25000));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * particleCanvas.width,
+          y: Math.random() * particleCanvas.height,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          r: Math.random() * 1.2 + 0.4,
+          o: Math.random() * 0.2 + 0.05,
+        });
+      }
+    }
+
+    function animate() {
+      if (!ctx || !particleCanvas) return;
+      ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > particleCanvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > particleCanvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(201, 168, 108, ${p.o})`;
+        ctx.fill();
+      });
+
+      animId = requestAnimationFrame(animate);
+    }
+
+    resizeCanvas();
+    initParticles();
+    animate();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cancelAnimationFrame(animId);
+    }
+  }
+</script>
