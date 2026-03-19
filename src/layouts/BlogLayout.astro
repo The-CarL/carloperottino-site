@@ -1,6 +1,7 @@
 ---
 import Layout from './Layout.astro';
-import BlogNav from '../components/blog/BlogNav.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -11,13 +12,9 @@ const { title, description } = Astro.props;
 ---
 
 <Layout title={title} description={description} fullPage>
-  <BlogNav />
-  <main class="max-w-3xl mx-auto px-6 py-12">
+  <SiteNav />
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-1">
     <slot />
   </main>
-  <footer class="border-t border-surface-3/50 mt-16">
-    <div class="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-warm-dim">
-      &copy; {new Date().getFullYear()} Carlo Perottino
-    </div>
-  </footer>
+  <Footer />
 </Layout>
