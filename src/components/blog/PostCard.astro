@@ -12,12 +12,9 @@ const { post } = Astro.props;
 const readingTime = post.body ? getReadingTime(post.body) : '';
 ---
 
-<article class="group border-b border-surface-3/50 py-8 first:pt-0 last:border-b-0">
+<article class="group rounded-xl border border-surface-3/50 bg-surface-2/30 p-6 transition-all duration-300 hover:border-accent/20 hover:bg-surface-2/50">
   <a href={`/blog/${post.id}`} class="block">
-    <h3 class="text-xl font-semibold text-cream group-hover:text-accent transition-colors duration-200">
-      {post.data.title}
-    </h3>
-    <div class="flex items-center gap-3 mt-2 text-sm text-warm-dim">
+    <div class="flex items-center gap-3 text-sm text-warm-dim mb-3">
       <FormattedDate date={post.data.date} />
       {readingTime && (
         <>
@@ -26,7 +23,10 @@ const readingTime = post.body ? getReadingTime(post.body) : '';
         </>
       )}
     </div>
-    <p class="mt-3 text-warm-gray leading-relaxed">
+    <h3 class="text-lg font-semibold text-cream group-hover:text-accent transition-colors duration-200 leading-snug">
+      {post.data.title}
+    </h3>
+    <p class="mt-2 text-sm text-warm-gray leading-relaxed line-clamp-3">
       {post.data.description}
     </p>
   </a>

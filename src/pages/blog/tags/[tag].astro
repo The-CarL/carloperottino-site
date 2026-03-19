@@ -40,7 +40,7 @@ const posts = await getPostsByTag(tag);
     </p>
   </header>
 
-  <div>
+  <div class="grid gap-6 sm:grid-cols-2">
     {posts.map((post) => (
       <PostCard post={post} />
     ))}
