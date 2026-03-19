@@ -3,7 +3,7 @@ title: "AI Won't Replace You, Your Workflow Will"
 description: "The real shift in AI isn't about replacing engineers. It's about the compounding advantage of integrating AI into everyday workflows."
 date: 2026-03-19
 tags: ["ai", "productivity", "engineering"]
-draft: true
+draft: false
 ---
 
 Last month I refactored a 2,000-line service in an afternoon. Not because I'm fast — because I paired with an AI that handled the mechanical parts while I focused on architecture decisions. That's the shift most people are missing.
