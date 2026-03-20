@@ -1,4 +1,4 @@
-# Blog — Project Context
+# Blog - Project Context
 
 ## Tech Stack
 
@@ -15,13 +15,13 @@ Content is defined in `src/content/config.ts` using Astro's Content Layer API wi
 
 | Field         | Type                    | Required | Default |
 |---------------|-------------------------|----------|---------|
-| `title`       | `string`                | yes      | —       |
-| `description` | `string`                | yes      | —       |
-| `date`        | `coerce.date()`         | yes      | —       |
-| `updatedDate` | `coerce.date()`         | no       | —       |
+| `title`       | `string`                | yes      | -       |
+| `description` | `string`                | yes      | -       |
+| `date`        | `coerce.date()`         | yes      | -       |
+| `updatedDate` | `coerce.date()`         | no       | -       |
 | `tags`        | `array(string)`         | no       | `[]`    |
 | `draft`       | `boolean`               | no       | `false` |
-| `heroImage`   | `string`                | no       | —       |
+| `heroImage`   | `string`                | no       | -       |
 
 ### Frontmatter Pattern (from existing posts)
 
@@ -47,6 +47,8 @@ tags: ["tag-a", "tag-b"]
 ## Writing Standards
 
 - First person, conversational but technical. No filler intros ("In this post we will...").
+- **Never use em dashes (`—`) or en dashes (`–`).** Use commas, colons, hyphens, or rewrite the sentence instead.
+- Write like a human. Avoid patterns that read as AI-generated: no listicle filler ("Let's dive in", "Here's the thing"), no gratuitous adverbs ("Essentially", "Fundamentally"), no over-hedging ("It's worth noting that"). Be direct.
 - **H2** for major sections, **H3** for subsections. Never H1 (the post title is rendered as H1 by the layout).
 - Short paragraphs: 3-5 sentences max.
 - Code blocks with language identifiers (```ts, ```bash, etc.).
@@ -59,8 +61,8 @@ tags: ["tag-a", "tag-b"]
 
 ## Diagrams
 
-- **draw.io MCP** — architecture diagrams, polished style, AWS icon support
-- **Excalidraw MCP** — conceptual / whiteboard diagrams, hand-drawn aesthetic
+- **draw.io MCP** - architecture diagrams, polished style, AWS icon support
+- **Excalidraw MCP** - conceptual / whiteboard diagrams, hand-drawn aesthetic
 - Export as SVG, always include `alt` text on images
 
 ## Build & Dev Commands

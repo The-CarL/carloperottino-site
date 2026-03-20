@@ -6,7 +6,7 @@ export async function GET(context: APIContext) {
   const posts = await getPublishedPosts();
 
   return rss({
-    title: "Carlo Perottino — What's on my mind",
+    title: "Carlo Perottino - What's on my mind",
     description: 'Thoughts on AI/ML, technology leadership, and building intelligent systems.',
     site: context.site!,
     items: posts.map((post) => ({
