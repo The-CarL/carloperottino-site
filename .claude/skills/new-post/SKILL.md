@@ -78,14 +78,22 @@ draft: true
 - Set `draft: true`.
 - Leave the body empty (just a blank line after the closing `---`).
 
-## 6. Commit the scaffold
+## 6. Create the asset directory
 
 ```bash
-git add "src/content/blog/${SLUG}.md"
+mkdir -p "public/blog/${SLUG}"
+```
+
+This directory will hold diagrams, screenshots, and other artifacts for the post.
+
+## 7. Commit the scaffold
+
+```bash
+git add "src/content/blog/${SLUG}.md" "public/blog/${SLUG}/"
 git commit -m "docs: scaffold post \"${SLUG}\""
 ```
 
-## 7. Report and stop
+## 8. Report and stop
 
 Print a summary:
 
@@ -93,6 +101,7 @@ Print a summary:
 Branch:    post/<slug>
 Worktree:  <absolute path to worktree>
 Post file: src/content/blog/<slug>.md
+Assets:    public/blog/<slug>/
 ```
 
 Then tell the user:

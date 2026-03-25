@@ -1,11 +1,11 @@
 ---
 name: ship-post
-description: Finalize the current blog post — build, commit, push, open PR, and clean up the worktree.
+description: Finalize the current blog post -- build, commit, push, open PR, and clean up the worktree.
 disable-model-invocation: true
-allowed-tools: Bash, Read, Grep, Glob
+allowed-tools: Bash, Read, Edit, Grep, Glob
 ---
 
-# Ship Post — Finalize and PR
+# Ship Post -- Finalize and PR
 
 You are finalizing a blog post. Follow these steps exactly.
 
@@ -20,6 +20,11 @@ git branch --show-current
 
 If the current branch does not start with `post/`, warn the user and ask whether to continue.
 
+Extract the slug from the branch name:
+```bash
+SLUG=$(git branch --show-current | sed 's|^post/||')
+```
+
 Identify the post file by finding the markdown file(s) that differ from main:
 ```bash
 git diff main --name-only -- 'src/content/blog/*.md'
@@ -27,7 +32,16 @@ git diff main --name-only -- 'src/content/blog/*.md'
 
 Store the post file path as `POST_FILE`. If multiple files changed, list them and ask which one is the post being shipped.
 
-## 2. Content check
+## 2. Clean up research scratchpad
+
+Check for and delete any research scratchpad file:
+```bash
+rm -f "src/content/blog/${SLUG}-research.md"
+```
+
+This file is gitignored, but remove it explicitly so it doesn't linger in the worktree.
+
+## 3. Content check
 
 Read `POST_FILE` and check:
 - The file has content below the frontmatter closing `---` (not just empty or whitespace).
@@ -35,9 +49,24 @@ Read `POST_FILE` and check:
 
 If either check fails, warn the user: "This post looks empty or very short. Continue anyway?"
 
-## 3. Stage and commit remaining changes
+## 4. Image reference validation
 
+Scan the post body for markdown image references (`![...](...)`) and check that each referenced file exists at the path relative to the project root (for paths starting with `/`, check in `public/`).
+
+If any referenced images are missing, warn the user:
+> These images are referenced in the post but don't exist:
+> - `/blog/<slug>/missing-file.svg`
+>
+> Continue anyway, or fix the references first?
+
+## 5. Stage and commit remaining changes
+
+Stage the post file and any assets in the post's public directory:
 ```bash
+git add "src/content/blog/${SLUG}.md"
+if [ -d "public/blog/${SLUG}" ]; then
+  git add "public/blog/${SLUG}/"
+fi
 git add -A
 git status --porcelain
 ```
@@ -47,7 +76,7 @@ If there are staged changes, commit them:
 git commit -m "docs: finalize post content"
 ```
 
-## 4. Build
+## 6. Build
 
 Run the build command:
 ```bash
@@ -61,7 +90,7 @@ If the build **fails**:
 
 If the build **succeeds**, set `DRAFT_PR=false`.
 
-## 5. Draft flag check
+## 7. Draft flag check
 
 Read `POST_FILE` and check if `draft: true` is set in the frontmatter.
 
@@ -72,7 +101,7 @@ If they want to publish:
 - Change `draft: true` to `draft: false` in the frontmatter (or remove the `draft` line entirely since the schema defaults to `false`).
 - Stage and commit: `git add "$POST_FILE" && git commit -m "docs: mark post as published"`
 
-## 6. Push and open PR
+## 8. Push and open PR
 
 Extract the title and description from the post frontmatter for the PR.
 
@@ -83,7 +112,7 @@ git push -u origin "$BRANCH"
 
 Build the `gh pr create` command:
 - `--title` = post title from frontmatter
-- `--body` = PR description using the post's `description` field
+- `--body` = PR description that includes the post's `description` field and a brief summary
 - If `DRAFT_PR=true` (build failed), add `--draft`
 
 ```bash
@@ -92,14 +121,16 @@ gh pr create --title "$TITLE" --body "$(cat <<'EOF'
 
 **Description:** <post description from frontmatter>
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+**Summary:** <1-2 sentence summary of what the post covers>
+
+Generated with [Claude Code](https://claude.com/claude-code)
 EOF
 )"
 ```
 
 Capture and store the PR URL from the output.
 
-## 7. Clean up worktree
+## 9. Clean up worktree
 
 Store the current worktree path, then cd back to the main repo:
 
@@ -113,7 +144,7 @@ git worktree remove "$WORKTREE_PATH"
 If removal fails, tell the user:
 > Automatic cleanup failed. Run manually: `git worktree remove <path>`
 
-## 8. Report
+## 10. Report
 
 Print a summary:
 
@@ -121,5 +152,5 @@ Print a summary:
 Title:    <post title>
 Branch:   <branch name>
 PR:       <PR URL>
-Status:   <"will publish on merge" or "draft — won't publish yet">
+Status:   <"will publish on merge" or "draft -- won't publish yet">
 ```

@@ -146,3 +146,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Blog research scratchpads (generated during co-writing, not for publishing)
+src/content/blog/*-research.md
