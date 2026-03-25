@@ -48,10 +48,11 @@ tags: ["tag-a", "tag-b"]
 
 When working on a `post/*` branch, operate in co-writing mode:
 
-- **Expect rough input.** The user will speak via voice or type quick thoughts. Don't ask them to refine their prompt. Interpret the intent and draft something. They'll redirect if it's wrong.
+- **Expect rough input.** The primary input method is voice dictation, sometimes mixed with typed text. Transcriptions will have errors, missing punctuation, and run-on thoughts. Interpret the intent and draft something. Don't ask for clarification unless the meaning is genuinely ambiguous.
 - **Maintain momentum.** Don't stop to ask permission before each step. Draft content, then ask if changes are needed. Bias toward action.
 - **Iterate in place.** Edit the post file directly. Don't show markdown in conversation unless asked. Just update the file and summarize what changed.
 - **Be a co-writer, not a transcriber.** Push back on weak ideas. Suggest better framing. Propose section structures. Flag when something reads as generic or AI-sounding.
+- **Preserve the human voice.** The goal is writing that sounds like a person working through ideas, not a polished content piece. Don't over-edit. Keep the rough edges that make it feel authentic. When cleaning up voice dictation, preserve the user's phrasing and cadence where possible.
 - **Track the post state.** Know which sections are drafted, which are empty, which need revision. Offer a status check when asked "where are we?"
 
 ## Research Behavior
@@ -88,20 +89,35 @@ draw.io and Excalidraw MCPs are available globally.
 
 ## Writing Standards
 
-<!-- Writing standards are preliminary. The canonical reference is the "blog-of-blogs" post.
-     After that post is written, this section should be updated to match. -->
+<!-- See also: /blog/blog-of-blogs ("Writing When Everything Is Generated") -->
+
+### Voice and tone
 
 - First person. "I" not "we."
-- No filler intros. Start with the point.
-- **Never use em dashes (`---`) or en dashes (`--`).** Rewrite the sentence instead. Use commas, colons, or hyphens.
+- Casual, conversational, direct. Write like you're explaining something to a sharp colleague, not presenting to a boardroom.
+- Rough over polished. Authenticity is the differentiator. The writing should feel like a person working through an idea, not a finished content piece. Don't sand down every edge.
+- Every post must have a point of view. If there's no opinion, there's no post. Writing forces commitment to a position, and that's the point.
+- The ideas, opinions, and tone belong to the author. AI is a collaborator in the process, not the voice.
+
+### Anti-patterns
+
+- No filler intros. Start with the point. Open with something concrete, a scene, a frustration, a claim.
+- **Never use em dashes or en dashes.** Rewrite the sentence instead. Use commas, colons, or hyphens.
 - No AI-sounding patterns: "Let's dive in," "Here's the thing," "It's worth noting," "Essentially," "Fundamentally." Be direct.
 - No generic summaries at the end. End with a concrete takeaway, opinion, or forward-looking thought.
+- No content that just restates what's already been said elsewhere. If there's nothing original to add, don't write the post.
+- No defensive framing. Don't spend space defining what the blog isn't. Say what it is and move on.
+- Don't be interchangeable. If you could swap the author name and nobody would notice, rewrite it.
+
+### Structure
+
 - **H2** for major sections, **H3** for subsections. Never H1 (the post title is rendered as H1 by the layout).
 - Short paragraphs: 3-5 sentences max.
 - Code blocks with language identifiers (```ts, ```bash, etc.).
 - Working code examples, not pseudocode.
 - Link to official docs rather than restating them.
 - When referencing research or others' work, link to the source. Don't just mention it.
+- Sections should be tight. If a section is mostly negative framing ("what this won't be"), cut it or fold it into something affirmative.
 
 ## SEO
 
