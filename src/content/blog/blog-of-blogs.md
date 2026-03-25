@@ -3,7 +3,7 @@ title: "Writing When Everything Is Generated"
 description: "Why I'm starting a blog when AI can write one for me. On having opinions, staying authentic, and thinking in public."
 date: 2026-03-17
 tags: ["writing", "ai"]
-draft: true
+draft: false
 ---
 
 ## Why write a blog in 2026?
