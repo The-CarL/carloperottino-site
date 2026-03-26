@@ -90,16 +90,14 @@ If the build **fails**:
 
 If the build **succeeds**, set `DRAFT_PR=false`.
 
-## 7. Draft flag check
+## 7. Flip draft flag
 
-Read `POST_FILE` and check if `draft: true` is set in the frontmatter.
+Shipping means publishing. Change `draft: true` to `draft: false` in the frontmatter (or remove the `draft` line entirely since the schema defaults to `false`). Do not ask, just do it.
 
-If it is, ask the user:
-> `draft: true` is still set. Do you want to flip it to `false` so the post publishes when the PR merges, or leave it as a draft?
-
-If they want to publish:
-- Change `draft: true` to `draft: false` in the frontmatter (or remove the `draft` line entirely since the schema defaults to `false`).
-- Stage and commit: `git add "$POST_FILE" && git commit -m "docs: mark post as published"`
+Stage and commit:
+```bash
+git add "$POST_FILE" && git commit -m "docs: mark post as published"
+```
 
 ## 8. Push and open PR
 
