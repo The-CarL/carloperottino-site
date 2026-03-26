@@ -3,7 +3,7 @@ title: "We All Got a Promotion"
 description: "AI didn't replace us. It handed us a team. The promotion most people wait a decade for just showed up overnight, and almost nobody is thinking about it that way."
 date: 2026-03-26
 tags: ["ai", "career", "leadership"]
-draft: true
+draft: false
 ---
 
 ## The question everyone is asking wrong
