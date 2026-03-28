@@ -8,7 +8,10 @@ export default defineConfig({
   site: 'https://carloperottino.com',
   markdown: {
     shikiConfig: {
-      theme: 'github-dark-default',
+      themes: {
+        light: 'github-light-default',
+        dark: 'github-dark-default',
+      },
       wrap: true,
     },
   },
