@@ -186,9 +186,11 @@ The harder question is: when the agent acts, whose identity does it use? There a
 
 **Agent identity only.** The agent uses its own service credentials for everything. The user's identity is known at the inbound layer but never propagated outbound. This is the simplest model and the most dangerous. Every user's request executes with the same elevated permissions. Audit logs show a service account, not a person.
 
-**User identity propagation.** The agent acts on behalf of the authenticated user. Downstream services see the user's identity and enforce access control accordingly. The agent itself has no opinion about what the user can do. This is the cleanest model for security and auditability, but it requires the downstream services to support delegated authorization.
+**Impersonation.** The original user's JWT token is passed unchanged through each hop in the call chain. This is a step up from agent-only identity because downstream services can see who the user is, but it creates its own risks. Every downstream service receives tokens with broader privileges than necessary. If any component in the chain is compromised, the attacker gets a fully privileged token. You're also vulnerable to [confused deputy attacks](https://en.wikipedia.org/wiki/Confused_deputy_problem), where a compromised service can abuse the overly privileged token to access resources the user never intended.
 
-**Hybrid.** The agent uses its own credentials for some operations (like invoking a model) and propagates the user's identity for others (like querying user-specific data). This is the most common pattern in practice, and it's fine as long as you're deliberate about which operations use which identity. The danger is when the split is accidental rather than intentional.
+**Act-on-behalf.** Each hop in the workflow receives a separate, scoped token specifically issued for that downstream target. The agent says "I'm acting on behalf of Carlo" and the gateway generates a new token scoped to only what the downstream service needs. The Order tool gets `orders:read`. The Promotions tool gets `promotions:write`. Neither gets both. This is the model that actually enforces least privilege, and it's the one I recommend. It gives you reduced blast radius, clear chain of custody for auditing, and proper isolation between services in the call chain.
+
+**Hybrid.** The agent uses its own credentials for some operations (like invoking a model) and acts on behalf of the user for others (like querying user-specific data). This is the most common pattern in practice, and it's fine as long as you're deliberate about which operations use which identity. The danger is when the split is accidental rather than intentional.
 
 Most teams default to model one (agent identity only) because it's easiest to build. They don't realize they've made a security architecture decision by not making one. If you haven't explicitly chosen an identity model for your agent's outbound calls, you've implicitly chosen the least secure one.
 
@@ -301,15 +303,17 @@ Whether you use a managed guardrails service or run your own, the pattern is the
 
 **The question:** How do agents identify themselves to tools and services?
 
-When an agent calls a tool or API on behalf of a user, identity has to flow through. Not the agent's identity. The user's identity. This is non-negotiable for audit trails, access control, and the principle of least privilege.
+This is where the act-on-behalf model from dimension 2 gets implemented. When an agent calls a tool or API on behalf of a user, identity has to flow through. Not the agent's identity. The user's identity. This is non-negotiable for audit trails, access control, and the principle of least privilege.
 
-The standard pattern is a 3-legged OAuth flow:
+The temptation is to take the easy route: pass the user's original JWT token straight through to downstream services. This is the impersonation model, and it's dangerous. Every downstream service receives the user's full token with all its scopes. The Order tool gets the user's promotions permissions. The Promotions tool gets the user's order permissions. If any service in the chain is compromised, the attacker has a token that grants access to everything.
+
+The act-on-behalf model solves this. Each hop in the workflow gets a separate, scoped token issued specifically for that downstream target:
 
 1. The user authenticates with the agent (dimension 1)
-2. The agent obtains a scoped token on behalf of that user
-3. Downstream tools receive user-level authorization, not agent-level authorization
+2. The gateway generates a new scoped token for each downstream tool, carrying the user's identity context but limited to only the permissions that tool needs
+3. Downstream tools see who the user is and what they're authorized to do, but the token can't be reused against other services
 
-In AgentCore, identity providers are configured at the gateway level, and tools use them to obtain delegated tokens:
+In Bedrock AgentCore, [gateway interceptors](https://aws.amazon.com/blogs/machine-learning/apply-fine-grained-access-control-with-bedrock-agentcore-gateway-interceptors/) handle this at the infrastructure level. The gateway extracts identity from the inbound request, generates scoped tokens for each downstream target, and injects the appropriate credentials, all without the agent code touching long-lived credentials:
 
 ```python
 from strands import Agent, tool
@@ -338,9 +342,9 @@ agent = Agent(
 )
 ```
 
-The key detail: the agent never sees or stores the user's long-lived credentials. The gateway manages the OAuth exchange and hands the tool a scoped, short-lived token. The downstream service (Google Drive in this case) knows exactly which user authorized the access, not just that "an agent" made the request.
+The key detail: the agent never sees or stores the user's long-lived credentials. The gateway manages the OAuth exchange and hands the tool a scoped, short-lived token. The downstream service (Google Drive in this case) knows exactly which user authorized the access, not just that "an agent" made the request. If that token is compromised, the blast radius is limited to read-only Drive access for one user, not the agent's full credential set.
 
-This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. You can implement this with any OAuth library. AgentCore's advantage is handling the exchange as infrastructure rather than application code, but the pattern works the same way regardless of platform. The gap is that most agent frameworks don't wire it up by default, so developers end up using a single service account for all tool calls.
+This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. You can implement this with any OAuth library. The gap is that most agent frameworks don't wire it up by default, so developers end up with the impersonation model (or worse, a shared service account) because it's less work. The act-on-behalf model is more work to implement, but it's the only one that actually enforces least privilege at every hop.
 
 > **What goes wrong when you skip this:** The agent uses its own credentials for every tool call. Every user's request executes with the same permissions. Audit logs show "agent-service-account" instead of "user-12345." You lose traceability, you lose per-user access control at the tool level, and you create a single credential that, if compromised, grants access to everything the agent can reach.
 
@@ -385,9 +389,9 @@ with mcp_client:
 
 The gateway handles tool registration, credential injection, and access control in one place. When the agent calls `list_tools_sync()`, it doesn't get every tool registered in the gateway. It gets the tools that this specific agent, acting on behalf of this specific user, is authorized to use. Credentials are injected at call time. The agent never sees or stores them.
 
-Because the gateway uses MCP, you're not locked into a single vendor's agent SDK. Any MCP-compatible client can connect. You can mix gateway-managed tools with self-hosted MCP servers.
+AgentCore Gateway also supports [gateway interceptors](https://aws.amazon.com/blogs/machine-learning/apply-fine-grained-access-control-with-bedrock-agentcore-gateway-interceptors/): Lambda functions that process requests and responses at two critical points in the flow. A request interceptor can transform payloads, inject scoped credentials, and enforce authorization before the request reaches the tool. A response interceptor can filter tool lists, redact sensitive data, and enforce access control on what comes back. This is where the act-on-behalf model from dimension 5 gets enforced in practice: the interceptor extracts identity from the inbound request, generates scoped tokens for each downstream target, and strips the original credentials so downstream services never see more than they need.
 
-The gateway pattern is converging across the industry, and [MCP](https://modelcontextprotocol.io/) is emerging as the standard protocol for tool registration and discovery. Because AgentCore Gateway speaks MCP natively, you can mix gateway-managed tools with self-hosted MCP servers. The principle is the same regardless of implementation: agents shouldn't manage their own tool connections.
+Because the gateway uses [MCP](https://modelcontextprotocol.io/), you're not locked into a single vendor's agent SDK. Any MCP-compatible client can connect. You can mix gateway-managed tools with self-hosted MCP servers. The principle is the same regardless of implementation: agents shouldn't manage their own tool connections.
 
 > **What goes wrong when you skip this:** Tool management becomes an operational nightmare at scale. Every agent maintains its own credentials, its own connection logic, its own error handling. Credential rotation requires touching every agent. Access control is per-agent rather than centralized. You have no single view of which agents are calling which tools, how often, or with what results.
 
