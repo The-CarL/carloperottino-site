@@ -38,6 +38,10 @@ Each question maps to a security dimension. Each dimension is its own problem sp
 7. **Tool Policy**
 8. **Observability**
 
+Think of these as layers around your agent. Inbound security (identity, authorization, behavioral control, guardrails) protects the path from user to agent. Outbound security (tool identity, tool access, tool policy) protects the path from agent to tools. Observability wraps everything.
+
+![Agent security as layered defenses: inbound layers (identity, authorization, behavioral control, guardrails) protect user-to-agent communication, outbound layers (tool identity, tool access, tool policy) protect agent-to-tool communication, with observability wrapping the entire stack](/blog/agent-security/security-layers.svg)
+
 These dimensions are universal. They apply regardless of your cloud provider, your agent framework, or whether you're running on-prem. I work in the AWS ecosystem, so I'll be using [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) as my implementation example throughout this post. But the concepts come first. The tooling is just one way to get there.
 
 The rest of this post walks through each dimension. For each one, I'll explain the problem, show what the implementation looks like, and tell you what goes wrong when you skip it.
@@ -355,6 +359,8 @@ This is different from authorization (dimension 2) and different from tool acces
 
 Policy enforcement happens at runtime, evaluated before every tool call. Not at deployment time, not at configuration time. Every single invocation gets checked.
 
+This is the dimension where AgentCore is genuinely differentiated. To my knowledge, no other agent framework has integrated a formal policy engine directly into the tool invocation path at the gateway level. Most frameworks leave this to the developer to build, and most developers don't build it.
+
 AgentCore uses [Cedar](https://www.cedarpolicy.com/), AWS's open-source policy language, for tool-call policies. Policies are evaluated at the gateway level, which means the agent can't bypass them:
 
 ```cedar
@@ -382,7 +388,9 @@ Cedar's semantics are important: **default deny** (no matching `permit` means th
 
 AgentCore also supports generating Cedar policies from natural language descriptions, with automated reasoning to validate that the generated policy isn't overly permissive or unsatisfiable. That's a nice operational feature, but the real value is the enforcement model: policies evaluated synchronously in the critical path of every tool call, at the gateway layer where the agent can't skip them.
 
-Cedar is open source, so the policy language itself isn't locked to AWS. But the broader point is more important: system prompt-based tool restrictions are probabilistic and bypassable. Transport-layer policies are deterministic and auditable. Whether you use Cedar, [OPA/Rego](https://www.openpolicyagent.org/), or something else, the enforcement needs to happen at a layer the agent can't skip.
+Cedar is open source, so the policy language itself isn't locked to AWS. And you could build something similar with [OPA/Rego](https://www.openpolicyagent.org/) if you wire it into your tool invocation path yourself. But having it integrated at the gateway level out of the box, with natural language policy generation and automated reasoning validation, is something I haven't seen anywhere else. This is the kind of capability that makes AgentCore worth looking at even if you're not all-in on AWS.
+
+The broader point is important regardless of tooling: system prompt-based tool restrictions are probabilistic and bypassable. Transport-layer policies are deterministic and auditable. The enforcement needs to happen at a layer the agent can't skip.
 
 **What goes wrong when you skip this:** Authorization tells you the agent can use a tool. It doesn't tell you how. Without runtime policy, an agent with access to a search API can issue unbounded queries. An agent with database read access can `SELECT *` with no `LIMIT`. An agent authorized to look up orders can look up every order in the system. The tool works as designed. The agent is just using it in ways you didn't intend.
 
