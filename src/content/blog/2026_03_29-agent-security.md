@@ -14,9 +14,9 @@ Nobody raised a hand.
 
 Most teams building agents today are thinking about guardrails. Some are thinking about auth. Almost nobody is thinking about tool identity, runtime policy enforcement, or agent-specific observability. And that's a problem, because agents aren't chatbots. They don't just generate text. They act. They access data. They call tools. They make decisions on behalf of users. Each of those actions opens a different attack surface, and each requires a different security pattern.
 
-## The questions that keep agent devs up at night
+## The questions that keep agent developers and CISOs up at night
 
-If you're building agents, you should be able to answer all of these. Most teams can answer two or three.
+If you're building agents, or responsible for the security posture of an organization that is, you should be able to answer all of these. If you're not asking yourself these questions, you really should be. Most teams can answer two or three.
 
 1. How does my agent know who I am and that I'm allowed to interact with it?
 2. How do I control what my agent is allowed to do?
@@ -42,7 +42,7 @@ Think of these as layers around your agent. Inbound security (identity, authoriz
 
 ![Agent security as layered defenses: inbound layers (identity, authorization, behavioral control, guardrails) protect user-to-agent communication, outbound layers (tool identity, tool access, tool policy) protect agent-to-tool communication, with observability wrapping the entire stack](/blog/agent-security/security-layers.svg)
 
-These dimensions are universal. They apply regardless of your cloud provider, your agent framework, or whether you're running on-prem. I work in the AWS ecosystem, so I'll be using [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) as my implementation example throughout this post. But the concepts come first. The tooling is just one way to get there.
+These dimensions are universal. They apply regardless of your cloud provider, your agent framework, or whether you're running on-prem. I work in the AWS ecosystem, so I'll be using [Bedrock AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) as my implementation example throughout this post. But the concepts come first. The tooling is just one way to get there.
 
 The rest of this post walks through each dimension. For each one, I'll explain the problem, show what the implementation looks like, and tell you what goes wrong when you skip it.
 
@@ -110,9 +110,11 @@ def invoke(payload, context):
 app.run()
 ```
 
-The important thing here isn't the AWS-specific API. It's the pattern: identity validation happens at the runtime layer, not in your application code. The runtime rejects invalid tokens before your handler is invoked. Your code receives a validated identity and propagates it downstream.
+The important thing here isn't the AWS-specific API. It's the pattern: identity validation happens at the runtime layer, not in your application code. The runtime rejects invalid tokens before your handler is invoked. Your code receives a validated identity and propagates it downstream. Any agent runtime that supports OIDC discovery and JWT validation can do this.
 
-The pattern here isn't AWS-specific. Any agent runtime that supports OIDC discovery and JWT validation can do this. The important part is that identity validation happens at the infrastructure layer, not in your application code, and that validated claims propagate through every downstream call.
+A word of caution on that code example above. Notice how it extracts the user's role from the JWT and passes it into the agent's prompt. That works, but you've now built an authorization layer into your agent. If you start branching agent behavior based on extracted claims, like "users with role X can access tool Y," you're maintaining authorization logic inside your agent code. That's a pattern I've seen developers carry over from web backends, where it's common to check a role against a route. But agents aren't web routes. They have autonomy, tool access, and data access that's far more nuanced than "can this user see this page."
+
+The cleaner approach is identity propagation: the agent acts on behalf of the user, and the downstream services enforce what that user is allowed to do. The agent doesn't need to know what your role permits. It just says "I'm acting on behalf of Carlo" and lets the authorization layer (dimension 2) handle the rest. That's more maintainable, and it keeps the authorization logic in one place rather than scattering it across agent code, system prompts, and tool configurations.
 
 **What goes wrong when you skip this:** Your agent becomes a privilege escalation vector. User A asks a question, the agent uses its own broad service credentials to fetch the answer, and suddenly User A has access to data they were never supposed to see. I've seen this in production. It's not theoretical.
 
