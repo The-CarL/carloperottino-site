@@ -2,7 +2,7 @@
 import FormattedDate from './FormattedDate.astro';
 import TagList from './TagList.astro';
 import { getReadingTime } from '../../lib/reading-time';
-import type { BlogPost } from '../../lib/posts';
+import { type BlogPost, getPostSlug } from '../../lib/posts';
 
 interface Props {
   post: BlogPost;
@@ -13,7 +13,7 @@ const readingTime = post.body ? getReadingTime(post.body) : '';
 ---
 
 <article class="group border-b border-surface-3/50 py-8 first:pt-0 last:border-b-0">
-  <a href={`/blog/${post.id}`} class="block">
+  <a href={`/blog/${getPostSlug(post)}`} class="block">
     <h3 class="text-xl font-semibold text-cream group-hover:text-accent transition-colors duration-200">
       {post.data.title}
     </h3>

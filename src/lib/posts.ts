@@ -4,6 +4,14 @@ import type { CollectionEntry } from 'astro:content';
 export type BlogPost = CollectionEntry<'blog'>;
 
 /**
+ * Derive a URL slug from a post id.
+ * Strips the optional YYYY_MM_DD- date prefix used for filesystem sorting.
+ */
+export function getPostSlug(post: BlogPost): string {
+  return post.id.replace(/^\d{4}_\d{2}_\d{2}-/, '');
+}
+
+/**
  * Get all published posts, sorted newest-first.
  * Drafts are visible in dev but filtered in production.
  */
