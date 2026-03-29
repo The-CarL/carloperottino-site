@@ -29,20 +29,18 @@ If you're building agents, you should be able to answer all of these. Most teams
 
 Each question maps to a named security dimension, and each dimension maps to concrete tooling. Here's the framework:
 
-| Question | Dimension | AWS | Alternatives |
-|---|---|---|---|
-| Who is the user? | Agent Identity | AgentCore Runtime Identity | Auth0 Agent Auth, Entra Agent ID, FastAPI + OIDC |
-| What can it do? | Authorization | IAM + AgentCore | GCP Workload Identity, OPA, WorkOS FGA |
-| How does it behave? | Behavioral Control | System Instructions | Universal (no vendor tooling needed) |
-| What can it say? | Guardrails | Bedrock Guardrails | NeMo Guardrails, Llama Firewall, Guardrails AI |
-| Agent to tool identity? | Tool Identity | AgentCore + 3-Leg OAuth | Standard OAuth 2.0 (RFC 8693), Auth0 Token Vault |
-| Which tools? | Tool Access | AgentCore Gateway | Docker MCP Gateway, Cloudflare, Permit.io |
-| Tool constraints? | Tool Policy | AgentCore Policy (Cedar) | OPA/Rego, PolicyLayer Intercept, Permit.io |
-| Behaving correctly? | Observability | AgentCore Eval & Obs | LangSmith, Braintrust, Arize Phoenix, OTel |
+| Question | Dimension | Tool |
+|---|---|---|
+| Who is the user? | Agent Identity | AgentCore Runtime Identity |
+| What can it do? | Authorization | IAM + AgentCore |
+| How does it behave? | Behavioral Control | System Instructions |
+| What can it say? | Guardrails | Bedrock Guardrails |
+| Agent to tool identity? | Tool Identity | AgentCore + 3-Leg OAuth |
+| Which tools? | Tool Access | AgentCore Gateway |
+| Tool constraints? | Tool Policy | AgentCore Policy (Cedar) |
+| Behaving correctly? | Observability | AgentCore Eval & Obs |
 
-The first two columns are universal. The last two change depending on your stack. That's exactly the point: the questions and dimensions are the same regardless of where you're running. The tools change.
-
-I work in the AWS ecosystem, so that's where my implementation examples come from. [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) gets some things very right, and I'll show you where. But the dimensions themselves apply whether you're on AWS, GCP, Azure, or running everything on-prem.
+I work in the AWS ecosystem, so the third column reflects that. I'll be using [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) for the implementation examples because it maps cleanly to these dimensions and I think it gets a lot right. But the first two columns are what matter. The questions and dimensions are universal. Every cloud provider and most open-source agent frameworks have their own answers to the same questions. The patterns are what you should take away, not the specific tools.
 
 The rest of this post walks through each dimension. For each one, I'll explain the problem, show what the implementation looks like, and tell you what goes wrong when you skip it.
 
@@ -112,7 +110,7 @@ app.run()
 
 The important thing here isn't the AWS-specific API. It's the pattern: identity validation happens at the runtime layer, not in your application code. The runtime rejects invalid tokens before your handler is invoked. Your code receives a validated identity and propagates it downstream.
 
-If you're not on AWS, the same pattern applies with different tooling. [Auth0's agent auth SDK](https://auth0.com/ai) provides OIDC integration with pre-built connectors for LangChain and LlamaIndex. [Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/) introduces first-class agent identity with purpose-built token claims for delegation. Or wire it up yourself with FastAPI + `python-jose` and standard OIDC middleware. The mechanics are the same: validate tokens at the boundary, propagate claims through the execution chain.
+The pattern here isn't AWS-specific. Any agent runtime that supports OIDC discovery and JWT validation can do this. The important part is that identity validation happens at the infrastructure layer, not in your application code, and that validated claims propagate through every downstream call.
 
 **What goes wrong when you skip this:** Your agent becomes a privilege escalation vector. User A asks a question, the agent uses its own broad service credentials to fetch the answer, and suddenly User A has access to data they were never supposed to see. I've seen this in production. It's not theoretical.
 
@@ -152,7 +150,7 @@ The agent-level layer is what constrains behavior within those boundaries. The a
 
 The distinction between "can call this API" and "should call this API" is where most teams fall down. IAM says yes. Agent authorization says "yes, but only under these conditions."
 
-If you're not on AWS, the same two-layer model applies. GCP has service accounts plus [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation). Azure has Managed Identity plus RBAC. For the agent-level layer beyond cloud IAM, tools like [OPA](https://www.openpolicyagent.org/), [Permit.io](https://www.permit.io/), and [WorkOS FGA](https://workos.com/docs/fga) handle fine-grained authorization. WorkOS makes a strong argument that flat RBAC breaks down for agents, and you need hierarchical, resource-scoped authorization to prevent the confused deputy problem.
+This two-layer model isn't unique to AWS. Every major cloud provider has infrastructure-level identity (service accounts, managed identities) and every agent framework needs an application-level authorization layer on top of it. The mistake is treating the infrastructure layer as sufficient. It's not.
 
 **What goes wrong when you skip this:** The agent inherits the full blast radius of its service credentials. A prompt injection or unexpected behavior doesn't just produce a bad response. It produces a bad response with the permissions of a service account that can read your entire database.
 
@@ -253,7 +251,7 @@ The `stop_reason == "guardrail_intervened"` pattern gives you programmatic contr
 
 A customer-facing agent and an internal analytics agent need completely different guardrail configurations. The customer-facing agent needs aggressive PII masking and strict topic boundaries. The internal agent might need looser content filters but stricter grounding checks to prevent hallucinated metrics from reaching a dashboard. Configure per use case, not globally.
 
-If you're not on AWS, the guardrails ecosystem is mature. [NVIDIA NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) gives you programmable guardrails via Colang, a domain-specific language for defining conversational rules. [Meta's Llama Firewall](https://github.com/meta-llama/PurpleLlama) takes a different approach: PromptGuard 2 for jailbreak classification, AlignmentCheck for auditing chain-of-thought reasoning, and CodeShield for static analysis of generated code. AlignmentCheck is particularly interesting for agents because it catches goal hijacking in the agent's reasoning, not just in its outputs. [Guardrails AI](https://www.guardrailsai.com/) focuses on output validation with a marketplace of validators. The managed vs. self-hosted tradeoff is real: Bedrock Guardrails is less flexible but operationally simpler. NeMo and Llama Firewall give you more control at the cost of running infrastructure.
+Whether you use a managed guardrails service or run your own, the pattern is the same: a layer that evaluates every agent response against configurable policies before it reaches the user. The guardrails ecosystem is mature and there are strong open-source options if you want more control over the rules engine.
 
 **What goes wrong when you skip this:** Your agent's failure mode is uncontrolled. Without guardrails, a single successful jailbreak or edge-case input produces whatever the model generates with no safety net. PII leaks into chat logs. Hallucinated data reaches users as if it were real. Off-topic responses erode trust. Guardrails don't prevent bad inputs. They prevent them from becoming outputs.
 
@@ -300,9 +298,7 @@ agent = Agent(
 
 The key detail: the agent never sees or stores the user's long-lived credentials. The gateway manages the OAuth exchange and hands the tool a scoped, short-lived token. The downstream service (Google Drive in this case) knows exactly which user authorized the access, not just that "an agent" made the request.
 
-This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. The gap is that most agent frameworks don't wire it up by default, so developers end up using a single service account for all tool calls.
-
-If you're not on AWS, [Auth0's Token Vault](https://auth0.com/ai) handles the OAuth dance for agent tool calls with pre-built connectors. You can also implement standard token exchange with any OAuth library. The plumbing is well-documented but manual. AgentCore's advantage is handling it as infrastructure rather than application code.
+This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. You can implement this with any OAuth library. AgentCore's advantage is handling the exchange as infrastructure rather than application code, but the pattern works the same way regardless of platform. The gap is that most agent frameworks don't wire it up by default, so developers end up using a single service account for all tool calls.
 
 **What goes wrong when you skip this:** The agent uses its own credentials for every tool call. Every user's request executes with the same permissions. Audit logs show "agent-service-account" instead of "user-12345." You lose traceability, you lose per-user access control at the tool level, and you create a single credential that, if compromised, grants access to everything the agent can reach.
 
@@ -349,7 +345,7 @@ The gateway handles tool registration, credential injection, and access control 
 
 Because the gateway uses MCP, you're not locked into a single vendor's agent SDK. Any MCP-compatible client can connect. You can mix gateway-managed tools with self-hosted MCP servers.
 
-The gateway pattern is converging across the industry. [Docker MCP Gateway](https://github.com/docker/mcp-gateway) provides open-source tool orchestration with container isolation and a catalog of 200+ pre-built tool servers. [Cloudflare](https://developers.cloudflare.com/agents/) lets you host MCP servers on Workers with built-in OAuth 2.1 and permission-based tool access. [Permit.io's MCP Gateway](https://www.permit.io/mcp-gateway) focuses specifically on authorization, adding identity, consent, and fine-grained access control to every tool call.
+The gateway pattern is converging across the industry, and [MCP](https://modelcontextprotocol.io/) is emerging as the standard protocol for tool registration and discovery. Because AgentCore Gateway speaks MCP natively, you can mix gateway-managed tools with self-hosted MCP servers. The principle is the same regardless of implementation: agents shouldn't manage their own tool connections.
 
 **What goes wrong when you skip this:** Tool management becomes an operational nightmare at scale. Every agent maintains its own credentials, its own connection logic, its own error handling. Credential rotation requires touching every agent. Access control is per-agent rather than centralized. You have no single view of which agents are calling which tools, how often, or with what results.
 
@@ -388,7 +384,7 @@ Cedar's semantics are important: **default deny** (no matching `permit` means th
 
 AgentCore also supports generating Cedar policies from natural language descriptions, with automated reasoning to validate that the generated policy isn't overly permissive or unsatisfiable. That's a nice operational feature, but the real value is the enforcement model: policies evaluated synchronously in the critical path of every tool call, at the gateway layer where the agent can't skip them.
 
-If you're not on AWS, [OPA/Rego](https://www.openpolicyagent.org/) is the closest general-purpose equivalent. [PolicyLayer Intercept](https://github.com/PolicyLayer/Intercept) is worth watching: it's an MCP proxy that enforces YAML-based policies on tool calls, with rate limits, spend caps, argument validation, and default deny. Their core argument is compelling: system prompt-based tool restrictions are probabilistic and bypassable, while transport-layer policies are deterministic and auditable. [Permit.io](https://www.permit.io/) covers the authorization and consent layer for tool calls.
+Cedar is open source, so the policy language itself isn't locked to AWS. But the broader point is more important: system prompt-based tool restrictions are probabilistic and bypassable. Transport-layer policies are deterministic and auditable. Whether you use Cedar, [OPA/Rego](https://www.openpolicyagent.org/), or something else, the enforcement needs to happen at a layer the agent can't skip.
 
 **What goes wrong when you skip this:** Authorization tells you the agent can use a tool. It doesn't tell you how. Without runtime policy, an agent with access to a search API can issue unbounded queries. An agent with database read access can `SELECT *` with no `LIMIT`. An agent authorized to look up orders can look up every order in the system. The tool works as designed. The agent is just using it in ways you didn't intend.
 
@@ -460,7 +456,7 @@ The judge explanations are the valuable part. A score of 2.1/5 on helpfulness te
 
 Run evaluations on-demand, not just passively. When you update a system prompt, run an eval. When you add a new tool, run an eval. When you change a guardrail config, run an eval. Treat it like a test suite for behavior.
 
-The observability ecosystem outside AWS is strong. [LangSmith](https://docs.smith.langchain.com/) offers zero-latency tracing with an AI-powered insights agent that clusters failures automatically. [Braintrust](https://www.braintrust.dev/) is eval-first, with 25+ built-in scorers and CI/CD integration for gating deployments on eval results. [Arize Phoenix](https://github.com/Arize-ai/phoenix) is fully open-source and self-hostable, built on OpenTelemetry with drift and anomaly detection. [Langfuse](https://langfuse.com/) is the popular open-source alternative for tracing plus prompt management. All of them support LLM-as-judge evaluation patterns.
+Agent observability is one area where the ecosystem is genuinely strong across the board. [OpenTelemetry](https://opentelemetry.io/) gives you vendor-neutral instrumentation, and there are multiple mature platforms for tracing and evaluation regardless of your cloud provider. The important thing is that you're collecting traces and running evaluations, not which platform you're using to do it.
 
 **What goes wrong when you skip this:** You're flying blind. You deployed the agent, it seemed fine, and now you have no idea whether it's still fine. You find out about problems from angry users, not from dashboards. You can't measure improvement because you never measured the baseline. Every other dimension in this post is preventive. This one is detective. You need both.
 
