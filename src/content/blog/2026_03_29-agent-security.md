@@ -58,7 +58,7 @@ Identity should be a built-in primitive in your agent runtime, not middleware yo
 
 The pattern is OIDC integration. Your agents should plug into whatever identity provider you already use. No separate identity system needed.
 
-In AgentCore, identity is configured at runtime creation. You declare a JWT authorizer with your OIDC discovery URL, and the runtime validates tokens before your code even runs:
+In [Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/), identity is configured at runtime creation. You declare a JWT authorizer with your OIDC discovery URL, and the runtime validates tokens before your code even runs:
 
 ```python
 import boto3
@@ -263,7 +263,7 @@ Guardrails are the catch-all. Even if everything else fails, a bad system prompt
 
 What they cover: content filtering (blocks harmful or off-topic outputs), topic avoidance (keeps the agent in its lane), PII detection and masking (catches sensitive data before it leaks), and grounding checks (reduces hallucination risk by validating outputs against source material).
 
-In AWS, Bedrock Guardrails is a managed service. You configure content filters and PII rules in the console, attach a guardrail ID to the model, and it evaluates on every call:
+In AWS, [Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) is a managed service. You configure content filters and PII rules in the console, attach a guardrail ID to the model, and it evaluates on every call:
 
 ```python
 from strands import Agent
@@ -356,7 +356,7 @@ Without a gateway, tool configuration is scattered across individual agent codeb
 
 A tool gateway is a control plane that sits between your agents and the tools they call. It centralizes discovery, credential management, and access control.
 
-AgentCore Gateway is an [MCP](https://modelcontextprotocol.io/) server. It speaks the Model Context Protocol natively, so any MCP-compatible agent can connect to it:
+[AgentCore Gateway](https://aws.amazon.com/bedrock/agentcore/) is an [MCP](https://modelcontextprotocol.io/) server. It speaks the Model Context Protocol natively, so any MCP-compatible agent can connect to it:
 
 ```python
 from strands import Agent
@@ -403,7 +403,7 @@ This is different from authorization (dimension 2) and different from tool acces
 
 Policy enforcement happens at runtime, evaluated before every tool call. Not at deployment time, not at configuration time. Every single invocation gets checked.
 
-This is the dimension where AgentCore is genuinely differentiated. To my knowledge, no other agent framework has integrated a formal policy engine directly into the tool invocation path at the gateway level. Most frameworks leave this to the developer to build, and most developers don't build it.
+This is the dimension where [Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/) is genuinely differentiated. To my knowledge, no other agent framework has integrated a formal policy engine directly into the tool invocation path at the gateway level. Most frameworks leave this to the developer to build, and most developers don't build it. [AgentCore Policy went GA in March 2026](https://aws.amazon.com/about-aws/whats-new/2026/03/policy-amazon-bedrock-agentcore-generally-available/), providing centralized, fine-grained controls for agent-tool interactions that operate outside your agent code.
 
 AgentCore uses [Cedar](https://www.cedarpolicy.com/), AWS's open-source policy language, for tool-call policies. Policies are evaluated at the gateway level, which means the agent can't bypass them:
 
@@ -452,7 +452,7 @@ Tracing means collecting full execution traces for every agent interaction. Not 
 
 Evaluation is where most teams have a blind spot. Tracing tells you what happened. Evaluation tells you whether what happened was good. LLM-as-judge is the most practical approach right now: use a model to score each agent interaction on dimensions like helpfulness, accuracy, and scope adherence.
 
-AgentCore Evaluations provides this as a managed service:
+[AgentCore Evaluations](https://aws.amazon.com/bedrock/agentcore/) provides this as a managed service:
 
 ```python
 import boto3
