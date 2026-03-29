@@ -299,50 +299,59 @@ Whether you use a managed guardrails service or run your own, the pattern is the
 
 **The question:** How do agents identify themselves to tools and services?
 
-This is where the act-on-behalf model from dimension 2 gets implemented. When an agent calls a tool or API on behalf of a user, identity has to flow through. Not the agent's identity. The user's identity. This is non-negotiable for audit trails, access control, and the principle of least privilege.
+This is where the identity model from dimension 2 gets implemented. When an agent calls a tool or API on behalf of a user, identity has to flow through. Not the agent's identity. The user's identity. This is non-negotiable for audit trails, access control, and the principle of least privilege.
 
-The temptation is to take the easy route: pass the user's original JWT token straight through to downstream services. This is the impersonation model, and it's dangerous. Every downstream service receives the user's full token with all its scopes. The Order tool gets the user's promotions permissions. The Promotions tool gets the user's order permissions. If any service in the chain is compromised, the attacker has a token that grants access to everything.
+### Impersonation: the easy route
+
+The simplest approach is to take the user's JWT and pass it straight through to the downstream service:
+
+```python
+@tool
+def lookup_order(order_id: str, context: dict) -> str:
+    """Look up an order by passing the user's token directly."""
+    user_token = context.get("authorization")
+
+    # Pass the user's original JWT to the downstream API
+    response = requests.get(
+        f"https://api.internal/orders/{order_id}",
+        headers={"Authorization": f"Bearer {user_token}"}
+    )
+    return response.json()
+```
+
+This works. It's also fragile and risky. You need to know the downstream service's expected audience and claims in advance. The token carries every scope the user has, not just the ones this tool needs. If you have multiple downstream services, each one gets the user's full token, which means every service in the chain can act with the user's full permissions. As you add more tools and more hops, the token's scope never narrows, it only accumulates risk. This is the [confused deputy problem](https://en.wikipedia.org/wiki/Confused_deputy_problem): a compromised service can abuse the overly privileged token to access resources the user never intended.
+
+### Act-on-behalf: scoped delegation
 
 The act-on-behalf model solves this. Each hop in the workflow gets a separate, scoped token issued specifically for that downstream target:
 
 1. The user authenticates with the agent (dimension 1)
-2. The gateway generates a new scoped token for each downstream tool, carrying the user's identity context but limited to only the permissions that tool needs
+2. The agent or gateway generates a new scoped token for each downstream tool, carrying the user's identity context but limited to only the permissions that tool needs
 3. Downstream tools see who the user is and what they're authorized to do, but the token can't be reused against other services
 
-In Bedrock AgentCore, [gateway interceptors](https://aws.amazon.com/blogs/machine-learning/apply-fine-grained-access-control-with-bedrock-agentcore-gateway-interceptors/) handle this at the infrastructure level. The gateway extracts identity from the inbound request, generates scoped tokens for each downstream target, and injects the appropriate credentials, all without the agent code touching long-lived credentials:
+The Order tool gets `orders:read`. The Promotions tool gets `promotions:write`. Neither gets both. If a token is compromised, the blast radius is limited to one tool's scope for one user.
+
+In Bedrock AgentCore, [workload access tokens](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/get-workload-access-token.html) implement this pattern. The runtime binds the user's identity and the agent's identity into a single scoped token, and the gateway handles the exchange so your agent code never touches long-lived credentials:
 
 ```python
-from strands import Agent, tool
-from googleapiclient.discovery import build
+from bedrock_agentcore.services.identity import IdentityClient
 
-@tool
-def get_access_token() -> str:
-    """Obtain a scoped OAuth token on behalf of the authenticated user.
-    Configured in AgentCore Gateway: provider_id='google-drive-provider',
-    scopes=['https://www.googleapis.com/auth/drive.readonly']"""
-    # AgentCore handles the OAuth exchange; the tool receives the token
-    ...
+identity_client = IdentityClient("us-east-1")
 
-@tool
-def list_drive_files(access_token: str = "", q: str = "") -> str:
-    """List the authenticated user's Google Drive files."""
-    from google.oauth2.credentials import Credentials
-    creds = Credentials(token=access_token)
-    service = build("drive", "v3", credentials=creds)
-    results = service.files().list(q=q, fields="files(id, name)").execute()
-    return str(results.get("files", []))
-
-agent = Agent(
-    tools=[get_access_token, list_drive_files],
-    system_prompt="You are a file assistant. Help users find their files."
+# Obtain a scoped token binding both agent and user identity
+workload_access_token = identity_client.get_workload_access_token(
+    workload_name="order-lookup-agent",
+    user_token="<user-jwt>"  # The user's validated JWT from dimension 1
 )
+
+# This token is scoped: it can only access services
+# that the order-lookup-agent is authorized to call
+# on behalf of this specific user
 ```
 
-The key detail: the agent never sees or stores the user's long-lived credentials. The gateway manages the OAuth exchange and hands the tool a scoped, short-lived token. The downstream service (Google Drive in this case) knows exactly which user authorized the access, not just that "an agent" made the request. If that token is compromised, the blast radius is limited to read-only Drive access for one user, not the agent's full credential set.
+This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. You can implement this pattern with any OAuth library. The gap is that most agent frameworks don't wire it up by default, so developers end up with the impersonation model (or worse, a shared service account) because it's less work. The act-on-behalf model is more work to set up, but it's the only one that actually enforces least privilege at every hop.
 
-This is standard [OAuth 2.0 token exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693). The mechanics are well-established. You can implement this with any OAuth library. The gap is that most agent frameworks don't wire it up by default, so developers end up with the impersonation model (or worse, a shared service account) because it's less work. The act-on-behalf model is more work to implement, but it's the only one that actually enforces least privilege at every hop.
-
-> **What goes wrong when you skip this:** The agent uses its own credentials for every tool call. Every user's request executes with the same permissions. Audit logs show "agent-service-account" instead of "user-12345." You lose traceability, you lose per-user access control at the tool level, and you create a single credential that, if compromised, grants access to everything the agent can reach.
+> **What goes wrong when you skip this:** The agent uses its own credentials or the user's full token for every tool call. Every downstream service gets more permissions than it needs. Audit logs show "agent-service-account" instead of "user-12345." You lose traceability, you lose per-user access control at the tool level, and you create tokens that, if compromised, grant access to everything the agent can reach.
 
 ## 6. Tool access: the agent-to-tool gateway
 
