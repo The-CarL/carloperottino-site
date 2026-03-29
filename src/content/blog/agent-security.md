@@ -14,9 +14,37 @@ Nobody raised a hand.
 
 Most teams building agents today are thinking about guardrails. Some are thinking about auth. Almost nobody is thinking about tool identity, runtime policy enforcement, or agent-specific observability. And that's a problem, because agents aren't chatbots. They don't just generate text. They act. They access data. They call tools. They make decisions on behalf of users. Each of those actions opens a different attack surface, and each requires a different security pattern.
 
-This post breaks agent security into eight dimensions. Each one answers a different question. Each one requires different tooling. Skip any one of them and you've left a door open.
+## The questions that keep agent devs up at night
 
-I work in the AWS ecosystem, so that's where my implementation examples come from. [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) gets some things very right, and I'll show you where. But the dimensions themselves are universal. I'll point you to alternatives wherever they exist.
+If you're building agents, you should be able to answer all of these. Most teams can answer two or three.
+
+1. How does my agent know who I am and that I'm allowed to interact with it?
+2. How do I control what my agent is allowed to do?
+3. How can I control my agent's behavior?
+4. How do I prevent my agent from doing things it shouldn't?
+5. How do agents identify themselves to tools and services?
+6. How do I control which tools my agent can use and how?
+7. How do I enforce fine-grained rules on tool invocation at runtime?
+8. How do I know my agent is behaving correctly over time?
+
+Each question maps to a named security dimension, and each dimension maps to concrete tooling. Here's the framework:
+
+| Question | Dimension | AWS | Alternatives |
+|---|---|---|---|
+| Who is the user? | Agent Identity | AgentCore Runtime Identity | Auth0 Agent Auth, Entra Agent ID, FastAPI + OIDC |
+| What can it do? | Authorization | IAM + AgentCore | GCP Workload Identity, OPA, WorkOS FGA |
+| How does it behave? | Behavioral Control | System Instructions | Universal (no vendor tooling needed) |
+| What can it say? | Guardrails | Bedrock Guardrails | NeMo Guardrails, Llama Firewall, Guardrails AI |
+| Agent to tool identity? | Tool Identity | AgentCore + 3-Leg OAuth | Standard OAuth 2.0 (RFC 8693), Auth0 Token Vault |
+| Which tools? | Tool Access | AgentCore Gateway | Docker MCP Gateway, Cloudflare, Permit.io |
+| Tool constraints? | Tool Policy | AgentCore Policy (Cedar) | OPA/Rego, PolicyLayer Intercept, Permit.io |
+| Behaving correctly? | Observability | AgentCore Eval & Obs | LangSmith, Braintrust, Arize Phoenix, OTel |
+
+The first two columns are universal. The last two change depending on your stack. That's exactly the point: the questions and dimensions are the same regardless of where you're running. The tools change.
+
+I work in the AWS ecosystem, so that's where my implementation examples come from. [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) gets some things very right, and I'll show you where. But the dimensions themselves apply whether you're on AWS, GCP, Azure, or running everything on-prem.
+
+The rest of this post walks through each dimension. For each one, I'll explain the problem, show what the implementation looks like, and tell you what goes wrong when you skip it.
 
 ## 1. Agent-user identity
 
