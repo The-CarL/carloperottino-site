@@ -110,7 +110,7 @@ def invoke(payload, context):
 app.run()
 ```
 
-The important thing here isn't the AWS-specific API. It's the pattern: identity validation happens at the runtime layer, not in your application code. The runtime rejects invalid tokens before your handler is invoked. Your code receives a validated identity and propagates it downstream. AgentCore takes this further with [workload access tokens](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/get-workload-access-token.html): AWS-signed tokens that bind both the user's identity and the agent's identity together, so downstream services know exactly which agent is acting on behalf of which user. Any agent runtime that supports OIDC discovery and JWT validation can implement this pattern.
+The important thing here isn't the AWS-specific API. It's the pattern: identity validation happens at the runtime layer, not in your application code. The runtime rejects invalid tokens before your handler is invoked. Your code receives a validated identity and propagates it downstream. Any agent runtime that supports OIDC discovery and JWT validation can implement this pattern.
 
 > **A word of caution.** Extracting identity claims is fine. Passing them downstream for context is fine. But the moment you start *acting on those claims* inside your agent, you've built an authorization layer into your agent code. That's a different thing entirely.
 
