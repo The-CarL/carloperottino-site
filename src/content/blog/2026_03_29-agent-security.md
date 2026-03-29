@@ -452,7 +452,7 @@ Tracing means collecting full execution traces for every agent interaction. Not 
 
 Evaluation is where most teams have a blind spot. Tracing tells you what happened. Evaluation tells you whether what happened was good. LLM-as-judge is the most practical approach right now: use a model to score each agent interaction on dimensions like helpfulness, accuracy, and scope adherence.
 
-[AgentCore Evaluations](https://aws.amazon.com/bedrock/agentcore/) provides this as a managed service:
+[AgentCore Evaluations](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-bedrock-agentcore-policy-evaluations-preview) provides this as a managed service, with 13 built-in evaluators for common quality dimensions and support for custom model-based scoring:
 
 ```python
 import boto3
