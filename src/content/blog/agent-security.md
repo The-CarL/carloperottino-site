@@ -27,20 +27,18 @@ If you're building agents, you should be able to answer all of these. Most teams
 7. How do I enforce fine-grained rules on tool invocation at runtime?
 8. How do I know my agent is behaving correctly over time?
 
-Each question maps to a named security dimension, and each dimension maps to concrete tooling. Here's the framework:
+Each question maps to a security dimension. Each dimension is its own problem space with its own patterns and tooling:
 
-| Question | Dimension | Tool |
-|---|---|---|
-| Who is the user? | Agent Identity | AgentCore Runtime Identity |
-| What can it do? | Authorization | IAM + AgentCore |
-| How does it behave? | Behavioral Control | System Instructions |
-| What can it say? | Guardrails | Bedrock Guardrails |
-| Agent to tool identity? | Tool Identity | AgentCore + 3-Leg OAuth |
-| Which tools? | Tool Access | AgentCore Gateway |
-| Tool constraints? | Tool Policy | AgentCore Policy (Cedar) |
-| Behaving correctly? | Observability | AgentCore Eval & Obs |
+1. **Agent Identity**
+2. **Authorization**
+3. **Behavioral Control**
+4. **Guardrails**
+5. **Tool Identity**
+6. **Tool Access**
+7. **Tool Policy**
+8. **Observability**
 
-I work in the AWS ecosystem, so the third column reflects that. I'll be using [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) for the implementation examples because it maps cleanly to these dimensions and I think it gets a lot right. But the first two columns are what matter. The questions and dimensions are universal. Every cloud provider and most open-source agent frameworks have their own answers to the same questions. The patterns are what you should take away, not the specific tools.
+These dimensions are universal. They apply regardless of your cloud provider, your agent framework, or whether you're running on-prem. I work in the AWS ecosystem, so I'll be using [AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-agentcore.html) as my implementation example throughout this post. But the concepts come first. The tooling is just one way to get there.
 
 The rest of this post walks through each dimension. For each one, I'll explain the problem, show what the implementation looks like, and tell you what goes wrong when you skip it.
 
