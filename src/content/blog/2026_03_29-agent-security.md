@@ -255,11 +255,15 @@ System prompts are a probabilistic defense. They work most of the time. They are
 
 **The question:** How do I prevent my agent from doing things it shouldn't?
 
-Guardrails are the catch-all. Even if everything else fails, a bad system prompt, a jailbreak attempt, unexpected input, guardrails sit at the response layer and enforce hard limits.
+Guardrails are different from system prompts, and the distinction matters. System prompts (dimension 3) are part of the inference. They're instructions the model follows during generation. Guardrails run out-of-band from inference. They assess both the input going into the model and the output coming out of it, independent of what the model was told to do.
 
-What they cover: content filtering (blocks harmful or off-topic outputs), topic avoidance (keeps the agent in its lane), PII detection and masking (catches sensitive data before it leaks), and grounding checks (reduces hallucination risk by validating outputs against source material).
+In the context of agents, guardrails evaluate everything inside the agent's event loop: system instructions, tool definitions, previous messages, user input, and the model's response. They run on every invocation, not just the final output. So if your agent reasons through three tool calls before producing an answer, the guardrail is evaluating at each step, catching issues in intermediate reasoning, not just in what the user sees.
 
-In AWS, [Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/) is a managed service. You configure content filters and PII rules in the console, attach a guardrail ID to the model, and it evaluates on every call:
+What guardrails catch: content filtering (blocks harmful or off-topic outputs), topic avoidance (keeps the agent in its lane), PII detection and masking (catches sensitive data before it leaks), and grounding checks (reduces hallucination risk by validating outputs against source material).
+
+There are multiple patterns for implementing guardrails:
+
+**Direct integration with the agent framework.** The guardrail is wired into the model invocation itself. In [Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/), you attach a guardrail ID directly to the model, and it evaluates on every call:
 
 ```python
 from strands import Agent
@@ -287,11 +291,11 @@ if response.stop_reason == "guardrail_intervened":
     print("Response blocked or content masked by guardrail")
 ```
 
-The `stop_reason == "guardrail_intervened"` pattern gives you programmatic control over what happens when a guardrail fires. With `guardrail_trace="enabled"`, you get detailed information about which filter triggered and why. The guardrail evaluates on every model invocation, not just the final response. This means it catches issues in intermediate reasoning steps, not just in what the user sees.
+The `stop_reason == "guardrail_intervened"` pattern gives you programmatic control over what happens when a guardrail fires. With `guardrail_trace="enabled"`, you get detailed information about which filter triggered and why.
 
-A customer-facing agent and an internal analytics agent need completely different guardrail configurations. The customer-facing agent needs aggressive PII masking and strict topic boundaries. The internal agent might need looser content filters but stricter grounding checks to prevent hallucinated metrics from reaching a dashboard. Configure per use case, not globally.
+**Centralized guardrails at the LLM proxy layer.** If you want a blanket policy across all of your LLM invocations, regardless of which agent or application is calling, you can implement guardrails at the proxy level. Tools like LiteLLM support centralized input/output guardrails that evaluate every request flowing through the proxy. This gives you a single enforcement point: one configuration that applies to every model call across your organization, rather than configuring guardrails per-agent or per-model.
 
-Whether you use a managed guardrails service or run your own, the pattern is the same: a layer that evaluates every agent response against configurable policies before it reaches the user. The guardrails ecosystem is mature and there are strong open-source options if you want more control over the rules engine.
+Both patterns have their place. Direct integration gives you per-agent granularity. Centralized proxy-level guardrails give you organizational coverage. A customer-facing agent needs aggressive PII masking and strict topic boundaries. An internal analytics agent might need looser content filters but stricter grounding checks to prevent hallucinated metrics from reaching a dashboard. You might use centralized guardrails for the baseline policy and per-agent guardrails for the specific rules.
 
 > **What goes wrong when you skip this:** Your agent's failure mode is uncontrolled. Without guardrails, a single successful jailbreak or edge-case input produces whatever the model generates with no safety net. PII leaks into chat logs. Hallucinated data reaches users as if it were real. Off-topic responses erode trust. Guardrails don't prevent bad inputs. They prevent them from becoming outputs.
 
@@ -517,12 +521,14 @@ Agent observability is one area where the ecosystem is genuinely strong across t
 
 ## The full picture
 
-These eight dimensions aren't independent. They form a layered security architecture:
+I haven't seen anyone consolidate the full agent security landscape into a single view. The [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications/) catalogs the risks, and it's excellent. But mapping risks to defenses, showing how the layers connect, and giving engineers a framework they can actually evaluate their posture against? That's the gap this post tries to fill.
+
+These eight dimensions aren't independent. They form a layered architecture:
 
 1. **Identity** establishes who the user is
 2. **Authorization** constrains what the agent can do for that user
 3. **Behavioral control** shapes how the agent approaches its task
-4. **Guardrails** catch failures at the output layer
+4. **Guardrails** catch failures at the input and output layers
 5. **Tool identity** propagates user context to downstream services
 6. **Tool access** centralizes tool management and credential handling
 7. **Tool policy** enforces fine-grained rules on every tool invocation
@@ -530,8 +536,6 @@ These eight dimensions aren't independent. They form a layered security architec
 
 Skip any one and the others compensate less than you'd think. Authorization without identity means you're authorizing an anonymous entity. Guardrails without observability means you don't know when they're catching real attacks versus false positives. Tool access without tool policy means you've centralized management but not governance.
 
-The [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications/) catalogs the risks. This post maps the defenses. They're complementary. If you haven't read the OWASP list, start there for the threat landscape and come back here for the architecture.
+I hope this gives other developers building agents a useful framework for thinking about security holistically, not as one problem but as eight. And I hope it gives senior leaders and CISOs some comfort knowing that the tools to control agents at each of these layers exist today. The tooling is real. The patterns are proven. The gap isn't capability. It's awareness.
 
-The teams I see getting this right aren't necessarily using the most sophisticated tools. They're the ones who've recognized that agent security is multi-dimensional and have deliberately addressed each layer, even if some implementations are simple. A hand-rolled policy engine that checks three rules before every tool call is infinitely better than no policy engine at all.
-
-If you're building agents today, map your current security posture against these eight dimensions. I'd bet you'll find at least three or four gaps. Start there.
+If you're building agents, map your current posture against these eight dimensions. I'd bet you'll find at least three or four you haven't addressed yet. Start there.
