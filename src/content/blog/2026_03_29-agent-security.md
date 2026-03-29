@@ -2,7 +2,7 @@
 title: "Eight Dimensions of AI Agent Security"
 description: "Agent security isn't one problem. It's eight distinct dimensions, each with different tools and patterns."
 date: 2026-03-29
-tags: ["ai", "security", "agents", "architecture"]
+tags: ["ai", "security", "agents", "aws", "identity", "mcp", "architecture"]
 draft: true
 ---
 
