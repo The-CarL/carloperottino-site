@@ -41,7 +41,11 @@ rm -f "src/content/blog/${SLUG}-research.md"
 
 This file is gitignored, but remove it explicitly so it doesn't linger in the worktree.
 
-## 3. Content check
+## 3. Pre-ship quality checks
+
+Run the `fact-check` and `style-check` agents in parallel against the post file. Present their findings to the user before continuing. If either agent reports "must fix" items, ask the user whether to address them now or ship as-is.
+
+## 4. Content check
 
 Read `POST_FILE` and check:
 - The file has content below the frontmatter closing `---` (not just empty or whitespace).
@@ -49,7 +53,7 @@ Read `POST_FILE` and check:
 
 If either check fails, warn the user: "This post looks empty or very short. Continue anyway?"
 
-## 4. Image reference validation
+## 5. Image reference validation
 
 Scan the post body for markdown image references (`![...](...)`) and check that each referenced file exists at the path relative to the project root (for paths starting with `/`, check in `public/`).
 
@@ -59,7 +63,7 @@ If any referenced images are missing, warn the user:
 >
 > Continue anyway, or fix the references first?
 
-## 5. Stage and commit remaining changes
+## 6. Stage and commit remaining changes
 
 Stage the post file and any assets in the post's public directory:
 ```bash
@@ -76,7 +80,7 @@ If there are staged changes, commit them:
 git commit -m "docs: finalize post content"
 ```
 
-## 6. Build
+## 7. Build
 
 Run the build command:
 ```bash
@@ -90,7 +94,7 @@ If the build **fails**:
 
 If the build **succeeds**, set `DRAFT_PR=false`.
 
-## 7. Flip draft flag
+## 8. Flip draft flag
 
 Shipping means publishing. Change `draft: true` to `draft: false` in the frontmatter (or remove the `draft` line entirely since the schema defaults to `false`). Do not ask, just do it.
 
@@ -99,7 +103,7 @@ Stage and commit:
 git add "$POST_FILE" && git commit -m "docs: mark post as published"
 ```
 
-## 8. Push and open PR
+## 9. Push and open PR
 
 Extract the title and description from the post frontmatter for the PR.
 
@@ -128,7 +132,7 @@ EOF
 
 Capture and store the PR URL from the output.
 
-## 9. Clean up worktree
+## 10. Clean up worktree
 
 Store the current worktree path, then cd back to the main repo:
 
@@ -142,7 +146,7 @@ git worktree remove "$WORKTREE_PATH"
 If removal fails, tell the user:
 > Automatic cleanup failed. Run manually: `git worktree remove <path>`
 
-## 10. Report
+## 11. Report
 
 Print a summary:
 

@@ -55,18 +55,33 @@ When working on a `post/*` branch, operate in co-writing mode:
 - **Preserve the human voice.** The goal is writing that sounds like a person working through ideas, not a polished content piece. Don't over-edit. Keep the rough edges that make it feel authentic. When cleaning up voice dictation, preserve the user's phrasing and cadence where possible.
 - **Track the post state.** Know which sections are drafted, which are empty, which need revision. Offer a status check when asked "where are we?"
 
-## Research Behavior
+## Co-Writing Agents
 
-When asked to research a topic (or when starting a new post on an unfamiliar topic):
+Three specialized agents are available in `.claude/agents/` for the co-writing workflow. Use them proactively at the right moments, don't wait for the user to ask.
 
-- **Search the web** for existing articles, blog posts, and technical content on the topic.
-- **Identify who else has written about it** -- names, publications, angles they took, and what gaps exist that could be filled.
-- **Surface useful data** -- stats, benchmarks, recent announcements, primary sources worth linking.
-- **Save a scratchpad file** at `src/content/blog/<slug>-research.md` with the compiled findings. This file is gitignored and is for reference during writing, not for publishing.
-- **Summarize key findings** in the conversation so the user can decide what to use.
-- **Use subagents** for parallel research when the topic is broad enough to warrant it -- e.g., one subagent for competitive scan, another for data gathering. For simple topics, single-threaded search is fine.
+### `research` -- Topic Research
 
-Research should be a natural part of conversation, not a rigid step. The user might say "who else has written about this?" at any point.
+Use when: starting a new post on an unfamiliar topic, user asks "who else has written about this?", or you need to verify the landscape before writing.
+
+Finds existing articles, primary sources, data, code examples, and gaps in coverage. Saves findings to `src/content/blog/<slug>-research.md` (gitignored). Research should be a natural part of conversation, not a rigid step.
+
+### `fact-check` -- Claims, Code, and Links
+
+Use when: a full draft is complete and before shipping, or when the user asks to verify something specific.
+
+Verifies factual claims against sources, checks that code examples use current APIs with correct imports and field names, and validates that links resolve and point to the right content. Returns a structured report (verified / needs attention / unable to verify).
+
+### `style-check` -- Voice, Authenticity, AI Patterns
+
+Use when: after a major draft or revision pass, or when the user asks "does this sound AI-generated?"
+
+Reads the voice reference post for calibration, then flags AI-sounding patterns (repeated openers, filler transitions, em dashes, hedging), checks voice consistency, evaluates argument strength, and challenges weak sections. Returns findings by severity (must fix / should fix / consider).
+
+### When to run them
+
+- **Research:** At the start of a new post, or anytime context is needed mid-writing.
+- **Fact-check:** After the first complete draft, and again before shipping. Run in the background while continuing to write.
+- **Style-check:** After major revisions. Run before the user does their final read. Can run in parallel with fact-check.
 
 ## Diagrams and Visual Artifacts
 

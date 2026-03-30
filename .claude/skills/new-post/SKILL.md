@@ -109,3 +109,5 @@ Then tell the user:
 > The workspace is ready. Describe what you want to write about and we'll build the post together.
 
 **Do NOT start writing content.** Wait for the user to describe their topic.
+
+Once the user describes their topic, use the `research` agent to gather background before drafting.
