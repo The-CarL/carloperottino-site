@@ -1,7 +1,7 @@
 ---
 name: research
 description: Use when starting a new blog post, when the user asks "who else has written about this?", or when you need background on a topic before writing. Researches topics across the web, finds primary sources, identifies gaps in existing coverage, and compiles findings.
-tools: Read, Grep, Glob, WebFetch, WebSearch, mcp__exa__web_search_exa, mcp__exa__crawling_exa, mcp__exa__get_code_context_exa, mcp__context7__resolve-library-id, mcp__context7__query-docs
+tools: Read, Write, Grep, Glob, WebFetch, WebSearch, mcp__exa__web_search_exa, mcp__exa__crawling_exa, mcp__exa__get_code_context_exa, mcp__context7__resolve-library-id, mcp__context7__query-docs
 model: sonnet
 ---
 
