@@ -1,13 +1,13 @@
 ---
 title: "Farewell, AWS"
-description: "Last Friday was my last day at AWS. A short note on why I joined, what I'll miss, and why I'm leaving."
+description: "Today was my last day at AWS. A short note on why I joined, what I'll miss, and why I'm leaving."
 date: 2026-04-03
 tags: ["aws", "career"]
 ---
 
 ## A short note
 
-Last Friday was my last day at AWS. I'm leaving for a new role outside the company, and I wanted to mark the moment instead of letting it slide by in a LinkedIn update.
+Today was my last day at AWS. I'm leaving for a new role outside the company, and I wanted to mark the moment instead of letting it slide by in a LinkedIn update.
 
 AWS was the first cloud I ever touched. It's the platform I built my career on. I've worked across Azure and GCP since, and I've shipped real things on all three, but AWS is the one that taught me how to think about cloud in the first place. Most of the instincts I rely on every day got formed there.
 
