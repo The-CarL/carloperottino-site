@@ -39,9 +39,13 @@ I joined as an AI/ML Specialist Solutions Architect in Healthcare and Life Scien
 
 ## Why I'm leaving
 
-I took a new role where I can have higher impact, focus exclusively on AI, and sit closer to the bleeding edge. That last part matters most. The space is moving fast enough that proximity to the frontier compounds, and I want to be as close to it as I can get.
+Working for AWS was genuinely a dream. Not a "LinkedIn post" dream, a real one. I loved the team I got to work with. I loved the impact we had on customers. The kind of problems I got to put my hands on in two years don't show up in most careers, and the people I got to put my hands on them with don't either.
 
-That's not a critique of AWS. It's a calculation about where I do my best work for the next few years.
+But underneath the AWS dream, there's been a second ambition I've been chasing for a long time. I love to build, and anyone who knows me knows that. What fewer people pick up on is that I love the customer-obsession side of the work just as much. Figuring out what to build and why. How it fits a larger product bet. Who it's for and what they actually need. The closer I've gotten to those kinds of decisions over the years, the more energized I've felt. Technical product ownership and product strategy is where I've wanted to head for a while now.
+
+The new role pulls me a meaningful step in that direction. Closer to the bleeding edge, and closer to where the product decisions actually get made. It's also a place where the pace of what's being built and decided is about as fast as anywhere in the industry right now.
+
+I'm not going to name the company here. Anyone who knows me or sees where I land next will figure it out quickly enough. None of this is a critique of AWS. It's just where I'm pointed next.
 
 ## What I'm taking with me
 
