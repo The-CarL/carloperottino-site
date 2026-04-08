@@ -33,6 +33,12 @@ The thing that turned "eventually" into "now" was re:Invent in December 2022. I 
 
 Part of it was the scale. I've always been drawn to systems that operate at a size most engineers never get to see up close, and AWS runs at a scale that's genuinely hard to comprehend until you're inside it. Part of it was the people I met that week, who were sharp in a way that felt different from the rest of the industry.
 
+One of the most impactful sessions I sat in that week was about large-scale training clusters for transformer-based networks. I walked in almost by accident. I'd been deep in ML and analytics work at the time, but I hadn't been tracking the evolution of deep learning or neural network architectures very closely. Transformers were a name I knew more than a thing I understood.
+
+The speaker, who I'm still connected with on LinkedIn to this day, laid out where all of this was heading in a way that reframed my whole sense of the horizon. I went back to the hotel that night and started reading everything I could find on modern deep learning and what these transformer-scale systems were actually going to make possible.
+
+What I didn't fully appreciate in the moment was how absurdly well the timing lined up. ChatGPT launched on November 30, 2022, in the middle of re:Invent week. I was sitting in a session about training clusters for transformers at almost the exact moment the rest of the world was discovering what those transformers could produce. It wasn't a shock. It was a starting line. In hindsight, there wasn't a better week to get pulled into this space, and I happened to be in the room where the people building the plumbing for it were standing.
+
 The thing that sealed it came later, during the interview process. I read the Amazon Leadership Principles for the first time and realized they described how I already wanted to work. I'll come back to that.
 
 ## What I got to work on
