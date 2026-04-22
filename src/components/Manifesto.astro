@@ -1,0 +1,70 @@
+---
+---
+
+<section id="manifesto" class="py-24 px-6 relative">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-mono text-xs tracking-[0.25em] uppercase text-accent mb-10">// What drives me</h2>
+
+    <ul class="space-y-5 sm:space-y-6">
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Hard <span class="gradient-text font-medium">problems</span>
+      </li>
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Innovative <span class="gradient-text font-medium">technologies</span>
+      </li>
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Strong teams with positive <span class="gradient-text font-medium">attitudes</span>
+      </li>
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Customer <span class="gradient-text font-medium">obsession</span>
+      </li>
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Focus and <span class="gradient-text font-medium">organization</span>
+      </li>
+      <li class="manifesto-line pl-5 sm:pl-6 border-l border-accent/30 text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-cream">
+        Open and candid <span class="gradient-text font-medium">communication</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .manifesto-line {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+  .manifesto-line.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .manifesto-line {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const lines = document.querySelectorAll<HTMLElement>('.manifesto-line');
+  if (lines.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const idx = Array.from(lines).indexOf(el);
+            setTimeout(() => el.classList.add('is-visible'), idx * 120);
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    lines.forEach((l) => io.observe(l));
+  } else {
+    lines.forEach((l) => l.classList.add('is-visible'));
+  }
+</script>
