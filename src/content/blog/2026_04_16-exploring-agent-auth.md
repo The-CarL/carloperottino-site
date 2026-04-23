@@ -2,8 +2,7 @@
 title: "Climbing the agent authorization ladder"
 description: "Authentication gets the attention. Authorization is where the patterns multiply. Eight of them, runnable, from shared API key to OAuth consent."
 date: 2026-04-16
-tags: ["ai", "security", "agents", "authorization", "mcp", "oauth", "keycloak"]
-draft: true
+tags: ["ai", "security", "agents", "authorization", "identity", "mcp", "oauth"]
 ---
 
 ## Why a follow-up on authorization
