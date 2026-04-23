@@ -530,8 +530,8 @@ def architecture():
     )
     # Two small boxes inside the panel
     sp_y = panel_y + 58
-    kc_cx = panel_x + 220
-    opa_cx = panel_x + 720
+    kc_cx = panel_x + 120
+    opa_cx = panel_x + 520
     box(kc_cx, sp_y, 140, 40, "Keycloak", ACTOR_COLORS["keycloak"])
     out.append(
         f'<text x="{kc_cx + 80}" y="{sp_y + 5}" font-size="12" fill="#495057">'
