@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 730" width="1200" height="730">
+<rect x="0" y="0" width="1200" height="730" fill="#ffffff"/>
+<g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1e1e1e">
+<rect x="50.0" y="18" width="150" height="44" rx="8" ry="8" fill="#a5d8ff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="125.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">User</text>
+<rect x="240.0" y="18" width="150" height="44" rx="8" ry="8" fill="#74c0fc" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="315.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Browser</text>
+<rect x="430.0" y="18" width="150" height="44" rx="8" ry="8" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="505.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Keycloak</text>
+<rect x="620.0" y="18" width="150" height="44" rx="8" ry="8" fill="#b2f2bb" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="695.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Agent</text>
+<rect x="810.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="885.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="1000.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="1075.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Backend Service</text>
+<line x1="125.0" y1="62" x2="125.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="315.0" y1="62" x2="315.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="505.0" y1="62" x2="505.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="695.0" y1="62" x2="695.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="885.0" y1="62" x2="885.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="1075.0" y1="62" x2="1075.0" y2="650" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="50" y1="100.0" x2="1150" y2="100.0" stroke="#6741d9" stroke-width="1" stroke-dasharray="6 4" opacity="0.5"/>
+<rect x="70" y="88.0" width="269" height="24" rx="12" ry="12" fill="#ffffff" stroke="#6741d9" stroke-width="1.2"/>
+<text x="204.5" y="104.0" text-anchor="middle" font-size="12" font-weight="600" fill="#6741d9">Phase 1: User consent (out-of-band)</text>
+<g><line x1="129.0" y1="138.0" x2="309.0" y2="138.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="302.0,133.0 309.0,138.0 302.0,143.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="220.0" y="131.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Opens consent URL</text></g>
+<g><line x1="319.0" y1="174.0" x2="499.0" y2="174.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="492.0,169.0 499.0,174.0 492.0,179.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="167.0" text-anchor="middle" font-size="12" fill="#6741d9">Authorization request (PKCE)</text></g>
+<g><line x1="501.0" y1="210.0" x2="321.0" y2="210.0" stroke="#6741d9" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="328.0,205.0 321.0,210.0 328.0,215.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="203.0" text-anchor="middle" font-size="12" fill="#6741d9">Consent screen</text></g>
+<g><line x1="129.0" y1="246.0" x2="309.0" y2="246.0" stroke="#2b8a3e" stroke-width="1.6"/><polyline points="302.0,241.0 309.0,246.0 302.0,251.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="220.0" y="239.0" text-anchor="middle" font-size="12" fill="#2b8a3e">Grants consent  ✓</text></g>
+<g><line x1="319.0" y1="282.0" x2="499.0" y2="282.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="492.0,277.0 499.0,282.0 492.0,287.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="275.0" text-anchor="middle" font-size="12" fill="#6741d9">Auth code exchange</text></g>
+<g><line x1="509.0" y1="318.0" x2="689.0" y2="318.0" stroke="#2b8a3e" stroke-width="1.6"/><polyline points="682.0,313.0 689.0,318.0 682.0,323.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="600.0" y="311.0" text-anchor="middle" font-size="12" fill="#2b8a3e">Access token delivered to agent</text></g>
+<rect x="587.5" y="336" width="215" height="50" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="695.0" y="351" text-anchor="middle" font-size="12" fill="#1e1e1e">Agent receives token</text>
+<text x="695.0" y="367" text-anchor="middle" font-size="12" fill="#1e1e1e">Never sees user credentials</text>
+<line x1="50" y1="406.0" x2="1150" y2="406.0" stroke="#2b8a3e" stroke-width="1" stroke-dasharray="6 4" opacity="0.5"/>
+<rect x="70" y="394.0" width="332" height="24" rx="12" ry="12" fill="#ffffff" stroke="#2b8a3e" stroke-width="1.2"/>
+<text x="236.0" y="410.0" text-anchor="middle" font-size="12" font-weight="600" fill="#2b8a3e">Phase 2: Agent invocation with consent token</text>
+<g><line x1="129.0" y1="444.0" x2="689.0" y2="444.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="682.0,439.0 689.0,444.0 682.0,449.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="437.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"What expenses do I have?"</text></g>
+<g><line x1="699.0" y1="480.0" x2="879.0" y2="480.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="872.0,475.0 879.0,480.0 872.0,485.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="790.0" y="473.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Tool call + consent JWT</text></g>
+<g><line x1="889.0" y1="516.0" x2="1069.0" y2="516.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="1062.0,511.0 1069.0,516.0 1062.0,521.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="980.0" y="509.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Authorization: Bearer &lt;jwt&gt;</text></g>
+<rect x="974.0" y="534" width="201" height="34" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1074.5" y="549" text-anchor="middle" font-size="12" fill="#1e1e1e">Validates JWT via JWKS  ✓</text>
+<g><line x1="1071.0" y1="586.0" x2="891.0" y2="586.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="898.0,581.0 891.0,586.0 898.0,591.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="980.0" y="579.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Alice's expenses</text></g>
+<g><line x1="691.0" y1="622.0" x2="131.0" y2="622.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="138.0,617.0 131.0,622.0 138.0,627.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="615.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Response</text></g>
+<rect x="50" y="666" width="1100" height="46" rx="6" ry="6" fill="#ebfbee" stroke="#40c057" stroke-width="1.5"/>
+<text x="600.0" y="694.0" text-anchor="middle" font-size="14" font-weight="600" fill="#2b8a3e">Authz: USER-CONSENTED. Agent removed from credential chain, user controls what the agent can access.</text>
+</g>
+</svg>

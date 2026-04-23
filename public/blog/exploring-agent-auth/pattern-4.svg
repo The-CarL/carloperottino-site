@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 716" width="1200" height="716">
+<rect x="0" y="0" width="1200" height="716" fill="#ffffff"/>
+<g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1e1e1e">
+<rect x="50.0" y="18" width="150" height="44" rx="8" ry="8" fill="#a5d8ff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="125.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">User</text>
+<rect x="287.5" y="18" width="150" height="44" rx="8" ry="8" fill="#b2f2bb" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="362.5" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Agent</text>
+<rect x="525.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="600.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="762.5" y="18" width="150" height="44" rx="8" ry="8" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="837.5" y="45.0" text-anchor="middle" font-size="14" font-weight="600">OPA</text>
+<rect x="1000.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="1075.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Backend Service</text>
+<line x1="125.0" y1="62" x2="125.0" y2="636" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="362.5" y1="62" x2="362.5" y2="636" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="600.0" y1="62" x2="600.0" y2="636" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="837.5" y1="62" x2="837.5" y2="636" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="1075.0" y1="62" x2="1075.0" y2="636" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="50" y1="100.0" x2="1150" y2="100.0" stroke="#c92a2a" stroke-width="1" stroke-dasharray="6 4" opacity="0.5"/>
+<rect x="70" y="88.0" width="318" height="24" rx="12" ry="12" fill="#ffffff" stroke="#c92a2a" stroke-width="1.2"/>
+<text x="229.0" y="104.0" text-anchor="middle" font-size="12" font-weight="600" fill="#c92a2a">Flow A: alice (employee) requests approval</text>
+<g><line x1="129.0" y1="138.0" x2="356.5" y2="138.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="349.5,133.0 356.5,138.0 349.5,143.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="243.8" y="131.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"Approve alice's expense"</text></g>
+<g><line x1="366.5" y1="174.0" x2="594.0" y2="174.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="587.0,169.0 594.0,174.0 587.0,179.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="481.2" y="167.0" text-anchor="middle" font-size="12" fill="#1e1e1e">approve_expense + JWT</text></g>
+<g><line x1="604.0" y1="210.0" x2="831.5" y2="210.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="824.5,205.0 831.5,210.0 824.5,215.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="203.0" text-anchor="middle" font-size="12" fill="#6741d9">role=employee, approve_expense?</text></g>
+<g><line x1="833.5" y1="246.0" x2="606.0" y2="246.0" stroke="#c92a2a" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="613.0,241.0 606.0,246.0 613.0,251.0" fill="none" stroke="#c92a2a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="239.0" text-anchor="middle" font-size="12" fill="#c92a2a">DENY</text></g>
+<g><line x1="596.0" y1="282.0" x2="368.5" y2="282.0" stroke="#c92a2a" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="375.5,277.0 368.5,282.0 375.5,287.0" fill="none" stroke="#c92a2a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="481.2" y="275.0" text-anchor="middle" font-size="12" fill="#c92a2a">403 Forbidden</text></g>
+<rect x="985.0" y="300" width="180" height="34" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1075.0" y="315" text-anchor="middle" font-size="12" fill="#1e1e1e">Service never called</text>
+<line x1="50" y1="354.0" x2="1150" y2="354.0" stroke="#2b8a3e" stroke-width="1" stroke-dasharray="6 4" opacity="0.5"/>
+<rect x="70" y="342.0" width="297" height="24" rx="12" ry="12" fill="#ffffff" stroke="#2b8a3e" stroke-width="1.2"/>
+<text x="218.5" y="358.0" text-anchor="middle" font-size="12" font-weight="600" fill="#2b8a3e">Flow B: bob (manager) requests approval</text>
+<g><line x1="129.0" y1="392.0" x2="356.5" y2="392.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="349.5,387.0 356.5,392.0 349.5,397.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="243.8" y="385.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"Approve alice's expense"</text></g>
+<g><line x1="366.5" y1="428.0" x2="594.0" y2="428.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="587.0,423.0 594.0,428.0 587.0,433.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="481.2" y="421.0" text-anchor="middle" font-size="12" fill="#1e1e1e">approve_expense + JWT</text></g>
+<g><line x1="604.0" y1="464.0" x2="831.5" y2="464.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="824.5,459.0 831.5,464.0 824.5,469.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="457.0" text-anchor="middle" font-size="12" fill="#6741d9">role=manager, approve_expense?</text></g>
+<g><line x1="833.5" y1="500.0" x2="606.0" y2="500.0" stroke="#2b8a3e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="613.0,495.0 606.0,500.0 613.0,505.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="493.0" text-anchor="middle" font-size="12" fill="#2b8a3e">ALLOW  ✓</text></g>
+<g><line x1="604.0" y1="536.0" x2="1069.0" y2="536.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="1062.0,531.0 1069.0,536.0 1062.0,541.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="837.5" y="529.0" text-anchor="middle" font-size="12" fill="#1e1e1e">X-API-Key (no user identity)</text></g>
+<g><line x1="1071.0" y1="572.0" x2="606.0" y2="572.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="613.0,567.0 606.0,572.0 613.0,577.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="837.5" y="565.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Expense approved</text></g>
+<g><line x1="358.5" y1="608.0" x2="131.0" y2="608.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="138.0,603.0 131.0,608.0 138.0,613.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="243.8" y="601.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"Expense approved"</text></g>
+<rect x="50" y="652" width="1100" height="46" rx="6" ry="6" fill="#fff4e6" stroke="#fd7e14" stroke-width="1.5"/>
+<text x="600.0" y="680.0" text-anchor="middle" font-size="14" font-weight="600" fill="#d9480f">Authz: OPA AT AGENT LAYER. Rules externalized, service still blind. If MCP is compromised, OPA is skippable.</text>
+</g>
+</svg>

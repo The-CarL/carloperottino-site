@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 578" width="1200" height="578">
+<rect x="0" y="0" width="1200" height="578" fill="#ffffff"/>
+<g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1e1e1e">
+<rect x="50.0" y="18" width="150" height="44" rx="8" ry="8" fill="#a5d8ff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="125.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">User</text>
+<rect x="287.5" y="18" width="150" height="44" rx="8" ry="8" fill="#b2f2bb" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="362.5" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Agent</text>
+<rect x="525.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="600.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="762.5" y="18" width="150" height="44" rx="8" ry="8" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="837.5" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Keycloak</text>
+<rect x="1000.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="1075.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Backend Service</text>
+<line x1="125.0" y1="62" x2="125.0" y2="498" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="362.5" y1="62" x2="362.5" y2="498" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="600.0" y1="62" x2="600.0" y2="498" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="837.5" y1="62" x2="837.5" y2="498" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="1075.0" y1="62" x2="1075.0" y2="498" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<g><line x1="129.0" y1="98.0" x2="356.5" y2="98.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="349.5,93.0 356.5,98.0 349.5,103.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="243.8" y="91.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"What expenses do I have?"</text></g>
+<g><line x1="366.5" y1="134.0" x2="594.0" y2="134.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="587.0,129.0 594.0,134.0 587.0,139.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="481.2" y="127.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Tool call + user JWT</text></g>
+<rect x="496.0" y="152" width="208" height="34" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="600.0" y="167" text-anchor="middle" font-size="12" fill="#1e1e1e">Exchanges for scoped token</text>
+<g><line x1="604.0" y1="204.0" x2="831.5" y2="204.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="824.5,199.0 831.5,204.0 824.5,209.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="197.0" text-anchor="middle" font-size="12" fill="#6741d9">Token exchange (RFC 8693), aud=expense-svc</text></g>
+<g><line x1="833.5" y1="240.0" x2="606.0" y2="240.0" stroke="#6741d9" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="613.0,235.0 606.0,240.0 613.0,245.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="718.8" y="233.0" text-anchor="middle" font-size="12" fill="#6741d9">Scoped JWT (aud=[expense-svc], azp=agent)</text></g>
+<g><line x1="604.0" y1="276.0" x2="1069.0" y2="276.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="1062.0,271.0 1069.0,276.0 1062.0,281.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="837.5" y="269.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Authorization: Bearer &lt;scoped-jwt&gt;</text></g>
+<g><line x1="1071.0" y1="312.0" x2="843.5" y2="312.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="850.5,307.0 843.5,312.0 850.5,317.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="956.2" y="305.0" text-anchor="middle" font-size="12" fill="#6741d9">Validate JWT (JWKS)</text></g>
+<g><line x1="841.5" y1="348.0" x2="1069.0" y2="348.0" stroke="#2b8a3e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="1062.0,343.0 1069.0,348.0 1062.0,353.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="956.2" y="341.0" text-anchor="middle" font-size="12" fill="#2b8a3e">Valid  ✓</text></g>
+<rect x="939.0" y="366" width="236" height="50" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1057.0" y="381" text-anchor="middle" font-size="12" fill="#1e1e1e">aud scoped to THIS service  ✓</text>
+<text x="1057.0" y="397" text-anchor="middle" font-size="12" fill="#1e1e1e">azp=agent-client (audit trail)</text>
+<g><line x1="1071.0" y1="434.0" x2="606.0" y2="434.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="613.0,429.0 606.0,434.0 613.0,439.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="837.5" y="427.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Alice's expenses</text></g>
+<g><line x1="358.5" y1="470.0" x2="131.0" y2="470.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="138.0,465.0 131.0,470.0 138.0,475.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="243.8" y="463.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Response</text></g>
+<rect x="50" y="514" width="1100" height="46" rx="6" ry="6" fill="#ebfbee" stroke="#40c057" stroke-width="1.5"/>
+<text x="600.0" y="542.0" text-anchor="middle" font-size="14" font-weight="600" fill="#2b8a3e">Authz: SERVICE-VERIFIED + SCOPED TOKEN. Blast radius limited to one service, azp provides audit trail.</text>
+</g>
+</svg>

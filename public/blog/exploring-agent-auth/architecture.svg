@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380">
+<rect x="0" y="0" width="1200" height="380" fill="#ffffff"/>
+<g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1e1e1e">
+<rect x="25.0" y="87.0" width="150" height="56" rx="10" ry="10" fill="#a5d8ff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="100.0" y="120.0" text-anchor="middle" font-size="14" font-weight="600">User</text>
+<rect x="225.0" y="87.0" width="150" height="56" rx="10" ry="10" fill="#b2f2bb" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="300.0" y="120.0" text-anchor="middle" font-size="14" font-weight="600">Agent</text>
+<rect x="485.0" y="32.0" width="150" height="56" rx="10" ry="10" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="560.0" y="57.0" text-anchor="middle" font-size="14" font-weight="600">Expense</text>
+<text x="560.0" y="73.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="825.0" y="32.0" width="150" height="56" rx="10" ry="10" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="900.0" y="57.0" text-anchor="middle" font-size="14" font-weight="600">Expense</text>
+<text x="900.0" y="73.0" text-anchor="middle" font-size="14" font-weight="600">FastAPI Service</text>
+<rect x="485.0" y="142.0" width="150" height="56" rx="10" ry="10" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="560.0" y="167.0" text-anchor="middle" font-size="14" font-weight="600">Document</text>
+<text x="560.0" y="183.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="825.0" y="142.0" width="150" height="56" rx="10" ry="10" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="900.0" y="167.0" text-anchor="middle" font-size="14" font-weight="600">Document</text>
+<text x="900.0" y="183.0" text-anchor="middle" font-size="14" font-weight="600">FastAPI Service</text>
+<line x1="179.0" y1="115.0" x2="217.0" y2="115.0" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round"/>
+<polyline points="208.0,119.5 217.0,115.0 208.0,110.5" fill="none" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="378.7" y1="107.4" x2="477.7" y2="63.3" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round"/>
+<polyline points="471.3,71.0 477.7,63.3 467.6,62.8" fill="none" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="378.7" y1="122.6" x2="477.7" y2="166.7" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round"/>
+<polyline points="467.6,167.2 477.7,166.7 471.3,159.0" fill="none" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="639.0" y1="60.0" x2="817.0" y2="60.0" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round"/>
+<polyline points="808.0,64.5 817.0,60.0 808.0,55.5" fill="none" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="639.0" y1="170.0" x2="817.0" y2="170.0" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round"/>
+<polyline points="808.0,174.5 817.0,170.0 808.0,165.5" fill="none" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="100" y="260" width="1000" height="90" rx="8" ry="8" fill="#f8f9fa" stroke="#adb5bd" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="116" y="282" font-size="12" font-weight="600" fill="#495057">SHARED INFRASTRUCTURE</text>
+<rect x="150.0" y="298.0" width="140" height="40" rx="10" ry="10" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="220.0" y="323.0" text-anchor="middle" font-size="14" font-weight="600">Keycloak</text>
+<text x="300" y="323" font-size="12" fill="#495057">identity, JWKS, token exchange</text>
+<rect x="550.0" y="298.0" width="140" height="40" rx="10" ry="10" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="620.0" y="323.0" text-anchor="middle" font-size="14" font-weight="600">OPA</text>
+<text x="700" y="323" font-size="12" fill="#495057">policy decisions (role + relationship)</text>
+</g></svg>

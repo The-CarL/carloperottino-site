@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 562" width="1200" height="562">
+<rect x="0" y="0" width="1200" height="562" fill="#ffffff"/>
+<g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1e1e1e">
+<rect x="50.0" y="18" width="150" height="44" rx="8" ry="8" fill="#a5d8ff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="125.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">User (bob)</text>
+<rect x="240.0" y="18" width="150" height="44" rx="8" ry="8" fill="#b2f2bb" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="315.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Agent</text>
+<rect x="430.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffec99" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="505.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">MCP Server</text>
+<rect x="620.0" y="18" width="150" height="44" rx="8" ry="8" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="695.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Keycloak</text>
+<rect x="810.0" y="18" width="150" height="44" rx="8" ry="8" fill="#ffc9c9" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="885.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">Backend Service</text>
+<rect x="1000.0" y="18" width="150" height="44" rx="8" ry="8" fill="#d0bfff" stroke="#1e1e1e" stroke-width="1.5"/>
+<text x="1075.0" y="45.0" text-anchor="middle" font-size="14" font-weight="600">OPA</text>
+<line x1="125.0" y1="62" x2="125.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="315.0" y1="62" x2="315.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="505.0" y1="62" x2="505.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="695.0" y1="62" x2="695.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="885.0" y1="62" x2="885.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="1075.0" y1="62" x2="1075.0" y2="482" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+<g><line x1="129.0" y1="98.0" x2="309.0" y2="98.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="302.0,93.0 309.0,98.0 302.0,103.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="220.0" y="91.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"Approve alice's expense"</text></g>
+<g><line x1="319.0" y1="134.0" x2="499.0" y2="134.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="492.0,129.0 499.0,134.0 492.0,139.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="410.0" y="127.0" text-anchor="middle" font-size="12" fill="#1e1e1e">approve_expense + bob's JWT</text></g>
+<g><line x1="509.0" y1="170.0" x2="879.0" y2="170.0" stroke="#1e1e1e" stroke-width="1.6"/><polyline points="872.0,165.0 879.0,170.0 872.0,175.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="695.0" y="163.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Authorization: Bearer &lt;jwt&gt;</text></g>
+<g><line x1="881.0" y1="206.0" x2="701.0" y2="206.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="708.0,201.0 701.0,206.0 708.0,211.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="790.0" y="199.0" text-anchor="middle" font-size="12" fill="#6741d9">Validate JWT (JWKS)</text></g>
+<g><line x1="699.0" y1="242.0" x2="879.0" y2="242.0" stroke="#2b8a3e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="872.0,237.0 879.0,242.0 872.0,247.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="790.0" y="235.0" text-anchor="middle" font-size="12" fill="#2b8a3e">Valid  ✓</text></g>
+<rect x="767.0" y="260" width="236" height="34" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="885.0" y="275" text-anchor="middle" font-size="12" fill="#1e1e1e">caller=bob, target_owner=alice</text>
+<g><line x1="889.0" y1="312.0" x2="1069.0" y2="312.0" stroke="#6741d9" stroke-width="1.6"/><polyline points="1062.0,307.0 1069.0,312.0 1062.0,317.0" fill="none" stroke="#6741d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="980.0" y="305.0" text-anchor="middle" font-size="12" fill="#6741d9">Can bob approve alice's expense?</text></g>
+<rect x="985.0" y="330" width="180" height="34" rx="4" ry="4" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1075.0" y="345" text-anchor="middle" font-size="12" fill="#1e1e1e">bob manages alice  ✓</text>
+<g><line x1="1071.0" y1="382.0" x2="891.0" y2="382.0" stroke="#2b8a3e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="898.0,377.0 891.0,382.0 898.0,387.0" fill="none" stroke="#2b8a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="980.0" y="375.0" text-anchor="middle" font-size="12" fill="#2b8a3e">ALLOW  ✓</text></g>
+<g><line x1="881.0" y1="418.0" x2="511.0" y2="418.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="518.0,413.0 511.0,418.0 518.0,423.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="695.0" y="411.0" text-anchor="middle" font-size="12" fill="#1e1e1e">Expense approved</text></g>
+<g><line x1="311.0" y1="454.0" x2="131.0" y2="454.0" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/><polyline points="138.0,449.0 131.0,454.0 138.0,459.0" fill="none" stroke="#1e1e1e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="220.0" y="447.0" text-anchor="middle" font-size="12" fill="#1e1e1e">"Expense approved"</text></g>
+<rect x="50" y="498" width="1100" height="46" rx="6" ry="6" fill="#ebfbee" stroke="#40c057" stroke-width="1.5"/>
+<text x="600.0" y="526.0" text-anchor="middle" font-size="14" font-weight="600" fill="#2b8a3e">Authz: SERVICE-VERIFIED JWT + OPA ReBAC. Per-resource decisions based on relationship graph.</text>
+</g>
+</svg>
