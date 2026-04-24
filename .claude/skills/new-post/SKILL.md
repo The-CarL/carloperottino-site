@@ -60,7 +60,9 @@ Then cd into the worktree directory.
 
 Read an existing post from `src/content/blog/` to confirm the frontmatter pattern.
 
-Create the file `src/content/blog/${SLUG}.md` with this content (adjust if the existing post pattern differs):
+Set `DATE` to today's date in `YYYY-MM-DD` format and `DATE_PREFIX` to `YYYY_MM_DD` (underscores).
+
+Create the file `src/content/blog/${DATE_PREFIX}-${SLUG}.md` with this content (adjust if the existing post pattern differs):
 
 ```markdown
 ---
@@ -89,7 +91,7 @@ This directory will hold diagrams, screenshots, and other artifacts for the post
 ## 7. Commit the scaffold
 
 ```bash
-git add "src/content/blog/${SLUG}.md" "public/blog/${SLUG}/"
+git add "src/content/blog/${DATE_PREFIX}-${SLUG}.md" "public/blog/${SLUG}/"
 git commit -m "docs: scaffold post \"${SLUG}\""
 ```
 
@@ -100,7 +102,7 @@ Print a summary:
 ```
 Branch:    post/<slug>
 Worktree:  <absolute path to worktree>
-Post file: src/content/blog/<slug>.md
+Post file: src/content/blog/<date_prefix>-<slug>.md
 Assets:    public/blog/<slug>/
 ```
 
