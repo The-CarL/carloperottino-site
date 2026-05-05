@@ -1,6 +1,6 @@
 ---
 title: "A few weeks in at OpenAI"
-description: "Started at OpenAI on April 14. AI has always been my focus, OpenAI is at the center of it, and the pace is insane. A short note from a few weeks in."
+description: "Started at OpenAI on April 14. AI has always been my focus, OpenAI is at the center, the pace is insane. The bar is high, the work matters, the mission lands."
 date: 2026-04-24
 tags: ["career", "openai", "ai"]
 draft: true
