@@ -3,7 +3,7 @@ title: "A few weeks in at OpenAI"
 description: "Started at OpenAI on April 14. AI has always been my focus, OpenAI is at the center, the pace is insane. The bar is high, the work matters, the mission lands."
 date: 2026-04-24
 tags: ["career", "openai", "ai"]
-draft: true
+draft: false
 ---
 
 I started at OpenAI on April 14. It's been a few weeks. The thing that hits first is the energy of the group, the intensity, the pace.
