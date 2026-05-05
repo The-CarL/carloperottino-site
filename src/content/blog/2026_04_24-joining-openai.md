@@ -8,7 +8,7 @@ draft: true
 
 I started at OpenAI on April 14. It's been a few weeks. The thing that hits first is the energy of the group, the intensity, the pace.
 
-My first real exposure to AI was in college, twelve or thirteen years ago. The first serious use case I ever saw, though, was at BMW. We were pulling thousands of car feedback reviews off Twitter and running text classification on them. Basic NLP by today's standards, but it blew my mind. From there I got to run my own image classification training, this time for detecting manufacturing defects after the cars came off the line. That blew my mind too.
+My first real exposure to AI was in college, twelve or thirteen years ago. The first serious use case I ever saw, though, was at BMW. We were pulling thousands of car feedback reviews off Twitter and running text classification on them. Basic NLP by today's standards, but at the time it blew my mind. From there I got to run my own image classification training, for detecting manufacturing defects after the cars came off the line.
 
 This was before most of the modern neural net frameworks we know today existed. I felt like I was fumbling in the dark. What I didn't realize at the time was that I was learning along with the rest of the community. Maybe I wasn't as close to the bleeding edge as others, but I was still learning.
 
@@ -20,8 +20,8 @@ OpenAI is the next step, and it's the biggest one. Now I get to be with an organ
 
 People who know me will tell you I sometimes scare them with how optimistic I am about this stuff. I look at every workflow, every use case, every dimension of business and even of life, and I see places where AI is going to make things better, cheaper, faster, and free people up to do more meaningful, higher-impact work.
 
-Honestly, I still can't believe I work for this organization. I can't believe I'm in a role that's going to have this level of impact, at a time I think is going to be hugely consequential for AI, and more importantly for our economy and a ton of different industries. The fact that I get to take part in it is huge. Super proud. Super excited.
+It still hasn't fully landed that I work here. I'm in a role with a level of impact I didn't expect this early, at a moment I think matters for AI, and especially for the economy and the industries it touches. I'm grateful to be part of it.
 
-The bar is really high. The work is really important. It really matters, and that means a lot to me. My personal motto has always been: solve really hard problems with really smart people. That's not a slogan. It's why I'm here. This is exactly what I'm here for.
+The bar is high, the work is important, and it matters. My motto has always been to solve really hard problems with really smart people. The thread through every role I've had has been the same: deep technical work, real hands-on time with the technology, high customer impact, and a lot of direct customer engagement. This is the place where all of those converge.
 
-The pace is insane. I'm here for it.
+The pace is insane. The ambition is bigger. OpenAI is serious about making sure the world benefits from AGI, and that mission lands with me. I'm sincerely excited for what comes next.
