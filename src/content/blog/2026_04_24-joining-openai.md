@@ -8,13 +8,17 @@ draft: true
 
 I started at OpenAI on April 14. It's been a few weeks. The thing that hits first is the energy of the group, the intensity, the pace.
 
-My first real exposure to AI was in college, twelve or thirteen years ago. Then at BMW, as a co-op intern, I was handed a Hadoop cluster and asked to run experiments on it. This was before most of the modern neural net frameworks we know today existed. I felt like I was fumbling in the dark. What I didn't realize at the time was that I was learning along with the rest of the community. Maybe I wasn't as close to the bleeding edge as others, but I was still learning.
+My first real exposure to AI was in college, twelve or thirteen years ago. The first serious use case I ever saw, though, was at BMW. We were pulling thousands of car feedback reviews off Twitter and running text classification on them. Basic NLP by today's standards, but it blew my mind. From there I got to run my own image classification training, this time for detecting manufacturing defects after the cars came off the line. That blew my mind too.
+
+This was before most of the modern neural net frameworks we know today existed. I felt like I was fumbling in the dark. What I didn't realize at the time was that I was learning along with the rest of the community. Maybe I wasn't as close to the bleeding edge as others, but I was still learning.
 
 A couple of years later at GE Digital, I was 23 and acting as the architect on a project with a group of data scientists, orchestrating data collection and analysis across more than a hundred thousand compute, storage, and network assets, looking at resiliency in a whole new light. I still remember running my first data collection script and the analysis it kicked off. We found a needle in the haystack: a set of future failures we would not have caught any other way. That was the first time the impact really hit me.
 
 Years later at Amazon, I got to do that for customers operating at the same scale.
 
 OpenAI is the next step, and it's the biggest one. Now I get to be with an organization shipping AI to customers with high velocity and a high sense of urgency. This is, literally, my dream job.
+
+People who know me will tell you I sometimes scare them with how optimistic I am about this stuff. I look at every workflow, every use case, every dimension of business and even of life, and I see places where AI is going to make things better, cheaper, faster, and free people up to do more meaningful, higher-impact work.
 
 Honestly, I still can't believe I work for this organization. I can't believe I'm in a role that's going to have this level of impact, at a time I think is going to be hugely consequential for AI, and more importantly for our economy and a ton of different industries. The fact that I get to take part in it is huge. Super proud. Super excited.
 
