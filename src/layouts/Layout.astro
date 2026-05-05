@@ -1,7 +1,5 @@
 ---
 import '../styles/global.css';
-import Analytics from '@vercel/analytics/astro';
-import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   title?: string;
@@ -42,8 +40,42 @@ const bodyClass = fullPage
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <Analytics />
-    <SpeedInsights />
+    <script>
+      import { inject } from '@vercel/analytics';
+      import { injectSpeedInsights } from '@vercel/speed-insights';
+
+      // Self-exclusion: visit `?me=1` to opt out of analytics on this device,
+      // `?me=0` to opt back in. Persisted via localStorage.
+      function isOwner(): boolean {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const me = params.get('me');
+          if (me === '1' || me === '0') {
+            if (me === '1') localStorage.setItem('is_owner', '1');
+            else localStorage.removeItem('is_owner');
+            params.delete('me');
+            const search = params.toString();
+            history.replaceState(
+              null,
+              '',
+              window.location.pathname +
+                (search ? '?' + search : '') +
+                window.location.hash
+            );
+          }
+          return localStorage.getItem('is_owner') === '1';
+        } catch {
+          return false;
+        }
+      }
+
+      if (isOwner()) {
+        console.info('[analytics] excluded as owner');
+      } else {
+        inject();
+        injectSpeedInsights();
+      }
+    </script>
   </head>
   <body class={bodyClass}>
     <slot />
