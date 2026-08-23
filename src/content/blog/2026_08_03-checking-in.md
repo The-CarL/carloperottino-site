@@ -3,7 +3,7 @@ title: "Checking In"
 description: "Four months into OpenAI, a brief reflection on the work, the pace, and why I have been quiet here."
 date: 2026-08-23
 tags: []
-draft: true
+draft: false
 ---
 
 I've been with OpenAI for roughly four months. I probably should have written this a long time ago.
