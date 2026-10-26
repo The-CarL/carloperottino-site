@@ -1,5 +1,9 @@
 # Blog - Project Context
 
+## Visual Style and Image Generation
+
+Read [STYLE_GUIDE.md](../STYLE_GUIDE.md) in the repository root before designing UI, creating or selecting editorial artwork, or writing image-generation prompts. It defines the shared visual language with Forge, this site's gold palette, illustration treatment, prompt template, asset conventions, and review checks. Keep the existing diagram and artifact workflows below.
+
 ## Tech Stack
 
 - **Framework:** Astro 5 (static site, `type: "module"`)
