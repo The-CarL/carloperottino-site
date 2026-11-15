@@ -64,6 +64,22 @@ And that's the harder case. I also get questions where the answer is already doc
 
 I want to stop doing that. I want to help build the system that lets me stop.
 
+## The capabilities need a better home
+
+I wrote about this in [Checking In](/blog/checking-in#the-personal-workflow-gap). The gap I saw was the context layer and the work required to assemble useful automations around it. Connecting my tools wasn't enough. I still had to make the system understand how those tools, the information inside them, and my workflows fit together.
+
+Information exchange is a very concrete example of that gap. I can ask an agent to search for an answer. But if I'm still copying a question out of an email, opening another tool, asking it to search, and carrying the result back, I'm still doing a lot of the exchange myself.
+
+I think always-on agents, or what I call durable agents, are going to be a huge part of closing this. For this use case, I mean something that can stay involved in a workflow over time: notice an incoming question, retain the context needed to handle it, and continue the work when new information arrives. I want it available where the question comes in, rather than waiting for me to move the question somewhere else.
+
+The surfaces aren't the whole adoption problem. But packaging this well matters. Someone shouldn't need to build their own collection of integrations and automations just to stop forwarding questions and answers. I expect this to get much better.
+
+### What I'm trying today
+
+In my own work at OpenAI, I've started addressing one piece of this: using questions that come up on customer calls to trigger a Slack search automatically. That's the first part of the exchange I want to remove, the detour to go find the answer.
+
+The broader workflow I want is the one I've described above: a question arrives, the agent finds the relevant context, works out what can be shared, and responds or brings me a specific decision. The call-time lookup is something I've built a version of. The broader workflow is what I'm working toward.
+
 ## There's still a shit ton of opportunity
 
 I've worked in big tech, or in some tech-adjacent role, for most of my career. That shapes what I see every day. I'm surrounded by people talking about agents, building with them, and trying to work out what comes next.
