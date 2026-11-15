@@ -102,17 +102,21 @@ My current version is a dot using my context layer in Spaces, following the same
 
 ![Current workflow: incoming questions reach a dot, which uses Spaces context and risk guidance to respond or bring a decision to me.](/blog/information-exchange-worker/current-dot-workflow-v1.svg)
 
-This goes back to the personal workflow gap I described in [Checking In](/blog/checking-in#the-personal-workflow-gap). Pulse, scheduled tasks, my own context layer, and Codex managing other Codex sessions were how I assembled a solution around that gap. I think dots are going to be a huge part of making this easier.
-
-I see durable personal agents and durable team agents as a big next step. A personal agent can work with my context and recurring exchanges. A team agent can work with shared context and the questions that keep coming back to the team. In both cases, I want the agent to stay involved as the work continues.
-
-Having those agents in the surfaces we already use will be critical. If the question comes in through Slack or Teams, that's where I want the agent available. Moving every question into a separate tool still leaves a person doing part of the exchange. I think this is clearly where the industry is heading.
-
 ### Future: a Carlo knowledge graph
 
 The more complete Carlo knowledge graph is further out, and something I'm still building toward. It would connect shared entities across my interactions and point back to the original sources, rather than storing every piece of information in the graph.
 
 ![Future workflow: an agent consults a personal knowledge graph that connects shared entities and references original emails, chats, calls, and files.](/blog/information-exchange-worker/future-knowledge-graph-v1.svg)
+
+### Less scaffolding, closer to the work
+
+This is the gap I was getting at in [Checking In](/blog/checking-in#the-personal-workflow-gap). Previously, I had to scaffold a lot of this myself: stitch together scheduled tasks, retrieve context from different places, write the skills, and get Codex coordinating other Codex sessions. The capabilities were there, but I had to assemble the workflow around them. Some of that work will still exist.
+
+I see three things making this much more approachable. Durable personal and team agents that can stay involved as the work continues. A context layer that an ordinary user can actually use without building their own retrieval system. And those agents showing up in the surfaces where the work happens: Slack, Teams, and calls.
+
+Those pieces belong together. An agent that keeps running still needs useful context. A good context layer still needs something to act on it. And if I have to carry every question out of a conversation and into a separate tool, I'm still part of the relay.
+
+Calls are where I've been trying to put that together myself.
 
 ## Answer it while we're still on the call
 
