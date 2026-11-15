@@ -16,7 +16,7 @@ Then I look at my own inbox.
 
 I'm calling it information exchange work.
 
-For probably two years, I've been watching this get harder and harder to ignore. A lot of my time at Amazon, and now at OpenAI, has involved taking information from one group of people and getting it to another. Product feedback. Product clarifications. Release timelines. Roadmap questions.
+For probably two years, I've been watching this get harder and harder to ignore. A lot of my time at Amazon, and now at OpenAI, has involved taking information from one group of people and getting it to another. Product clarifications. Release timelines. Roadmap questions.
 
 A customer asks me something. I go find the answer. Sometimes that's in documentation. Sometimes it's spread across internal conversations. Sometimes I ask someone on the product team. Then I put the answer together, work out what I can share, and send it back.
 
@@ -38,9 +38,21 @@ Even before AI, I thought it was a poor use of my time. It mattered because some
 
 There wasn't a mechanism I trusted to take a question, scan multiple sources, and apply judgment to a response. Now I see a path to building exactly that.
 
-## I want an agent answering those emails
+## The answer already exists
+
+These questions come through email, Slack, Teams, and on customer calls. When is this being released? What is this alpha? How specifically does this feature work under the hood?
+
+There's a concrete answer. I might not have it, and it might not be documented publicly, but someone has it. My job in that moment is to go get it from them and bring it back. That whole exchange feels like a colossal waste of time.
+
+The customer needs the answer. I want them to get it faster. Having me search for the person or conversation that holds it is the part I want to remove.
+
+## I want this across every surface
 
 Here's a very concrete thing I want: a customer emails me a roadmap question, and an agent finds the relevant internal context and responds with what that customer is allowed to know.
+
+On a call, I want the customer's question to trigger that lookup while we're still talking. I've already built a version of this: when those kinds of questions come up, I can automatically search Slack. I want the answer there in the conversation, without having to go away, find someone, and come back later.
+
+The surface changes. The exchange is the same.
 
 The obvious risk is leaking sensitive information. Access to an internal Slack conversation doesn't mean permission to repeat it to a customer. Knowing a tentative date doesn't mean being authorized to make a commitment.
 
@@ -50,35 +62,19 @@ And that's the harder case. I also get questions where the answer is already doc
 
 I want to stop doing that. I want to help build the system that lets me stop.
 
-## Feedback has the same problem
+## The part I might actually miss
 
-Feature requests are another example. A customer tells me what they want. I ask follow-up questions, try to understand the use case, refine the request, and pass it along.
+Architecture feels different to me. I enjoy taking a customer's problem, decomposing it into something specific, and asking the hard questions. There's something to work out together. We aren't just retrieving an answer someone already has.
 
-I already find AI very good at that process: iterating on feedback, asking follow-up questions, and helping someone work out what they actually want. I don't see a good reason that collecting and clarifying every request needs to pass through me.
+That's the part I might mourn a bit. I see humans doing it for a little longer. I don't assume that lasts forever. I can picture a solution architecture agent on AWS that reviews a design and works through it with you. I expect agents to take on more of that work too.
 
-I might have account context. I might know the customer's history, what they've tried, or why this request matters to them. That's useful. But I don't think it's reasonable to assume that context will always belong exclusively to a person. An agent can be given account context too.
-
-The question I keep asking myself is: what am I actually adding in this particular exchange?
-
-## I've been asking this about architects too
-
-At AWS, I used to joke with peers that we should build a solution architecture agent.
-
-A solutions architect helps qualify a customer use case, understand the requirements, and work toward a design that can eventually be taken into production. In my experience, AI is already a better architect than many of the architects I've worked with. It can ask follow-up questions, explore designs, and reason through tradeoffs at a level I find extremely useful.
-
-So why wouldn't I want a solution architecture agent? I do. I want it to exist.
-
-I feel similarly about a significant part of my work as an Applied AI Architect at OpenAI. I'd estimate information exchange makes up 70 percent of my job. That's enough that I can't treat this as a marginal productivity improvement.
-
-My blunt view is that a big reason these customer-facing roles persist is that they're sales-centric. My experience is that customers still want to buy from and engage with other people. I think that preference explains a lot about why the human is there, even as the technical exchange becomes something an agent can increasingly handle.
-
-I want to be honest with myself about which part of the job depends on that relationship, and which part I'm still doing because the customer happened to send the email to me.
+But my immediate frustration is the volume of exchanges where the answer already exists and I'm the person ferrying it around. I'd estimate information exchange makes up 70 percent of my job. That's enough that I can't treat this as a marginal productivity improvement.
 
 ## What is the remaining unit of work?
 
 The HOA example is the easiest version to spot. Information comes in, information goes out, and the person in the middle hasn't changed the decision. But I want a useful way to examine the harder cases too, including my own.
 
-Here's the test I'm starting with. Take one exchange from your day and ask what happened between receiving it and sending it on.
+Here's the test I'm starting with. Take one exchange from your day. Did the answer already exist before the question reached you? Where did you go to get it? What happened between receiving it and sending it on?
 
 | What did I add? | What I'd ask next |
 | --- | --- |
@@ -89,7 +85,7 @@ Here's the test I'm starting with. Take one exchange from your day and ask what 
 | I made a commitment or exercised authority. | Who is allowed to make that commitment, and who owns the outcome? |
 | I helped someone trust the answer or agree to act. | What did my relationship with that person change? |
 
-Calling something judgment shouldn't end the conversation. If I filtered a feature request because I knew the customer had already tried another approach, that's context. If I chose between two designs because one better fits a constraint, I should be able to say what that constraint was. My next question is why an agent couldn't have that information too.
+Calling something judgment shouldn't end the conversation. If I tailored an answer because I knew which version the customer was using, that's context. If I withheld part of an internal answer because it wasn't approved for external sharing, I should be able to explain that boundary. My next question is why an agent couldn't have that information too.
 
 ![Several inputs reach a shared decision surface, where a hand selects one gold path toward an outcome and leaves another path unused.](/blog/information-exchange-worker/judgment-and-context-v1.webp)
 
