@@ -84,7 +84,7 @@ I wouldn't put every email, transcript, call log, and file inside the graph. I'd
 
 That's something I'm still working toward. Here's how I've approached the exchange problem with the context I already have.
 
-### The version I used locally
+### Old: the version I used locally
 
 My previous version was a scheduled Codex task running on my machine. It scanned for new emails and Slack messages, and checked my notes for the kinds of toil I've been describing. It connected to my local context layer in Obsidian.
 
@@ -94,11 +94,19 @@ That risk assessment was part of my workflow. It didn't make an internal answer 
 
 This ran on my machine. I still had to put the pieces together and keep the workflow running there. That's part of the packaging gap I'm talking about.
 
-### What I want next
+![Old workflow: a scheduled Codex task scans email and Slack, uses local Obsidian context and risk guidance, and directly posts responses assessed as low risk.](/blog/information-exchange-worker/old-local-workflow-v1.svg)
 
-The next version I want is a dot using my context layer in Spaces, following the same guidance. It might run through a scheduled task, or pick up the work proactively. I want it to handle these exchanges across email, Slack, Teams, and the other places questions reach me.
+### Current: dot + Spaces
 
-That's the next version I'm aiming for, rather than a description of a system I've already finished. The more complete Carlo knowledge graph is further out, and something I'm still building toward.
+My current version is a dot using my context layer in Spaces, following the same guidance. The workflow can be scheduled or proactive. The aim is to handle these exchanges across email, Slack, Teams, and the other places questions reach me.
+
+![Current workflow: incoming questions reach a dot, which uses Spaces context and risk guidance to respond or bring a decision to me.](/blog/information-exchange-worker/current-dot-workflow-v1.svg)
+
+### Future: a Carlo knowledge graph
+
+The more complete Carlo knowledge graph is further out, and something I'm still building toward. It would connect shared entities across my interactions and point back to the original sources, rather than storing every piece of information in the graph.
+
+![Future workflow: an agent consults a personal knowledge graph that connects shared entities and references original emails, chats, calls, and files.](/blog/information-exchange-worker/future-knowledge-graph-v1.svg)
 
 ## There's still a shit ton of opportunity
 
