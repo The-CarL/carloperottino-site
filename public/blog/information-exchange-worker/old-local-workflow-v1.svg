@@ -10,11 +10,11 @@
 <text x="150.0" y="248.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Incoming questions</text>
 <rect x="360" y="180" width="260" height="100" rx="8" fill="#111111" stroke="#66563b"/>
 <text x="490.0" y="223.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="19" fill="#f0ece6">Scheduled Codex task</text>
-<text x="490.0" y="248.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Runs on my machine</text>
+<text x="490.0" y="248.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Coordinates Codex sessions</text>
 <rect x="720" y="180" width="240" height="100" rx="8" fill="#111111" stroke="#66563b"/>
 <text x="840.0" y="223.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="19" fill="#f0ece6">Direct response</text>
 <text x="840.0" y="248.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">If assessed as low risk</text>
 <rect x="360" y="350" width="260" height="100" rx="8" fill="#111111" stroke="#66563b"/>
 <text x="490.0" y="393.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="19" fill="#f0ece6">Obsidian context</text>
 <text x="490.0" y="418.5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Notes + risk guidance</text>
-<text x="40" y="525" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Public-information questions were the clearest starting point.</text></svg>
+<text x="40" y="525" font-family="Inter,Arial,sans-serif" font-size="16" fill="#bfb8ac">Local setup: Pulse, scheduled tasks, Obsidian context, and Codex session coordination.</text></svg>

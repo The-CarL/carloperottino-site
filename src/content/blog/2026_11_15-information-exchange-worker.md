@@ -86,7 +86,7 @@ That's something I'm still working toward. Here's how I've approached the exchan
 
 ### Old: the version I used locally
 
-My previous version was a scheduled Codex task running on my machine. It scanned for new emails and Slack messages, and checked my notes for the kinds of toil I've been describing. It connected to my local context layer in Obsidian.
+My previous setup combined Pulse, scheduled tasks, and a local context layer in Obsidian. A scheduled Codex task running on my machine scanned for new emails and Slack messages, and checked my notes for the kinds of toil I've been describing. Codex coordinating multiple other Codex sessions was a big part of how I put the work together.
 
 I gave it guidance for assessing risk. If a customer asked for information that was already public and the task assessed the response as low risk, it would post the answer directly. The point was to let it complete those straightforward exchanges instead of bringing every one back to me for manual handling.
 
@@ -101,6 +101,12 @@ This ran on my machine. I still had to put the pieces together and keep the work
 My current version is a dot using my context layer in Spaces, following the same guidance. The workflow can be scheduled or proactive. The aim is to handle these exchanges across email, Slack, Teams, and the other places questions reach me.
 
 ![Current workflow: incoming questions reach a dot, which uses Spaces context and risk guidance to respond or bring a decision to me.](/blog/information-exchange-worker/current-dot-workflow-v1.svg)
+
+This goes back to the personal workflow gap I described in [Checking In](/blog/checking-in#the-personal-workflow-gap). Pulse, scheduled tasks, my own context layer, and Codex managing other Codex sessions were how I assembled a solution around that gap. I think dots are going to be a huge part of making this easier.
+
+I see durable personal agents and durable team agents as a big next step. A personal agent can work with my context and recurring exchanges. A team agent can work with shared context and the questions that keep coming back to the team. In both cases, I want the agent to stay involved as the work continues.
+
+Having those agents in the surfaces we already use will be critical. If the question comes in through Slack or Teams, that's where I want the agent available. Moving every question into a separate tool still leaves a person doing part of the exchange. I think this is clearly where the industry is heading.
 
 ### Future: a Carlo knowledge graph
 
