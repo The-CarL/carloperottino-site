@@ -40,15 +40,17 @@ The product team has knowledge that isn't all publicly available. People like me
 
 Even before AI, I thought it was a poor use of my time. It mattered because someone needed the answer, and finding and communicating that answer took work.
 
-There wasn't a mechanism I trusted to take a question, scan multiple sources, and apply judgment to a response. Now I see a path to building exactly that.
+## What changed for me
 
-## The answer already exists
+Before agentic AI, automating this meant trying to build a system that could do the whole search-and-reason loop. Take a question, scan multiple sources, collect and correlate what it found, decide what to ask next, and keep going until it could reach a decision. That was the hard part. The next step depended on what the last search turned up.
 
-These questions come through email, Slack, Teams, and on customer calls. When is this being released? What is this alpha? How specifically does this feature work under the hood?
+Agents made that much easier. They could work through the sources and follow the question as it developed. But even when I was trying versions of this at AWS, I still only trusted them to take some of these exchanges as far as a draft. I wanted to review the response before it went out.
 
-There's a concrete answer. I might not have it, and it might not be documented publicly, but someone has it. My job in that moment is to go get it from them and bring it back. That whole exchange feels like a colossal waste of time.
+The concern was adherence to my guidance. Could I trust the model to follow the sharing rules, respect the boundaries I'd set, and avoid leaking internal information? Finding an answer and being allowed to send that answer are different parts of the task.
 
-The customer needs the answer. I want them to get it faster. Having me search for the person or conversation that holds it is the part I want to remove.
+My assessment of that has changed. I think today's models are well past the capability threshold that kept me stopping at drafts. With clear guidance about what can be shared, I now trust them to complete exchanges I previously would have reviewed manually. That's a big change in how I'm willing to use them.
+
+I still need to define the boundaries and decide which exchanges I hand over. But I no longer assume that I need to be the person reviewing every response. I want the agent to finish the work within those boundaries and bring me the cases that need a decision.
 
 ## I want this across every surface
 
@@ -60,7 +62,7 @@ The surface changes. The exchange is the same.
 
 The obvious risk is leaking sensitive information. Access to an internal Slack conversation doesn't mean permission to repeat it to a customer. Knowing a tentative date doesn't mean being authorized to make a commitment.
 
-But deciding what can be shared is already part of the work I do manually. I want to make those rules explicit enough that an agent can handle the exchanges within them and bring me the ones that need a decision. I feel much more comfortable trying to build that today than I did before.
+Deciding what can be shared is already part of the work I do manually. Those are the rules I want to give the agent so it can complete the exchange, instead of handing me another draft to review.
 
 And that's the harder case. I also get questions where the answer is already documented. It blows my mind how often a customer asks me something they could have asked ChatGPT or Codex themselves. I'm still there, manually completing the exchange.
 
