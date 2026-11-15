@@ -10,7 +10,7 @@ I've been working on automating the information exchange in my job. A lot of my 
 
 I was recently reminded of that through our HOA. We work with a community manager who handles many things for the association. One part of that work is coordinating information between the board, residents, and vendors.
 
-Looking through the emails, I see exchanges like a board member forwarding an inspection notice to the manager, who forwards it to the inspection company and reports back that they've done so. In another thread, someone asks for association documents and financials, and the manager points them to the portal where the available documents already live.
+A board member gets an inspection notice and sends it to the manager. The manager forwards it to the inspection company, then tells the board it's been forwarded. Someone asks for association documents and financials. The manager points them to the portal where the available documents already live.
 
 Those are specific tasks within a broader role. What catches my attention is the relay itself: a request comes in, someone passes it to the person who can answer it or points to information that already exists, and an update comes back. I keep asking myself how much of that exchange still needs a person in the middle.
 
