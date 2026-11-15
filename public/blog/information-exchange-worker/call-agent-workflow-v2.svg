@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc"><title id="title">CURRENT  /  a voice agent alongside the call</title><desc id="desc">Consent-based audio routing, two tool environments, and answers surfaced to me during the conversation.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#c9a86c"/></marker></defs>
+<rect width="1200" height="1030" fill="#0a0a0a" rx="14"/>
+<text x="36" y="45" font-family="Inter,Arial,sans-serif" font-size="26" fill="#c9a86c" text-anchor="start">CURRENT  /  a voice agent alongside the call</text>
+<text x="36" y="77" font-family="Inter,Arial,sans-serif" font-size="15" fill="#f0ece6" text-anchor="start">Consent-based audio routing, two tool environments, and answers surfaced to me during the conversation.</text>
+<rect x="30" y="115" width="1140" height="125" rx="12" fill="#101010" stroke="#65553b" stroke-dasharray="6 5"/>
+<text x="48" y="142" font-family="Inter,Arial,sans-serif" font-size="15" fill="#c9a86c" text-anchor="start">CALL  ·  participant consent before audio capture</text>
+<rect x="55" y="160" width="235" height="60" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="73" y="192" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Customer + Carlo</text>
+<rect x="390" y="155" width="275" height="65" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="408" y="187" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">BlackHole audio routing</text>
+<path d="M290 190 H390" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="30" y="295" width="1140" height="640" rx="12" fill="#101010" stroke="#65553b" stroke-dasharray="6 5"/>
+<text x="48" y="322" font-family="Inter,Arial,sans-serif" font-size="15" fill="#c9a86c" text-anchor="start">PERSONAL ASSISTANT SETUP  ·  simplified component view</text>
+<rect x="65" y="355" width="285" height="105" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="83" y="387" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Local transcription</text>
+<text x="83" y="415" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Local models</text>
+<text x="83" y="438" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Produce call transcripts</text>
+<rect x="435" y="355" width="345" height="120" rx="8" fill="#191816" stroke="#75654b"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQwNiAyNDA2Ij4KCTxwYXRoIGQ9Ik0xIDU3OC40QzEgMjU5LjUgMjU5LjUgMSA1NzguNCAxaDEyNDkuMWMzMTkgMCA1NzcuNSAyNTguNSA1NzcuNSA1NzcuNFYyNDA2SDU3OC40QzI1OS41IDI0MDYgMSAyMTQ3LjUgMSAxODI4LjZWNTc4LjR6IiBmaWxsPSIjNzRhYTljIi8+Cgk8cGF0aCBpZD0iYSIgZD0iTTExMDcuMyAyOTkuMWMtMTk3Ljk5OSAwLTM3My45IDEyNy4zLTQzNS4yIDMxNS4zTDY1MCA3NDMuNXY0MjcuOWMwIDIxLjQgMTEgNDAuNCAyOS40IDUxLjRsMzQ0LjUgMTk4LjUxNVY4MzMuM2guMXYtMjcuOUwxMzcyLjcgNjA0YzMzLjcxNS0xOS41MiA3MC40NC0zMi44NTcgMTA4LjQ3LTM5LjgyOEwxNDQ3LjYgNDUwLjNDMTM2MSAzNTMuNSAxMjM3LjEgMjk4LjUgMTEwNy4zIDI5OS4xem0wIDExNy41LS42LjZjNzkuNjk5IDAgMTU2LjMgMjcuNSAyMTcuNiA3OC40LTIuNSAxLjItNy40IDQuMy0xMSA2LjFMOTUyLjggNzA5LjNjLTE4LjQgMTAuNC0yOS40IDMwLTI5LjQgNTEuNFYxMjQ4bC0xNTUuMS04OS40Vjc1NS44Yy0uMS0xODcuMDk5IDE1MS42MDEtMzM4LjkgMzM5LTMzOS4yeiIgZmlsbD0iI2ZmZiIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMTIwMyAxMjAzKSIvPgogIAk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgMTIwMyAxMjAzKSIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDEyMDMgMTIwMykiLz4KCTx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0icm90YXRlKDI0MCAxMjAzIDEyMDMpIi8+Cgk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgzMDAgMTIwMyAxMjAzKSIvPgoKPC9zdmc+" x="451" y="371" width="36" height="36"/>
+<text x="500" y="387" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">OpenAI voice agent</text>
+<text x="500" y="415" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Speech models via API</text>
+<text x="500" y="438" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Identify questions + choose tools</text>
+<path d="M525 220 V265 H208 V355" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="245" y="252" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">audio</text>
+<path d="M525 265 H608 V355" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="620" y="320" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">audio</text>
+<rect x="870" y="355" width="260" height="120" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="888" y="387" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Carlo’s assistance view</text>
+<text x="888" y="415" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Relevant answers</text>
+<text x="888" y="438" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Documentation during call</text>
+<path d="M780 410 H870" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="65" y="570" width="285" height="100" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="83" y="602" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Web search</text>
+<text x="83" y="630" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Tools available to the agent</text>
+<rect x="435" y="570" width="345" height="100" rx="8" fill="#191816" stroke="#75654b"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQwNiAyNDA2Ij4KCTxwYXRoIGQ9Ik0xIDU3OC40QzEgMjU5LjUgMjU5LjUgMSA1NzguNCAxaDEyNDkuMWMzMTkgMCA1NzcuNSAyNTguNSA1NzcuNSA1NzcuNFYyNDA2SDU3OC40QzI1OS41IDI0MDYgMSAyMTQ3LjUgMSAxODI4LjZWNTc4LjR6IiBmaWxsPSIjNzRhYTljIi8+Cgk8cGF0aCBpZD0iYSIgZD0iTTExMDcuMyAyOTkuMWMtMTk3Ljk5OSAwLTM3My45IDEyNy4zLTQzNS4yIDMxNS4zTDY1MCA3NDMuNXY0MjcuOWMwIDIxLjQgMTEgNDAuNCAyOS40IDUxLjRsMzQ0LjUgMTk4LjUxNVY4MzMuM2guMXYtMjcuOUwxMzcyLjcgNjA0YzMzLjcxNS0xOS41MiA3MC40NC0zMi44NTcgMTA4LjQ3LTM5LjgyOEwxNDQ3LjYgNDUwLjNDMTM2MSAzNTMuNSAxMjM3LjEgMjk4LjUgMTEwNy4zIDI5OS4xem0wIDExNy41LS42LjZjNzkuNjk5IDAgMTU2LjMgMjcuNSAyMTcuNiA3OC40LTIuNSAxLjItNy40IDQuMy0xMSA2LjFMOTUyLjggNzA5LjNjLTE4LjQgMTAuNC0yOS40IDMwLTI5LjQgNTEuNFYxMjQ4bC0xNTUuMS04OS40Vjc1NS44Yy0uMS0xODcuMDk5IDE1MS42MDEtMzM4LjkgMzM5LTMzOS4yeiIgZmlsbD0iI2ZmZiIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMTIwMyAxMjAzKSIvPgogIAk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgMTIwMyAxMjAzKSIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDEyMDMgMTIwMykiLz4KCTx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0icm90YXRlKDI0MCAxMjAzIDEyMDMpIi8+Cgk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgzMDAgMTIwMyAxMjAzKSIvPgoKPC9zdmc+" x="451" y="586" width="36" height="36"/>
+<text x="500" y="602" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Codex SDK</text>
+<text x="500" y="630" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Launch headless Codex subagents</text>
+<path d="M500 475 V520 H208 V570" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="260" y="508" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">tool invocation</text>
+<path d="M650 475 V570" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="665" y="530" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">delegate</text>
+<rect x="415" y="730" width="690" height="155" rx="12" fill="#101010" stroke="#65553b" stroke-dasharray="6 5"/>
+<text x="433" y="757" font-family="Inter,Arial,sans-serif" font-size="15" fill="#c9a86c" text-anchor="start">LOCAL / CODEX TOOL ENVIRONMENT</text>
+<rect x="440" y="780" width="305" height="80" rx="8" fill="#191816" stroke="#75654b"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQwNiAyNDA2Ij4KCTxwYXRoIGQ9Ik0xIDU3OC40QzEgMjU5LjUgMjU5LjUgMSA1NzguNCAxaDEyNDkuMWMzMTkgMCA1NzcuNSAyNTguNSA1NzcuNSA1NzcuNFYyNDA2SDU3OC40QzI1OS41IDI0MDYgMSAyMTQ3LjUgMSAxODI4LjZWNTc4LjR6IiBmaWxsPSIjNzRhYTljIi8+Cgk8cGF0aCBpZD0iYSIgZD0iTTExMDcuMyAyOTkuMWMtMTk3Ljk5OSAwLTM3My45IDEyNy4zLTQzNS4yIDMxNS4zTDY1MCA3NDMuNXY0MjcuOWMwIDIxLjQgMTEgNDAuNCAyOS40IDUxLjRsMzQ0LjUgMTk4LjUxNVY4MzMuM2guMXYtMjcuOUwxMzcyLjcgNjA0YzMzLjcxNS0xOS41MiA3MC40NC0zMi44NTcgMTA4LjQ3LTM5LjgyOEwxNDQ3LjYgNDUwLjNDMTM2MSAzNTMuNSAxMjM3LjEgMjk4LjUgMTEwNy4zIDI5OS4xem0wIDExNy41LS42LjZjNzkuNjk5IDAgMTU2LjMgMjcuNSAyMTcuNiA3OC40LTIuNSAxLjItNy40IDQuMy0xMSA2LjFMOTUyLjggNzA5LjNjLTE4LjQgMTAuNC0yOS40IDMwLTI5LjQgNTEuNFYxMjQ4bC0xNTUuMS04OS40Vjc1NS44Yy0uMS0xODcuMDk5IDE1MS42MDEtMzM4LjkgMzM5LTMzOS4yeiIgZmlsbD0iI2ZmZiIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMTIwMyAxMjAzKSIvPgogIAk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgMTIwMyAxMjAzKSIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDEyMDMgMTIwMykiLz4KCTx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0icm90YXRlKDI0MCAxMjAzIDEyMDMpIi8+Cgk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgzMDAgMTIwMyAxMjAzKSIvPgoKPC9zdmc+" x="456" y="796" width="36" height="36"/>
+<text x="505" y="812" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Codex subagents</text>
+<text x="505" y="840" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Execute delegated tasks</text>
+<rect x="805" y="780" width="275" height="80" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="823" y="812" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Local files + plugins</text>
+<text x="823" y="840" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Codex ecosystem tools</text>
+<path d="M608 670 V780" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M745 820 H805" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1105 810 H1140 V510 H735 V475" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)" stroke-dasharray="5 5"/>
+<text x="825" y="500" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">results return to the voice agent</text>
+<text x="36" y="1005" font-family="Inter,Arial,sans-serif" font-size="14" fill="#bfb8ac" text-anchor="start">Assistance is surfaced to me; the diagram does not imply automatic disclosure or speech to the customer.</text>
+</svg>
