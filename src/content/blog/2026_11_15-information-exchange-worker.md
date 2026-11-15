@@ -3,7 +3,7 @@ title: "The End of the Information Exchange Worker"
 description: "I spend much of my working life moving information between people. I want agents to take that work, and I think we should all ask what comes after it."
 date: 2026-11-15
 tags: ["ai", "agents", "career"]
-draft: true
+draft: false
 ---
 
 We pay someone to help with our HOA. One of the things they do is ask a vendor when they can come on site, then bring the answer back to the board.
