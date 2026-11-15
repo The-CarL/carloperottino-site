@@ -6,7 +6,7 @@ tags: ["ai", "agents", "career"]
 draft: false
 ---
 
-I work in AI. I've been thinking about automating this kind of work for a couple of years, and the field has been talking about it for at least eighteen months. What keeps striking me is how much of it is still happening around us.
+I've been working on automating the information exchange in my job. A lot of my peers have too, each in our own way. But I work in AI, surrounded by people who are already building with these tools. It's easy to lose sight of how different that looks outside our corner of tech.
 
 We pay someone to help with our HOA. One of the things they do is ask a vendor when they can come on site, then bring the answer back to the board.
 
