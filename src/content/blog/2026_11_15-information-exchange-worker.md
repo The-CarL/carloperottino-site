@@ -6,23 +6,25 @@ tags: ["ai", "agents", "career"]
 draft: false
 ---
 
+I work in AI. I've been thinking about automating this kind of work for a couple of years, and the field has been talking about it for at least eighteen months. What keeps striking me is how much of it is still happening around us.
+
 We pay someone to help with our HOA. One of the things they do is ask a vendor when they can come on site, then bring the answer back to the board.
 
 The vendor says December 1st. The board gets asked whether December 1st works. The answer goes back to the vendor.
 
 In that exchange, nobody is adding judgment. Someone is carrying a message between two parties. And I keep thinking: why are we paying a person to do this?
 
-Then I look at my own inbox.
+It's a reminder of how much opportunity for diffusion is still sitting in everyday work. I've been pushing on whether we could replace these exchanges with AI, and the conversations around that have made me realize how far away this still feels to some people. I suspect there are plenty of roles where carrying information between people is the primary function.
 
-I'm calling it information exchange work.
+I'm calling it information exchange work. And unfortunately, even my own role still requires a lot of it.
 
-For probably two years, I've been watching this get harder and harder to ignore. A lot of my time at Amazon, and now at OpenAI, has involved taking information from one group of people and getting it to another. Product clarifications. Release timelines. Roadmap questions.
+A lot of my time at Amazon, and now at OpenAI, has involved taking information from one group of people and getting it to another. Product clarifications. Release timelines. Roadmap questions.
 
 A customer asks me something. I go find the answer. Sometimes that's in documentation. Sometimes it's spread across internal conversations. Sometimes I ask someone on the product team. Then I put the answer together, work out what I can share, and send it back.
 
 That can be insanely valuable to the customer. It's also high toil for me. And increasingly, I struggle to explain why Carlo, a human, needs to sit in the middle of that exchange.
 
-I've always hated this part of the job. I'm tremendously excited about the possibility of getting rid of it.
+I've always hated this part of the job. I'm tremendously excited about the possibility of getting rid of it. I've been building toward that in my own workflows, and I want to show what I'm doing about it.
 
 ![A person passes an unchanged message along a gold connection between a sender and a recipient.](/blog/information-exchange-worker/information-relay-v1.webp)
 
