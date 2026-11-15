@@ -62,6 +62,22 @@ And that's the harder case. I also get questions where the answer is already doc
 
 I want to stop doing that. I want to help build the system that lets me stop.
 
+## There's still a shit ton of opportunity
+
+I've worked in big tech, or in some tech-adjacent role, for most of my career. That shapes what I see every day. I'm surrounded by people talking about agents, building with them, and trying to work out what comes next.
+
+Dealing with the HOA brought me out of that world for a minute. I've been thinking about replacing these exchanges with AI and pushing on why we still need to pay someone to carry them out. In those conversations, I've encountered apprehension. I wouldn't even call it resistance. There's a hesitation about making the change.
+
+I don't know exactly what's behind it. Maybe people haven't seen the tools that could do this. Maybe they don't trust them yet. Maybe they don't know where to start. I don't want to pretend I've diagnosed it from one HOA conversation.
+
+But it made the diffusion problem feel very concrete to me. A capability can exist, and people can still be a long way from putting it into the everyday work around them.
+
+When I hear that AI hasn't delivered on the promise the industry has talked about, I want to point to this. There's still a shit ton of opportunity sitting in exchanges as ordinary as coordinating a vendor visit. The work is happening every day. People are paying for it. And in this example, we're still discussing whether to try doing it differently.
+
+I suspect there's a lot more of this across regional businesses, small and medium businesses, and organizations that weren't built around software. I don't have a number for it. What I have is this very ordinary interaction that made me wonder how many entire job functions still consist largely of these exchanges.
+
+For me, it's a useful litmus test. Look at how often an existing answer still has to pass through a person before it reaches the person who needs it. Every one of those exchanges is somewhere to look for opportunity. Seeing so many of them around me makes it hard to believe we're anywhere close to exhausting it.
+
 ## The part I might actually miss
 
 Architecture feels different to me. I enjoy taking a customer's problem, decomposing it into something specific, and asking the hard questions. There's something to work out together. We aren't just retrieving an answer someone already has.
