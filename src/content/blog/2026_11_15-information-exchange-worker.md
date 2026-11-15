@@ -6,25 +6,25 @@ tags: ["ai", "agents", "career"]
 draft: false
 ---
 
-I've been working on automating the information exchange in my job. A lot of my peers have too, each in our own way. But I work in AI, surrounded by people who are already building with these tools. It's easy to lose sight of how different that looks outside our corner of tech.
+There's a pattern in my day-to-day work that accounts for some of the most tedious, and some of the most important, things I do. I've seen it take up more of my time as I've moved into product-centric roles working with enterprise customers.
+
+A customer asks when a feature is being released, how something works under the hood, or what's on the roadmap. I don't have the answer, but someone on the product team does. Or it's in an internal conversation I need to find. I go get it, work out what I can share, and bring it back to the customer.
+
+The answer already exists. Someone needs it, someone else has it, and I'm the person connecting the two. That's what I mean by information exchange work.
+
+It can be insanely valuable to the customer. It's also high toil for me. A lot of my time at Amazon, and now at OpenAI, has gone into these exchanges. I've always hated this part of the job, and I've been working on automating it. A lot of my peers have too, each in our own way.
+
+But I work in AI, surrounded by people who are already building with these tools. It's easy to lose sight of how different that looks outside our corner of tech.
 
 I was recently reminded of that through our HOA. We work with a community manager who handles many things for the association. One part of that work is coordinating information between the board, residents, and vendors.
 
 A board member gets an inspection notice and sends it to the manager. The manager forwards it to the inspection company, then tells the board it's been forwarded. Someone asks for association documents and financials. The manager points them to the portal where the available documents already live.
 
-Those are specific tasks within a broader role. What catches my attention is the relay itself: a request comes in, someone passes it to the person who can answer it or points to information that already exists, and an update comes back. I keep asking myself how much of that exchange still needs a person in the middle.
+Those are specific tasks within a broader role. What catches my attention is the relay itself. I keep asking myself how much of that exchange still needs a person in the middle.
 
 It's a reminder of how much opportunity for diffusion is still sitting in everyday work. I've been pushing on whether we could replace these exchanges with AI, and the conversations around that have made me realize how far away this still feels to some people. I suspect there are plenty of roles where carrying information between people is the primary function.
 
-I'm calling it information exchange work. And unfortunately, even my own role still requires a lot of it.
-
-A lot of my time at Amazon, and now at OpenAI, has involved taking information from one group of people and getting it to another. Product clarifications. Release timelines. Roadmap questions.
-
-A customer asks me something. I go find the answer. Sometimes that's in documentation. Sometimes it's spread across internal conversations. Sometimes I ask someone on the product team. Then I put the answer together, work out what I can share, and send it back.
-
-That can be insanely valuable to the customer. It's also high toil for me. And increasingly, I struggle to explain why Carlo, a human, needs to sit in the middle of that exchange.
-
-I've always hated this part of the job. I'm tremendously excited about the possibility of getting rid of it. I've been building toward that in my own workflows, and I want to show what I'm doing about it.
+And even in my own role, there's still a lot of it to get rid of. I'm tremendously excited about that. I've been building toward it in my own workflows, and I want to show what I'm doing about it.
 
 ![A person passes an unchanged message along a gold connection between a sender and a recipient.](/blog/information-exchange-worker/information-relay-v1.webp)
 
