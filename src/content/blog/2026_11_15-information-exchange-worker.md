@@ -74,11 +74,31 @@ I think always-on agents, or what I call durable agents, are going to be a huge 
 
 The surfaces aren't the whole adoption problem. But packaging this well matters. Someone shouldn't need to build their own collection of integrations and automations just to stop forwarding questions and answers. I expect this to get much better.
 
-### What I'm trying today
+### The context layer comes first
 
-In my own work at OpenAI, I've started addressing one piece of this: using questions that come up on customer calls to trigger a Slack search automatically. That's the first part of the exchange I want to remove, the detour to go find the answer.
+Most of my context layer lives in Obsidian right now. I'm working on moving it into Pages and Spaces. There are a lot of examples of people building their own second brains and context layers, but the approaches I've seen don't yet feel consumer-grade to me.
 
-The broader workflow I want is the one I've described above: a question arrives, the agent finds the relevant context, works out what can be shared, and responds or brings me a specific decision. The call-time lookup is something I've built a version of. The broader workflow is what I'm working toward.
+My longer-term vision is a consolidated personal knowledge graph. It would connect the people, customers, projects, and activity across my life. If I email a customer, chat with them, and get on a call, I want an agent to understand that those interactions belong together.
+
+I wouldn't put every email, transcript, call log, and file inside the graph. I'd use it to associate the common entities and point back to the underlying sources. The graph would help the agent find the context that matters without making me assemble it again for every question.
+
+That's something I'm still working toward. Here's how I've approached the exchange problem with the context I already have.
+
+### The version I used locally
+
+My previous version was a scheduled Codex task running on my machine. It scanned for new emails and Slack messages, and checked my notes for the kinds of toil I've been describing. It connected to my local context layer in Obsidian.
+
+I gave it guidance for assessing risk. If a customer asked for information that was already public and the task assessed the response as low risk, it would post the answer directly. The point was to let it complete those straightforward exchanges instead of bringing every one back to me for manual handling.
+
+That risk assessment was part of my workflow. It didn't make an internal answer safe to share just because the agent could find it. The public-information case was the clearest place to start.
+
+This ran on my machine. I still had to put the pieces together and keep the workflow running there. That's part of the packaging gap I'm talking about.
+
+### What I want next
+
+The next version I want is a dot using my context layer in Spaces, following the same guidance. It might run through a scheduled task, or pick up the work proactively. I want it to handle these exchanges across email, Slack, Teams, and the other places questions reach me.
+
+That's the next version I'm aiming for, rather than a description of a system I've already finished. The more complete Carlo knowledge graph is further out, and something I'm still building toward.
 
 ## There's still a shit ton of opportunity
 
