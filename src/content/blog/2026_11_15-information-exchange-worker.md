@@ -8,11 +8,11 @@ draft: false
 
 I've been working on automating the information exchange in my job. A lot of my peers have too, each in our own way. But I work in AI, surrounded by people who are already building with these tools. It's easy to lose sight of how different that looks outside our corner of tech.
 
-We pay someone to help with our HOA. One of the things they do is ask a vendor when they can come on site, then bring the answer back to the board.
+I was recently reminded of that through our HOA. We work with a community manager who handles many things for the association. One part of that work is coordinating information between the board, residents, and vendors.
 
-The vendor says December 1st. The board gets asked whether December 1st works. The answer goes back to the vendor.
+Looking through the emails, I see exchanges like a board member forwarding an inspection notice to the manager, who forwards it to the inspection company and reports back that they've done so. In another thread, someone asks for association documents and financials, and the manager points them to the portal where the available documents already live.
 
-In that exchange, nobody is adding judgment. Someone is carrying a message between two parties. And I keep thinking: why are we paying a person to do this?
+Those are specific tasks within a broader role. What catches my attention is the relay itself: a request comes in, someone passes it to the person who can answer it or points to information that already exists, and an update comes back. I keep asking myself how much of that exchange still needs a person in the middle.
 
 It's a reminder of how much opportunity for diffusion is still sitting in everyday work. I've been pushing on whether we could replace these exchanges with AI, and the conversations around that have made me realize how far away this still feels to some people. I suspect there are plenty of roles where carrying information between people is the primary function.
 
