@@ -26,6 +26,8 @@ I've always hated this part of the job. I'm tremendously excited about the possi
 
 ![A person passes an unchanged message along a gold connection between a sender and a recipient.](/blog/information-exchange-worker/information-relay-v1.webp)
 
+Someone has a question. Someone else already has the answer. I sit between them, carrying the question one way and the answer back. That is the exchange I mean.
+
 ## I'm mostly finessing
 
 This became more obvious when I moved from consulting into product organizations. There's a whole category of questions that comes with being close to a product team.
@@ -112,5 +114,22 @@ That doesn't mean every decision becomes a rule I can safely hand over today. So
 Even the HOA exchange could turn into a different kind of work. If two vendors disagree about what needs fixing, or the board needs to choose how to spend its money, someone has a decision to make. My frustration is with paying for the relay and treating it as though that decision happened.
 
 I want to apply that same scrutiny to myself. Where I say I'm adding judgment, I should be able to point to it.
+
+## How much of your job is this?
+
+I'd encourage you to look at your last week of work. Open the emails, the chat threads, the meeting notes. Pick out the exchanges where somebody needed something from you and ask:
+
+- Did I know the answer, or did I ask someone else and pass their answer back?
+- Did I spend a call collecting questions that I then took to another team?
+- Was I coordinating availability, checking a status, or chasing an update that already existed somewhere?
+- Did I change the answer, or just make it easier to read and send it on?
+- If an agent had access to the same sources and sharing rules, what would still require me?
+- How much of my working week consists of those exchanges?
+
+If this is your primary function, I think you should be incredibly concerned about depending on it. Being the person who knows whom to ask has been valuable for a long time. I wouldn't build the next stage of my career around being that person. I'd start working out what else I can contribute and how to make that a larger part of my work.
+
+If this is a secondary or tertiary part of your job, I'd lean into replacing it proactively. Pick a recurring exchange. Give an agent the relevant context and clear limits on what it can share or do. Review what comes back, work through the failures, and use that experience to decide how much of the exchange you can hand over. Reclaim the time for work you actually want to do.
+
+I'm applying this to myself. By my own estimate, this is a large part of my job. I want to take it apart now, while I can help decide how it changes and what I do with the time it frees up.
 
 I hope OpenAI and other organizations build agents that take this work off our hands. I want to help build them. My next step is to work out how much of my own inbox I can hand over, and what decisions actually need to come back to me.
