@@ -108,6 +108,26 @@ The more complete Carlo knowledge graph is further out, and something I'm still 
 
 ![Future workflow: an agent consults a personal knowledge graph that connects shared entities and references original emails, chats, calls, and files.](/blog/information-exchange-worker/future-knowledge-graph-v1.svg)
 
+## Answer it while we're still on the call
+
+I started thinking about this while I was still at AWS. If I could route the audio from a call into a specialized system, I could have a voice agent listening alongside me. It could help with objection handling, look up relevant documentation, and do these information exchange searches while the conversation was happening.
+
+The usual workflow starts with notes. I take notes on a customer call, and when the people I'm speaking with consent, I use automated notes. Those notes become action items. The information exchange tasks then go through the workflow I've described above.
+
+But if the answer already exists, I want to get it during the call. I want the agent to notice a question it can answer, look it up, and bring the answer to me while we're still talking.
+
+### The system I'm using
+
+I've built a version of this, and I use it when customers consent. BlackHole routes the call audio into a voice agent using OpenAI speech models through the API. I also use local models for transcription.
+
+The agent has tools it can call to find answers. One path uses tools such as web search. The other delegates work through the Codex SDK to headless Codex subagents. That gives it a way to use files and tools available locally, including Codex plugins.
+
+![With participant consent, call audio passes through BlackHole to an OpenAI voice agent and local transcription. The agent can search the web or delegate through the Codex SDK to local Codex subagents, then surface answers and documentation to Carlo.](/blog/information-exchange-worker/call-agent-workflow-v1.svg)
+
+It listens for questions it can help with and surfaces an answer or relevant documentation. I find it incredibly useful. Instead of writing down another question to take away and resolve, I can have the information in front of me during the conversation. Surfacing it to me also gives me a chance to judge what belongs in the customer conversation.
+
+My longer-term vision is that agents can simply join calls with us. I want this kind of assistance to be available in the conversation without having to assemble the audio routing and tool connections myself.
+
 ## There's still a shit ton of opportunity
 
 I've worked in big tech, or in some tech-adjacent role, for most of my career. That shapes what I see every day. I'm surrounded by people talking about agents, building with them, and trying to work out what comes next.
