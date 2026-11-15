@@ -26,7 +26,7 @@ It's a reminder of how much opportunity for diffusion is still sitting in everyd
 
 And even in my own role, there's still a lot of it to get rid of. I'm tremendously excited about that. I've been building toward it in my own workflows, and I want to show what I'm doing about it.
 
-![A person passes an unchanged message along a gold connection between a sender and a recipient.](/blog/information-exchange-worker/information-relay-v1.webp)
+![A customer’s question reaches a human broker, who retrieves answers from protected internal documents, chats, and product specialists before returning an answer.](/blog/information-exchange-worker/information-broker-v2.webp)
 
 Someone has a question. Someone else already has the answer. I sit between them, carrying the question one way and the answer back. That is the exchange I mean.
 
@@ -96,19 +96,19 @@ That risk assessment was part of my workflow. It didn't make an internal answer 
 
 This ran on my machine. I still had to put the pieces together and keep the workflow running there. That's part of the packaging gap I'm talking about.
 
-![Old workflow: a scheduled Codex task scans email and Slack, uses local Obsidian context and risk guidance, and directly posts responses assessed as low risk.](/blog/information-exchange-worker/old-local-workflow-v1.svg)
+![Old workflow: a scheduled Codex task scans email and Slack, uses local Obsidian context and risk guidance, and directly posts responses assessed as low risk.](/blog/information-exchange-worker/old-local-workflow-v2.svg)
 
 ### Current: dot + Spaces
 
 My current version is a dot using my context layer in Spaces, following the same guidance. The workflow can be scheduled or proactive. The aim is to handle these exchanges across email, Slack, Teams, and the other places questions reach me.
 
-![Current workflow: incoming questions reach a dot, which uses Spaces context and risk guidance to respond or bring a decision to me.](/blog/information-exchange-worker/current-dot-workflow-v1.svg)
+![Current workflow: incoming questions reach a dot, which uses Spaces context and risk guidance to respond or bring a decision to me.](/blog/information-exchange-worker/current-dot-workflow-v2.svg)
 
 ### Future: a Carlo knowledge graph
 
 The more complete Carlo knowledge graph is further out, and something I'm still building toward. It would connect shared entities across my interactions and point back to the original sources, rather than storing every piece of information in the graph.
 
-![Future workflow: an agent consults a personal knowledge graph that connects shared entities and references original emails, chats, calls, and files.](/blog/information-exchange-worker/future-knowledge-graph-v1.svg)
+![Future workflow: an agent consults a personal knowledge graph that connects shared entities and references original emails, chats, calls, and files.](/blog/information-exchange-worker/future-knowledge-graph-v2.svg)
 
 ### Less scaffolding, closer to the work
 
@@ -134,7 +134,7 @@ I've built a version of this, and I use it when customers consent. BlackHole rou
 
 The agent has tools it can call to find answers. One path uses tools such as web search. The other delegates work through the Codex SDK to headless Codex subagents. That gives it a way to use files and tools available locally, including Codex plugins.
 
-![With participant consent, call audio passes through BlackHole to an OpenAI voice agent and local transcription. The agent can search the web or delegate through the Codex SDK to local Codex subagents, then surface answers and documentation to Carlo.](/blog/information-exchange-worker/call-agent-workflow-v1.svg)
+![With participant consent, call audio passes through BlackHole to an OpenAI voice agent and local transcription. The agent can search the web or delegate through the Codex SDK to local Codex subagents, then surface answers and documentation to Carlo.](/blog/information-exchange-worker/call-agent-workflow-v2.svg)
 
 It listens for questions it can help with and surfaces an answer or relevant documentation. I find it incredibly useful. Instead of writing down another question to take away and resolve, I can have the information in front of me during the conversation. Surfacing it to me also gives me a chance to judge what belongs in the customer conversation.
 

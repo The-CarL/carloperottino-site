@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc"><title id="title">OLD  /  a local runtime I assembled</title><desc id="desc">Recurring execution, shared context, and Codex sessions coordinated on my machine.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#c9a86c"/></marker></defs>
+<rect width="1200" height="900" fill="#0a0a0a" rx="14"/>
+<text x="36" y="45" font-family="Inter,Arial,sans-serif" font-size="26" fill="#c9a86c" text-anchor="start">OLD  /  a local runtime I assembled</text>
+<text x="36" y="77" font-family="Inter,Arial,sans-serif" font-size="15" fill="#f0ece6" text-anchor="start">Recurring execution, shared context, and Codex sessions coordinated on my machine.</text>
+<rect x="320" y="115" width="540" height="675" rx="12" fill="#101010" stroke="#65553b" stroke-dasharray="6 5"/>
+<text x="338" y="142" font-family="Inter,Arial,sans-serif" font-size="15" fill="#c9a86c" text-anchor="start">MY MACHINE  ·  local execution boundary</text>
+<rect x="35" y="165" width="235" height="115" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="53" y="197" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Connected sources</text>
+<text x="53" y="225" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Email + Slack</text>
+<text x="53" y="248" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">New questions and updates</text>
+<rect x="355" y="165" width="465" height="105" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="373" y="197" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Recurring schedule</text>
+<text x="373" y="225" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Periodic pulse starts another scan</text>
+<path d="M770 230 C810 230 810 185 775 185 C750 185 750 210 765 210" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)" stroke-dasharray="5 5"/>
+<path d="M375 248 H410 L420 235 L430 258 L440 248 H480 L490 235 L500 258 L510 248 H550 L560 235 L570 258 L580 248 H620" fill="none" stroke="#c9a86c" stroke-width="1.5"/>
+<rect x="355" y="325" width="465" height="115" rx="8" fill="#191816" stroke="#75654b"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQwNiAyNDA2Ij4KCTxwYXRoIGQ9Ik0xIDU3OC40QzEgMjU5LjUgMjU5LjUgMSA1NzguNCAxaDEyNDkuMWMzMTkgMCA1NzcuNSAyNTguNSA1NzcuNSA1NzcuNFYyNDA2SDU3OC40QzI1OS41IDI0MDYgMSAyMTQ3LjUgMSAxODI4LjZWNTc4LjR6IiBmaWxsPSIjNzRhYTljIi8+Cgk8cGF0aCBpZD0iYSIgZD0iTTExMDcuMyAyOTkuMWMtMTk3Ljk5OSAwLTM3My45IDEyNy4zLTQzNS4yIDMxNS4zTDY1MCA3NDMuNXY0MjcuOWMwIDIxLjQgMTEgNDAuNCAyOS40IDUxLjRsMzQ0LjUgMTk4LjUxNVY4MzMuM2guMXYtMjcuOUwxMzcyLjcgNjA0YzMzLjcxNS0xOS41MiA3MC40NC0zMi44NTcgMTA4LjQ3LTM5LjgyOEwxNDQ3LjYgNDUwLjNDMTM2MSAzNTMuNSAxMjM3LjEgMjk4LjUgMTEwNy4zIDI5OS4xem0wIDExNy41LS42LjZjNzkuNjk5IDAgMTU2LjMgMjcuNSAyMTcuNiA3OC40LTIuNSAxLjItNy40IDQuMy0xMSA2LjFMOTUyLjggNzA5LjNjLTE4LjQgMTAuNC0yOS40IDMwLTI5LjQgNTEuNFYxMjQ4bC0xNTUuMS04OS40Vjc1NS44Yy0uMS0xODcuMDk5IDE1MS42MDEtMzM4LjkgMzM5LTMzOS4yeiIgZmlsbD0iI2ZmZiIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMTIwMyAxMjAzKSIvPgogIAk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgMTIwMyAxMjAzKSIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDEyMDMgMTIwMykiLz4KCTx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0icm90YXRlKDI0MCAxMjAzIDEyMDMpIi8+Cgk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgzMDAgMTIwMyAxMjAzKSIvPgoKPC9zdmc+" x="371" y="341" width="36" height="36"/>
+<text x="420" y="357" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Codex coordinator</text>
+<text x="420" y="385" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Scan messages + notes</text>
+<text x="420" y="408" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Find information exchange tasks</text>
+<path d="M590 270 V325" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="607" y="305" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">wake / run</text>
+<path d="M270 220 H300 V380 H355" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="285" y="355" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">read</text>
+<rect x="355" y="505" width="215" height="110" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="373" y="537" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Obsidian context</text>
+<text x="373" y="565" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Local notes</text>
+<text x="373" y="588" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Customer / work context</text>
+<rect x="605" y="505" width="215" height="110" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="623" y="537" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Skills + guidance</text>
+<text x="623" y="565" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Task instructions</text>
+<text x="623" y="588" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Risk / sharing assessment</text>
+<path d="M460 505 V440" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M710 505 V440" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="355" y="675" width="465" height="80" rx="8" fill="#191816" stroke="#75654b"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQwNiAyNDA2Ij4KCTxwYXRoIGQ9Ik0xIDU3OC40QzEgMjU5LjUgMjU5LjUgMSA1NzguNCAxaDEyNDkuMWMzMTkgMCA1NzcuNSAyNTguNSA1NzcuNSA1NzcuNFYyNDA2SDU3OC40QzI1OS41IDI0MDYgMSAyMTQ3LjUgMSAxODI4LjZWNTc4LjR6IiBmaWxsPSIjNzRhYTljIi8+Cgk8cGF0aCBpZD0iYSIgZD0iTTExMDcuMyAyOTkuMWMtMTk3Ljk5OSAwLTM3My45IDEyNy4zLTQzNS4yIDMxNS4zTDY1MCA3NDMuNXY0MjcuOWMwIDIxLjQgMTEgNDAuNCAyOS40IDUxLjRsMzQ0LjUgMTk4LjUxNVY4MzMuM2guMXYtMjcuOUwxMzcyLjcgNjA0YzMzLjcxNS0xOS41MiA3MC40NC0zMi44NTcgMTA4LjQ3LTM5LjgyOEwxNDQ3LjYgNDUwLjNDMTM2MSAzNTMuNSAxMjM3LjEgMjk4LjUgMTEwNy4zIDI5OS4xem0wIDExNy41LS42LjZjNzkuNjk5IDAgMTU2LjMgMjcuNSAyMTcuNiA3OC40LTIuNSAxLjItNy40IDQuMy0xMSA2LjFMOTUyLjggNzA5LjNjLTE4LjQgMTAuNC0yOS40IDMwLTI5LjQgNTEuNFYxMjQ4bC0xNTUuMS04OS40Vjc1NS44Yy0uMS0xODcuMDk5IDE1MS42MDEtMzM4LjkgMzM5LTMzOS4yeiIgZmlsbD0iI2ZmZiIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMTIwMyAxMjAzKSIvPgogIAk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgMTIwMyAxMjAzKSIvPgoJPHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDEyMDMgMTIwMykiLz4KCTx1c2UgeGxpbms6aHJlZj0iI2EiIHRyYW5zZm9ybT0icm90YXRlKDI0MCAxMjAzIDEyMDMpIi8+Cgk8dXNlIHhsaW5rOmhyZWY9IiNhIiB0cmFuc2Zvcm09InJvdGF0ZSgzMDAgMTIwMyAxMjAzKSIvPgoKPC9zdmc+" x="371" y="691" width="36" height="36"/>
+<text x="420" y="707" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Other Codex sessions</text>
+<text x="420" y="735" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Delegated work coordinated by Codex</text>
+<path d="M820 405 H840 V715 H820" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="862" y="555" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">delegate</text>
+<rect x="920" y="325" width="245" height="115" rx="8" fill="#191816" stroke="#75654b"/>
+<text x="938" y="357" font-family="Inter,Arial,sans-serif" font-size="18" fill="#f0ece6" text-anchor="start">Response decision</text>
+<text x="938" y="385" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">Public information +</text>
+<text x="938" y="408" font-family="Inter,Arial,sans-serif" font-size="15" fill="#bfb8ac" text-anchor="start">assessed low risk → post</text>
+<path d="M820 370 H920" stroke="#c9a86c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="846" y="355" font-family="Inter,Arial,sans-serif" font-size="14" fill="#c9a86c" text-anchor="start">result</text>
+<text x="928" y="490" font-family="Inter,Arial,sans-serif" font-size="14" fill="#bfb8ac" text-anchor="start">Other cases are not shown</text>
+<text x="928" y="513" font-family="Inter,Arial,sans-serif" font-size="14" fill="#bfb8ac" text-anchor="start">as automatic responses.</text>
+<text x="36" y="875" font-family="Inter,Arial,sans-serif" font-size="14" fill="#bfb8ac" text-anchor="start">Pulse / scheduled tasks supplied the cadence; context, skills, and session coordination had to be assembled.</text>
+</svg>
